@@ -1,219 +1,215 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-	<title>Dashboard | Klorofil - Free Bootstrap Dashboard Template</title>
 	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-	<!-- VENDOR CSS -->
-	<link rel="stylesheet" href="<?= base_url() ?>assets/vendor/bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" href="<?= base_url() ?>assets/vendor/font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" href="<?= base_url() ?>assets/vendor/linearicons/style.css">
-	<link rel="stylesheet" href="<?= base_url() ?>assets/vendor/chartist/css/chartist-custom.css">
-	<!-- MAIN CSS -->
-	<link rel="stylesheet" href="<?= base_url() ?>assets/css/main.css">
-	<!-- FOR DEMO PURPOSES ONLY. You should remove this in your project -->
-	<link rel="stylesheet" href="<?= base_url() ?>assets/css/style.css">
-	<!-- GOOGLE FONTS -->
-	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
-	<!-- ICONS -->
-	<link rel="apple-touch-icon" sizes="76x76" href="<?= base_url() ?>assets/img/apple-icon.png">
-	<link rel="icon" type="image/png" sizes="96x96" href="<?= base_url() ?>assets/img/favicon.png">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Responsive Admin &amp; Dashboard Template based on Bootstrap 5">
+	<meta name="author" content="AdminKit">
+	<meta name="keywords" content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
+
+	<link rel="shortcut icon" href="<?= base_url() ?>assets/img/icons/icon-48x48.png" />
+
+	<title>Profile | AdminKit Demo</title>
+
+	<link href="<?= base_url() ?>assets/css/app.css" rel="stylesheet">
+	<link href="<?= base_url() ?>assets/css/style.css" rel="stylesheet">
+	<link href="<?= base_url() ?>assets/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
-	<!-- WRAPPER -->
-	<div id="wrapper">
-		<!-- NAVBAR -->
-		<nav class="navbar navbar-dark navbar-fixed-top">
-			<div class="container">
-				<div class="brand">
-					<a href="index.html"><img src="<?= base_url() ?>assets/img/logo-dark.png" alt="Klorofil Logo" class="img-responsive logo"></a>
-				</div>
-				<div class="container-fluid">
-					<div id="navbar-menu">
-						<ul class="nav navbar-nav navbar-right">
-							<li class="dropdown">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="lnr lnr-question-circle"></i> <span>Help</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
-								<ul class="dropdown-menu">
-									<li><a href="#">Basic Use</a></li>
-									<li><a href="#">Working With Data</a></li>
-									<li><a href="#">Security</a></li>
-									<li><a href="#">Troubleshooting</a></li>
-								</ul>
+	<div class="wrapper">
+
+		<div class="main">
+			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+				<div class="container">
+					<a class="navbar-brand" href="#">Navbar</a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav ml-auto">
+							<li class="nav-item active">
+								<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
 							</li>
-							<li class="dropdown">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="<?= base_url() ?>assets/img/user.png" class="img-circle" alt="Avatar"> <span>Samuel</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
-								<ul class="dropdown-menu">
-									<li><a href="#"><i class="lnr lnr-user"></i> <span>My Profile</span></a></li>
-									<li><a href="#"><i class="lnr lnr-envelope"></i> <span>Message</span></a></li>
-									<li><a href="#"><i class="lnr lnr-cog"></i> <span>Settings</span></a></li>
-									<li><a href="#"><i class="lnr lnr-exit"></i> <span>Logout</span></a></li>
-								</ul>
+							<li class="nav-item">
+								<a class="nav-link" href="#">Link</a>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									Dropdown
+								</a>
+								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<a class="dropdown-item" href="#">Action</a>
+									<a class="dropdown-item" href="#">Another action</a>
+									<div class="dropdown-divider"></div>
+									<a class="dropdown-item" href="#">Something else here</a>
+								</div>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
 							</li>
 						</ul>
 					</div>
 				</div>
-			</div>
-		</nav>
-		<!-- END NAVBAR -->
-		<!-- MAIN -->
-		<div class="main main-front">
-			<!-- MAIN CONTENT -->
-			<div class="main-content">
-				<div class="container">
+			</nav>
+
+			<section class="content">
+				<div class="container pb-5">
+
 					<div class="row">
-						<div class="col-md-8">
-							<!-- RECENT PURCHASES -->
-							<div class="panel">
-								<div class="panel-heading">
-									<h3 class="panel-title">Recent Purchases</h3>
-									<!-- <div class="right">
-										<button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
-										<button type="button" class="btn-remove"><i class="lnr lnr-cross"></i></button>
-									</div> -->
+						<div class="col-sm-8">
+							<div class="card flex-fill">
+								<div class="card-header">
+
+									<h5 class="card-title mb-0">Latest Projects</h5>
 								</div>
-								<div class="panel-body no-padding">
-									<table class="table table-striped">
-										<thead>
-											<tr>
-												<th>Order No.</th>
-												<th>Name</th>
-												<th>Amount</th>
-												<th>Date &amp; Time</th>
-												<th>Status</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td><a href="#">763648</a></td>
-												<td>Steve</td>
-												<td>$122</td>
-												<td>Oct 21, 2016</td>
-												<td><span class="label label-success">COMPLETED</span></td>
-											</tr>
-											<tr>
-												<td><a href="#">763649</a></td>
-												<td>Amber</td>
-												<td>$62</td>
-												<td>Oct 21, 2016</td>
-												<td><span class="label label-warning">PENDING</span></td>
-											</tr>
-											<tr>
-												<td><a href="#">763650</a></td>
-												<td>Michael</td>
-												<td>$34</td>
-												<td>Oct 18, 2016</td>
-												<td><span class="label label-danger">FAILED</span></td>
-											</tr>
-											<tr>
-												<td><a href="#">763651</a></td>
-												<td>Roger</td>
-												<td>$186</td>
-												<td>Oct 17, 2016</td>
-												<td><span class="label label-success">SUCCESS</span></td>
-											</tr>
-											<tr>
-												<td><a href="#">763652</a></td>
-												<td>Smith</td>
-												<td>$362</td>
-												<td>Oct 16, 2016</td>
-												<td><span class="label label-success">SUCCESS</span></td>
-											</tr>
-										</tbody>
-									</table>
-								</div>
+								<table class="table table-hover my-0">
+									<thead>
+										<tr>
+											<th>Name</th>
+											<th class="d-none d-xl-table-cell">Start Date</th>
+											<th class="d-none d-xl-table-cell">End Date</th>
+											<th>Status</th>
+											<th class="d-none d-md-table-cell">Assignee</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Project Apollo</td>
+											<td class="d-none d-xl-table-cell">01/01/2020</td>
+											<td class="d-none d-xl-table-cell">31/06/2020</td>
+											<td><span class="badge bg-success">Done</span></td>
+											<td class="d-none d-md-table-cell">Vanessa Tucker</td>
+										</tr>
+										<tr>
+											<td>Project Fireball</td>
+											<td class="d-none d-xl-table-cell">01/01/2020</td>
+											<td class="d-none d-xl-table-cell">31/06/2020</td>
+											<td><span class="badge bg-danger">Cancelled</span></td>
+											<td class="d-none d-md-table-cell">William Harris</td>
+										</tr>
+										<tr>
+											<td>Project Hades</td>
+											<td class="d-none d-xl-table-cell">01/01/2020</td>
+											<td class="d-none d-xl-table-cell">31/06/2020</td>
+											<td><span class="badge bg-success">Done</span></td>
+											<td class="d-none d-md-table-cell">Sharon Lessman</td>
+										</tr>
+										<tr>
+											<td>Project Nitro</td>
+											<td class="d-none d-xl-table-cell">01/01/2020</td>
+											<td class="d-none d-xl-table-cell">31/06/2020</td>
+											<td><span class="badge bg-warning">In progress</span></td>
+											<td class="d-none d-md-table-cell">Vanessa Tucker</td>
+										</tr>
+									</tbody>
+								</table>
 							</div>
-							<!-- END RECENT PURCHASES -->
 						</div>
-						<div class="col-md-4">
-							<!-- MULTI CHARTS -->
-							<div class="panel">
-								<div class="panel-heading">
-									<h3 class="panel-title">Login</h3>
-									<!-- <div class="right">
-										<button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
-										<button type="button" class="btn-remove"><i class="lnr lnr-cross"></i></button>
-									</div> -->
-								</div>
-								<div class="panel-body">
-									<div class="content">
-										<div class="header">
-											<!-- <div class="logo text-center"><img src="assets/img/logo-dark.png" alt="Klorofil Logo"></div>
-											<p class="lead">Login to your account</p> -->
-										</div>
-										<form class="form-auth-small" action="index.php">
-											<div class="form-group m-30">
-												<label for="signin-email" class="control-label sr-only">Email</label>
-												<input type="email" class="form-control" id="signin-email" value="samuel.gold@domain.com" placeholder="Email">
+						<div class="col-sm-4">
+							<div class="card">
+								<div class="card-body">
+									<h5 class="card-title mb-0">Login - Siswa</h5>
+									<div class="m-sm-4">
+										<form>
+											<div class="mb-3">
+												<label class="form-label">Email</label>
+												<input class="form-control form-control-lg" type="email" name="email" placeholder="Enter your email">
 											</div>
-											<div class="form-group m-30">
-												<label for="signin-password" class="control-label sr-only">Password</label>
-												<input type="password" class="form-control" id="signin-password" value="thisisthepassword" placeholder="Password">
+											<div class="mb-3">
+												<label class="form-label">Password</label>
+												<input class="form-control form-control-lg" type="password" name="password" placeholder="Enter your password">
+												<small>
+													<a href="pages-reset-password.html">Forgot password?</a>
+												</small>
 											</div>
-											<div class="form-group m-30 clearfix">
-												<label class="fancy-checkbox element-left">
-													<input type="checkbox">
-													<span>Remember me</span>
+											<div>
+												<label class="form-check">
+													<input class="form-check-input" type="checkbox" value="remember-me" name="remember-me" checked="">
+													<span class="form-check-label">
+														Remember me next time
+													</span>
 												</label>
 											</div>
-											<button type="submit" class="btn btn-primary btn-lg btn-block">LOGIN</button>
+											<div class="text-center mt-3">
+												<a href="index.html" class="btn btn-lg btn-primary">Sign in</a>
+												<!-- <button type="submit" class="btn btn-lg btn-primary">Sign in</button> -->
+											</div>
 										</form>
 									</div>
 								</div>
 							</div>
-							<!-- END MULTI CHARTS -->
+						</div>
+					</div>
+
+				</div>
+			</section>
+
+			<section class="info">
+				<div class="container py-5">
+					<div class="row">
+						<div class="col-sm-5 text-center">
+							<img src="<?= base_url() ?>/assets/img/ilustration/5100169.jpg" height="300px" alt="">
+						</div>
+						<div class="col-sm-7">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, nobis animi? Ab, veritatis culpa ad odit explicabo iste repudiandae. Nesciunt repudiandae necessitatibus, autem architecto reiciendis nihil maiores. Qui, eum harum! Vel praesentium temporibus vitae quas beatae tenetur recusandae! Culpa architecto quaerat facere minus. Vel optio odio magnam repudiandae, perferendis quod nobis quae inventore itaque molestiae minima sunt deleniti animi aliquid ullam. Error molestiae, delectus, accusamus totam hic id tempora quis libero, ipsa reprehenderit veritatis porro ducimus! Explicabo vero maiores iure error nam hic fugit, aliquid eum optio fugiat deserunt eveniet expedita quos praesentium ut dolorum qui soluta voluptatem laboriosam quibusdam.</p>
 						</div>
 					</div>
 				</div>
-			</div>
-			<!-- END MAIN CONTENT -->
-		</div>
-		<!-- END MAIN -->
-		<div class="info">
-			<div class="container p-80">
-				<div class="row">
-					<div class="col-sm-4 justify-content-center">
-						<img src="<?= base_url() ?>assets/img/5100169.jpg" class="img-rounded" height="300px" alt="">
-					</div>
-					<div class="col-sm-8">
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ipsa vel, deserunt maxime tempore ipsum sapiente, odio harum error aperiam architecto cumque iusto minus obcaecati sit officia recusandae explicabo hic eius excepturi incidunt. Totam tempore quia suscipit sint corrupti animi eveniet ut placeat maxime beatae voluptate dolorum consectetur in eos repellat aut vero enim saepe culpa obcaecati dolores laboriosam voluptas, exercitationem ab. Explicabo modi fugit dolore perferendis deserunt voluptates, repellendus praesentium officiis in reiciendis cupiditate fuga eos laudantium earum, minus magnam a distinctio nobis tenetur accusantium rerum. Alias excepturi accusantium velit iure, magni optio consectetur sit doloremque, laborum ipsum perspiciatis.</p>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="alur">
-			<div class="container p-80">
-				<div class="row d-flex justify-content-center">
-					<div class="col-sm-8">
-						<div class="panel">
-							<div class="panel-body">
-								<p>
-									Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis sint, culpa doloribus distinctio in eaque, sit iure debitis velit obcaecati officiis? Quis, error alias? Maiores earum doloremque dolores accusantium provident necessitatibus praesentium optio, laborum veniam pariatur officia ducimus dignissimos libero, quam porro commodi ipsam qui sit minus vero corrupti. Illo cupiditate odio saepe, officia est perferendis sed repellendus dolores earum, culpa vel quo blanditiis. Odit, cum. Veritatis dolor quae quaerat ipsa consequuntur dignissimos fugiat placeat quasi, cum, sit ducimus quam. Impedit vitae dolor reiciendis adipisci similique facere doloremque praesentium neque sapiente totam consequuntur, omnis odit dignissimos. Eos obcaecati temporibus libero.
-								</p>
+			</section>
+
+			<section class="alur">
+				<div class="container py-5">
+					<div class="row justify-content-center">
+						<div class="col-sm-8">
+							<div class="card">
+								<div class="card-body">
+									<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque cupiditate et dolore sapiente dolores nulla fugiat corporis molestias pariatur maiores quae blanditiis, quaerat deserunt obcaecati provident commodi libero. Nesciunt deserunt impedit obcaecati nemo exercitationem, ratione cum. Velit voluptatem assumenda amet fuga, molestias temporibus aliquid porro dignissimos quod impedit. Culpa totam vel veritatis ratione blanditiis, fugit dolor nesciunt ut aspernatur quia temporibus inventore rem saepe mollitia aliquam laborum omnis velit debitis laboriosam cumque soluta autem. Natus nisi dolorum vitae soluta expedita earum doloribus id perferendis sit deserunt quasi, consectetur numquam doloremque nostrum ex fugit! Veniam, labore? Ducimus doloremque iure porro vel?</p>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
+			</section>
+
+			<footer class="footer">
+				<div class="container-fluid">
+					<div class="row text-muted">
+						<div class="col-6 text-left">
+							<p class="mb-0">
+								<a href="<?= base_url() ?>assets/index.html" class="text-muted"><strong>AdminKit Demo</strong></a> &copy;
+							</p>
+						</div>
+						<div class="col-6 text-right">
+							<ul class="list-inline">
+								<li class="list-inline-item">
+									<a class="text-muted" href="<?= base_url() ?>assets/#">Support</a>
+								</li>
+								<li class="list-inline-item">
+									<a class="text-muted" href="<?= base_url() ?>assets/#">Help Center</a>
+								</li>
+								<li class="list-inline-item">
+									<a class="text-muted" href="<?= base_url() ?>assets/#">Privacy</a>
+								</li>
+								<li class="list-inline-item">
+									<a class="text-muted" href="<?= base_url() ?>assets/#">Terms</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</footer>
 		</div>
-		<div class="clearfix"></div>
-		<footer>
-			<div class="container-fluid">
-				<p class="copyright">Shared by <i class="fa fa-love"></i><a href="https://bootstrapthemes.co">BootstrapThemes</a>
-				</p>
-			</div>
-		</footer>
 	</div>
-	<!-- END WRAPPER -->
-	<!-- Javascript -->
-	<script src="<?= base_url() ?>assets/vendor/jquery/jquery.min.js"></script>
-	<script src="<?= base_url() ?>assets/vendor/bootstrap/js/bootstrap.min.js"></script>
-	<script src="<?= base_url() ?>assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-	<script src="<?= base_url() ?>assets/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
-	<script src="<?= base_url() ?>assets/vendor/chartist/js/chartist.min.js"></script>
-	<script src="<?= base_url() ?>assets/scripts/klorofil-common.js"></script>
+
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="<?= base_url() ?>assets/js/app.js"></script>
+	<script src="<?= base_url() ?>assets/js/bootstrap.min.js"></script>
+
 </body>
 
 </html>
