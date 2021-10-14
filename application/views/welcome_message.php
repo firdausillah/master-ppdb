@@ -22,7 +22,7 @@
 	<div class="wrapper">
 
 		<div class="main">
-			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<nav class="navbar navbar-expand-lg navbar-dark-blue bg-dark-blue fixed-top">
 				<div class="container">
 					<a class="navbar-brand" href="#">Navbar</a>
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,79 +32,58 @@
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
 						<ul class="navbar-nav ml-auto">
 							<li class="nav-item active">
-								<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+								<a class="nav-link" href="#home">Home</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="#">Link</a>
-							</li>
-							<li class="nav-item dropdown">
-								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									Dropdown
-								</a>
-								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-									<a class="dropdown-item" href="#">Action</a>
-									<a class="dropdown-item" href="#">Another action</a>
-									<div class="dropdown-divider"></div>
-									<a class="dropdown-item" href="#">Something else here</a>
-								</div>
+								<a class="nav-link" href="#info">Info</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+								<a class="nav-link" href="#alur">Alur Pendaftaran</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#contact">Contact</a>
 							</li>
 						</ul>
 					</div>
 				</div>
 			</nav>
 
-			<section class="content">
-				<div class="container pb-5">
+			<section id="home" class="content">
+				<div class="container py-5">
 
 					<div class="row">
 						<div class="col-sm-8">
 							<div class="card flex-fill">
 								<div class="card-header">
 
-									<h5 class="card-title mb-0">Latest Projects</h5>
+									<h5 class="card-title mb-0">Gelombang tersedia</h5>
 								</div>
 								<table class="table table-hover my-0">
 									<thead>
 										<tr>
-											<th>Name</th>
-											<th class="d-none d-xl-table-cell">Start Date</th>
-											<th class="d-none d-xl-table-cell">End Date</th>
+											<th>Gelombang</th>
+											<th class="d-none d-xl-table-cell">Tanggal Dibuka</th>
+											<th class="d-none d-xl-table-cell">Tanggal Ditutup</th>
 											<th>Status</th>
-											<th class="d-none d-md-table-cell">Assignee</th>
+											<th class="d-none d-md-table-cell">Aksi</th>
 										</tr>
 									</thead>
 									<tbody>
-										<tr>
-											<td>Project Apollo</td>
-											<td class="d-none d-xl-table-cell">01/01/2020</td>
-											<td class="d-none d-xl-table-cell">31/06/2020</td>
-											<td><span class="badge bg-success">Done</span></td>
-											<td class="d-none d-md-table-cell">Vanessa Tucker</td>
-										</tr>
-										<tr>
-											<td>Project Fireball</td>
-											<td class="d-none d-xl-table-cell">01/01/2020</td>
-											<td class="d-none d-xl-table-cell">31/06/2020</td>
-											<td><span class="badge bg-danger">Cancelled</span></td>
-											<td class="d-none d-md-table-cell">William Harris</td>
-										</tr>
-										<tr>
-											<td>Project Hades</td>
-											<td class="d-none d-xl-table-cell">01/01/2020</td>
-											<td class="d-none d-xl-table-cell">31/06/2020</td>
-											<td><span class="badge bg-success">Done</span></td>
-											<td class="d-none d-md-table-cell">Sharon Lessman</td>
-										</tr>
-										<tr>
-											<td>Project Nitro</td>
-											<td class="d-none d-xl-table-cell">01/01/2020</td>
-											<td class="d-none d-xl-table-cell">31/06/2020</td>
-											<td><span class="badge bg-warning">In progress</span></td>
-											<td class="d-none d-md-table-cell">Vanessa Tucker</td>
-										</tr>
+										<?php foreach ($gelombangs as $key => $gelombang) : ?>
+											<tr>
+												<td>Gelombang ke-<?= $gelombang->gelombang ?></td>
+												<td class="d-none d-xl-table-cell"><?= $gelombang->tgl_buka ?></td>
+												<td class="d-none d-xl-table-cell"><?= $gelombang->tgl_tutup ?></td>
+												<td><?= $gelombang->status == 1 ? '<span class="badge bg-success"> Dibuka </span>' : '<span class="badge bg-danger"> Ditutup </span>' ?></td>
+												<td class="d-none d-md-table-cell">
+													<?php if ($gelombang->status == 1) : ?>
+														<a href="" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal">Daftar</a>
+													<?php else : ?>
+														<a href="" aria-disabled="true" class="btn btn-secondary btn-sm disabled">Daftar</a>
+													<?php endif ?>
+												</td>
+											</tr>
+										<?php endforeach ?>
 									</tbody>
 								</table>
 							</div>
@@ -135,7 +114,7 @@
 												</label>
 											</div>
 											<div class="text-center mt-3">
-												<a href="index.html" class="btn btn-lg btn-primary">Sign in</a>
+												<a href="index.html" class="btn btn-md btn-primary">Sign in</a>
 												<!-- <button type="submit" class="btn btn-lg btn-primary">Sign in</button> -->
 											</div>
 										</form>
@@ -148,20 +127,26 @@
 				</div>
 			</section>
 
-			<section class="info">
+			<svg xmlns="http://www.w3.org/2000/svg" class="d-none d-lg-block d-md-none" style="margin-top: -250px; margin-bottom: -100px;" viewBox="0 0 1440 320">
+				<path fill="#A7B7CB" fill-opacity="1" d="M0,96L80,112C160,128,320,160,480,154.7C640,149,800,107,960,101.3C1120,96,1280,128,1360,144L1440,160L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
+			</svg>
+			<section id="info" class="info">
 				<div class="container py-5">
 					<div class="row">
-						<div class="col-sm-5 text-center">
-							<img src="<?= base_url() ?>/assets/img/ilustration/5100169.jpg" height="300px" alt="">
+						<div class="col-md-5 text-center mb-4">
+							<img src="<?= base_url() ?>/assets/img/ilustration/5100169.jpg" height="300px" alt="" class="shadow-md rounded">
 						</div>
-						<div class="col-sm-7">
+						<div class="col-md-7">
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, nobis animi? Ab, veritatis culpa ad odit explicabo iste repudiandae. Nesciunt repudiandae necessitatibus, autem architecto reiciendis nihil maiores. Qui, eum harum! Vel praesentium temporibus vitae quas beatae tenetur recusandae! Culpa architecto quaerat facere minus. Vel optio odio magnam repudiandae, perferendis quod nobis quae inventore itaque molestiae minima sunt deleniti animi aliquid ullam. Error molestiae, delectus, accusamus totam hic id tempora quis libero, ipsa reprehenderit veritatis porro ducimus! Explicabo vero maiores iure error nam hic fugit, aliquid eum optio fugiat deserunt eveniet expedita quos praesentium ut dolorum qui soluta voluptatem laboriosam quibusdam.</p>
 						</div>
 					</div>
 				</div>
 			</section>
+			<svg xmlns="http://www.w3.org/2000/svg" class="d-none d-lg-block d-md-none" style="margin-top: -50px; margin-bottom: -150px;" viewBox="0 0 1440 320">
+				<path fill="#A7B7CB" fill-opacity="1" d="M0,96L80,112C160,128,320,160,480,154.7C640,149,800,107,960,101.3C1120,96,1280,128,1360,144L1440,160L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path>
+			</svg>
 
-			<section class="alur">
+			<section id="alur" class="alur">
 				<div class="container py-5">
 					<div class="row justify-content-center">
 						<div class="col-sm-8">
@@ -205,11 +190,31 @@
 		</div>
 	</div>
 
+	<!-- Modal -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Form Pendaftaran Siswa Baru <br> SMK PGRI PESANGGARAN</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					...
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary btn-sm">Save changes</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 	<script src="<?= base_url() ?>assets/js/app.js"></script>
 	<script src="<?= base_url() ?>assets/js/bootstrap.min.js"></script>
-
 </body>
 
 </html>
