@@ -14,6 +14,7 @@
     <title>Admin | <?= $title ? $title : 'Judul Page' ?></title>
 
     <link href="<?= base_url() ?>assets/css/app.css" rel="stylesheet">
+    <link href="<?= base_url() ?>assets/css/dataTables.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -41,7 +42,11 @@
         </div>
     </div>
 
+    <script src="<?= base_url() ?>assets/js/jquery.min.js"></script>
+    <script src="<?= base_url() ?>assets/js/dataTables.min.js"></script>
     <script src="<?= base_url() ?>assets/js/app.js"></script>
+    <script src="<?= base_url() ?>assets/js/sweetalert2.all.min.js"></script>
+    <script src="<?= base_url() ?>assets/js/myScript.js"></script>
 
 </body>
 
