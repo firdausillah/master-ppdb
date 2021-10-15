@@ -11,7 +11,7 @@
 
 	<link rel="shortcut icon" href="<?= base_url() ?>assets/img/icons/icon-48x48.png" />
 
-	<title>PPDB </title>
+	<title>Profile | AdminKit Demo</title>
 
 	<link href="<?= base_url() ?>assets/css/app.css" rel="stylesheet">
 	<link href="<?= base_url() ?>assets/css/style.css" rel="stylesheet">
@@ -31,16 +31,16 @@
 
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
 						<ul class="navbar-nav ml-auto">
-							<li class="nav-item mr-2 active">
+							<li class="nav-item active">
 								<a class="nav-link" href="#home">Home</a>
 							</li>
-							<li class="nav-item mr-2">
+							<li class="nav-item">
 								<a class="nav-link" href="#info">Info</a>
 							</li>
-							<li class="nav-item mr-2">
+							<li class="nav-item">
 								<a class="nav-link" href="#alur">Alur Pendaftaran</a>
 							</li>
-							<li class="nav-item mr-2">
+							<li class="nav-item">
 								<a class="nav-link" href="#contact">Contact</a>
 							</li>
 						</ul>
@@ -58,14 +58,14 @@
 
 									<h5 class="card-title mb-0">Gelombang tersedia</h5>
 								</div>
-								<table class="table table-responsive my-0">
+								<table class="table table-hover my-0">
 									<thead>
 										<tr>
 											<th>Gelombang</th>
 											<th class="d-none d-xl-table-cell">Tanggal Dibuka</th>
 											<th class="d-none d-xl-table-cell">Tanggal Ditutup</th>
 											<th>Status</th>
-											<th>Aksi</th>
+											<th class="d-none d-md-table-cell">Aksi</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -75,7 +75,7 @@
 												<td class="d-none d-xl-table-cell"><?= $gelombang->tgl_buka ?></td>
 												<td class="d-none d-xl-table-cell"><?= $gelombang->tgl_tutup ?></td>
 												<td><?= $gelombang->status == 1 ? '<span class="badge bg-success"> Dibuka </span>' : '<span class="badge bg-danger"> Ditutup </span>' ?></td>
-												<td>
+												<td class="d-none d-md-table-cell">
 													<?php if ($gelombang->status == 1) : ?>
 														<a href="" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal">Daftar</a>
 													<?php else : ?>
@@ -96,14 +96,25 @@
 										<form>
 											<div class="mb-3">
 												<label class="form-label">Email</label>
-												<input class="form-control" type="email" name="email" placeholder="Enter your email">
+												<input class="form-control form-control-lg" type="email" name="email" placeholder="Enter your email">
 											</div>
 											<div class="mb-3">
 												<label class="form-label">Password</label>
-												<input class="form-control" type="password" name="password" placeholder="Enter your password">
+												<input class="form-control form-control-lg" type="password" name="password" placeholder="Enter your password">
+												<small>
+													<a href="pages-reset-password.html">Forgot password?</a>
+												</small>
+											</div>
+											<div>
+												<label class="form-check">
+													<input class="form-check-input" type="checkbox" value="remember-me" name="remember-me" checked="">
+													<span class="form-check-label">
+														Remember me next time
+													</span>
+												</label>
 											</div>
 											<div class="text-center mt-3">
-												<a href="index.html" class="btn btn-md btn-primary">Login</a>
+												<a href="index.html" class="btn btn-md btn-primary">Sign in</a>
 												<!-- <button type="submit" class="btn btn-lg btn-primary">Sign in</button> -->
 											</div>
 										</form>
@@ -189,99 +200,21 @@
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				<?= form_open_multipart('home/save'); ?>
 				<div class="modal-body">
-					<div class="mb-3">
-						<label class="form-label">Nama Lengkap</label>
-						<input type="text" name="nama" class="form-control" placeholder="Nama Lengkap" required>
-					</div>
-					<div class="mb-3">
-						<label class="form-label">Nomor Telepon</label>
-						<input type="number" name="nohp" class="form-control" placeholder="Nomor Telepon" required>
-					</div>
-					<div class="mb-3">
-						<label class="form-label">Asal Sekolah</label>
-						<input type="text" name="sekolah_asal" class="form-control" placeholder="Asal Sekolah" required>
-					</div>
-					<div class="mb-3">
-						<label class="form-label">Jurusan</label>
-						<select name="jurusan" id="jurusan" class="form-control" required>
-							<option value="">Pilih Jurusan</option>
-							<?php foreach ($jurusans as $key => $jurusan) : ?>
-								<option value="<?= $jurusan->id ?>"><?= $jurusan->jurusan ?></option>
-							<?php endforeach ?>
-						</select>
-					</div>
-					<div class="mb-3">
-						<label class="form-label">Password</label>
-						<input type="password" name="password" class="form-control" placeholder="Password" required>
-					</div>
+					...
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
-					<button type="submit" class="btn btn-primary btn-sm">Save changes</button>
+					<button type="button" class="btn btn-primary btn-sm">Save changes</button>
 				</div>
-				</form>
 			</div>
 		</div>
 	</div>
-
-	<?php if ($this->session->flashdata()) : ?>
-		<div id="myModal" class="modal fade" role="dialog">
-			<div class="modal-dialog">
-				<!-- Modal content-->
-				<div class="modal-content">
-					<div class="modal-body">
-						<?php if ($this->session->flashdata('success')) : ?>
-							<div class="text-center">
-								<img src="https://cdn.dribbble.com/users/251873/screenshots/9289747/media/6ddd0b400fbab6d5fa72d73df503f330.gif" height="250px" alt="">
-								<h3>Hai!, <?= $this->session->flashdata('success')['nama']; ?> </h3>
-								<h3>"AKUN ANDA BERHASIL DIBUAT"</h3>
-								<h5>silahkan login dengan menggunakan</h5>
-								<p>USERNAME : <b><?= $this->session->flashdata('success')['nohp']; ?></b></p>
-								<p>PASSWORD : <b><?= $this->session->flashdata('success')['password']; ?></b></p>
-								<h5>*MOHON DIINGAT JIKA PERLU SCREENSHOT</h5>
-							</div>
-						<?php elseif ($this->session->flashdata('error')) : ?>
-							<div class="text-center">
-								<img src="https://cdn.dribbble.com/users/251873/screenshots/9288094/media/a1c2f89065f68e1b2b5dcb66bdb9beb1.gif" height="250px" alt="">
-								<h3>Hai!, <?= $this->session->flashdata('error'); ?> </h3>
-							</div>
-						<?php endif ?>
-					</div>
-				</div>
-			</div>
-		</div>
-	<?php endif ?>
-
-	<!-- <div id="myModal" class="modal fade" role="dialog">
-		<div class="modal-dialog"> -->
-
-	<!-- Modal content-->
-	<!-- <div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">Welcome</h4>
-				</div>
-				<div class="modal-body text-center">
-					<img src="https://cdn.dribbble.com/users/251873/screenshots/9289747/media/6ddd0b400fbab6d5fa72d73df503f330.gif" height="250px" alt="">
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
-				</div>
-			</div>
-
-		</div>
-	</div> -->
-
 
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 	<script src="<?= base_url() ?>assets/js/app.js"></script>
 	<script src="<?= base_url() ?>assets/js/bootstrap.min.js"></script>
-	<script>
-		$('#myModal').modal('show');
-	</script>
 </body>
 
 </html>
