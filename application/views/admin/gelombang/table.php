@@ -33,10 +33,10 @@
                             <tr>
                                 <td><?= $no + 1; ?></td>
                                 <td>Gelombang ke-<?= $gel->gelombang ?></td>
-                                <td class="d-none d-xl-table-cell"><?= $gel->tgl_buka ?></td>
-                                <td class="d-none d-xl-table-cell"><?= $gel->tgl_tutup ?></td>
+                                <td><?= $gel->tgl_buka ?></td>
+                                <td><?= $gel->tgl_tutup ?></td>
                                 <td><?= $gel->status == 1 ? '<span class="badge bg-success"> Dibuka </span>' : '<span class="badge bg-danger"> Ditutup </span>' ?></td>
-                                <td class="d-none d-md-table-cell">
+                                <td>
                                     <a href="<?= base_url('admin/gelombang/edit/'.$gel->id) ?>" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
                                     <a href="<?= base_url('admin/gelombang/delete/'.$gel->id) ?>" class="btn btn-danger btn-sm tombol-hapus"><i class="fa fa-trash"></i></a>
                                 </td>

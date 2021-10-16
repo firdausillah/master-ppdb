@@ -58,13 +58,13 @@
 
 									<h5 class="card-title mb-0">Gelombang tersedia</h5>
 								</div>
-								<table class="table table-responsive my-0">
+								<table class="table table-striped my-0">
 									<thead>
 										<tr>
 											<th>Gelombang</th>
 											<th class="d-none d-xl-table-cell">Tanggal Dibuka</th>
 											<th class="d-none d-xl-table-cell">Tanggal Ditutup</th>
-											<th>Status</th>
+											<th class="d-none d-xl-table-cell">Status</th>
 											<th>Aksi</th>
 										</tr>
 									</thead>
@@ -74,7 +74,7 @@
 												<td>Gelombang ke-<?= $gelombang->gelombang ?></td>
 												<td class="d-none d-xl-table-cell"><?= $gelombang->tgl_buka ?></td>
 												<td class="d-none d-xl-table-cell"><?= $gelombang->tgl_tutup ?></td>
-												<td><?= $gelombang->status == 1 ? '<span class="badge bg-success"> Dibuka </span>' : '<span class="badge bg-danger"> Ditutup </span>' ?></td>
+												<td class="d-none d-xl-table-cell"><?= $gelombang->status == 1 ? '<span class="badge bg-success"> Dibuka </span>' : '<span class="badge bg-danger"> Ditutup </span>' ?></td>
 												<td>
 													<?php if ($gelombang->status == 1) : ?>
 														<a href="" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal">Daftar</a>
