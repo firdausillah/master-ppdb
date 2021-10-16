@@ -28,4 +28,14 @@
  		$this->db->where($id);
  		return $this->db->delete('tb_siswa');
  	}
+
+
+	// additional
+	public function cekUrut()
+	{
+		$query = $this->db->query("SELECT MAX(id) as urut_kode from tb_siswa");
+		$hasil = $query->row();
+		// print_r($hasil->urut_kode); exit();
+		return $hasil->urut_kode;
+	}
  }

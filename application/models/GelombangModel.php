@@ -14,7 +14,7 @@ class GelombangModel extends CI_Model
 
 	function findBy($id)
 	{
-		$this->db->where($id);
+		$this->db->where(['id' => $id]);
 		return $this->db->get('tb_gelombang_pendaftaran');
 	}
 
@@ -34,4 +34,5 @@ class GelombangModel extends CI_Model
 		$this->db->where($id);
 		return $this->db->delete('tb_gelombang_pendaftaran');
 	}
+
 }

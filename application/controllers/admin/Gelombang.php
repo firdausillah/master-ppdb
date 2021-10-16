@@ -40,7 +40,7 @@ class Gelombang extends CI_Controller
     public function edit($id){
         $data = [
             'title' => 'Edit Gelombang',
-            'gelombang' => $this->GelombangModel->findBy(['id' => $id])->row(),
+            'gelombang' => $this->GelombangModel->findBy($id)->row(),
             'content' => 'admin/gelombang/edit'
         ];
 

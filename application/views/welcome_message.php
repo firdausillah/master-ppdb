@@ -77,7 +77,7 @@
 												<td class="d-none d-xl-table-cell"><?= $gelombang->status == 1 ? '<span class="badge bg-success"> Dibuka </span>' : '<span class="badge bg-danger"> Ditutup </span>' ?></td>
 												<td>
 													<?php if ($gelombang->status == 1) : ?>
-														<a href="" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal">Daftar</a>
+														<a href="" class="btn btn-primary btn-sm tombol-daftar" data-toggle="modal" data-target="#exampleModal" data-idgel="<?= $gelombang->id ?>">Daftar</a>
 													<?php else : ?>
 														<a href="" aria-disabled="true" class="btn btn-secondary btn-sm disabled">Daftar</a>
 													<?php endif ?>
@@ -95,8 +95,8 @@
 									<div class="m-sm-4">
 										<form>
 											<div class="mb-3">
-												<label class="form-label">Email</label>
-												<input class="form-control" type="email" name="email" placeholder="Enter your email">
+												<label class="form-label">Username</label>
+												<input class="form-control" type="nohp" name="nohp" placeholder="Enter your email">
 											</div>
 											<div class="mb-3">
 												<label class="form-label">Password</label>
@@ -115,7 +115,6 @@
 											</div>
 											<div class="text-center mt-3">
 												<a href="index.html" class="btn btn-md btn-primary">Login</a>
-												<!-- <button type="submit" class="btn btn-lg btn-primary">Sign in</button> -->
 											</div>
 										</form>
 									</div>
@@ -134,7 +133,7 @@
 				<div class="container py-5">
 					<div class="row">
 						<div class="col-md-5 text-center mb-4">
-							<img src="<?= base_url() ?>/assets/img/ilustration/5100169.jpg" height="300px" alt="" class="shadow-md rounded">
+							<img src="<?= base_url() ?>/assets/img/ilustration/5100169.jpg" height="300px" alt="" class="shadow-md rounded img-fluid">
 						</div>
 						<div class="col-md-7">
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, nobis animi? Ab, veritatis culpa ad odit explicabo iste repudiandae. Nesciunt repudiandae necessitatibus, autem architecto reiciendis nihil maiores. Qui, eum harum! Vel praesentium temporibus vitae quas beatae tenetur recusandae! Culpa architecto quaerat facere minus. Vel optio odio magnam repudiandae, perferendis quod nobis quae inventore itaque molestiae minima sunt deleniti animi aliquid ullam. Error molestiae, delectus, accusamus totam hic id tempora quis libero, ipsa reprehenderit veritatis porro ducimus! Explicabo vero maiores iure error nam hic fugit, aliquid eum optio fugiat deserunt eveniet expedita quos praesentium ut dolorum qui soluta voluptatem laboriosam quibusdam.</p>
@@ -205,6 +204,7 @@
 					<div class="mb-3">
 						<label class="form-label">Nama Lengkap</label>
 						<input type="text" name="nama" class="form-control" placeholder="Nama Lengkap" required>
+						<input type="hidden" id="id_gel" name="id_gel" required>
 					</div>
 					<div class="mb-3">
 						<label class="form-label">Nomor Telepon</label>
@@ -291,6 +291,14 @@
 	<script src="<?= base_url() ?>assets/js/bootstrap.min.js"></script>
 	<script>
 		$('#myModal').modal('show');
+	</script>
+	<script>
+		$(document).ready(function() {
+			$(document).on('click', '.tombol-daftar', function() {
+				var id_gel = $(this).data('idgel');
+				$('#id_gel').val(id_gel);
+			});
+		});
 	</script>
 </body>
 

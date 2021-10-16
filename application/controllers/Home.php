@@ -7,6 +7,7 @@ class Home extends CI_Controller {
 		parent::__construct();
 		$this->load->model('GelombangModel', 'mGelombang');
 		$this->load->model('JurusanModel', 'mJurusan');
+		$this->load->model('SiswaModel', 'mSiswa');
 	}
 
 	public function index(){
@@ -19,13 +20,34 @@ class Home extends CI_Controller {
 	}
 
 	public function save(){
-		// print_r($_POST['nama']);
-		$data = $_POST;
-		// exit();
-		// $data = null;
+		// tahun
+		$date = date('Y');
 
-		// if ($this->mGelombang->add($data)) {
-		if ($data) {
+		// nomor urut
+		$nourut = $this->mSiswa->cekUrut();
+		$urut = sprintf("%04s", $nourut + 1);
+
+		// gelombang
+		$getGelombang =  $this->mGelombang->findBy($_POST['id_gel'])->row();
+		$gelombang = $getGelombang->gelombang;
+		
+		// kode = PPDB.tahun.nomor urut.gelombang
+		$kode = 'PPDB'.$date.$urut.$gelombang;
+		
+		$data = [
+			'nama'	=> $this->input->post('nama'),
+			'kode_pendaftaran'	=> $kode,
+			'nohp'	=> $this->input->post('nohp'),
+			'sekolah_asal'	=> $this->input->post('sekolah_asal'),
+			'id_jurusan'	=> $this->input->post('jurusan'),
+			'password'	=> $this->input->post('password')
+		];
+
+		// print_r($data);
+		// exit();
+		
+		if ($this->mSiswa->add($data)) {
+		// if ($data) {
 			$this->session->set_flashdata('success', $data);
 		} else {
 			$this->session->set_flashdata('error', 'Oops! Terjadi suatu kesalahan');
