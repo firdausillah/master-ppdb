@@ -25,6 +25,8 @@
             <?php $this->load->view('layout_admin/navbar') ?>
 
             <main class="content">
+                <!-- sweetalert -->
+                <div class="flash-data" data-flashdata="<?= $this->session->flashdata('flash') ?>"></div>
                 <?php $this->load->view($content) ?>
             </main>
 

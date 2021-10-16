@@ -5,8 +5,7 @@
             <h3><?= $title ? $title : 'Judul Page' ?></h3>
         </div>
 
-        <!-- sweetalert -->
-        <div class="flash-data" data-flashdata="<?= $this->session->flashdata('flash') ?>"></div>
+
         
     </div>
     <div class="row">
