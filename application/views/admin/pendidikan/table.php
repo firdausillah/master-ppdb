@@ -8,11 +8,11 @@
         </div>
     </div>
 
-    <table class="table table-bordered">
+    <table id="myTable" class="table table-bordered table-responsive p-3">
         <thead>
             <tr>
-                <th style="width:2%;">No</th>
-                <th style="width:80%;">Pendidikan</th>
+                <th class="text-center" style="width:2%;">No</th>
+                <th class="text-center" style="width:80%;">Pendidikan</th>
                 <th>Action</th>
 
             </tr>
@@ -22,8 +22,11 @@
                 <tr>
                     <td><?= $p + 1; ?></td>
                     <td class="text-midle"><?= $pen->pendidikan; ?></td>
+                    <td>
+                        <a href="<?= base_url('admin/pendidikan/edit/' . $pen->id) ?>" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
+                        <a href="<?= base_url('admin/pendidikan/delete/' . $pen->id) ?>" class="btn btn-danger btn-sm tombol-hapus"><i class="fa fa-trash"></i></a>
 
-                    <td></td>
+                    </td>
                 </tr>
             <?php endforeach ?>
         </tbody>
@@ -39,19 +42,21 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
+            <?= form_open_multipart('admin/pendidikan/save') ?>
             <div class="modal-body">
                 <div class="mb-3 row">
                     <label class="col-form-label col-sm-2 text-sm-right">Pendidikan</label>
                     <div class="col-sm-10">
-                        <input type="email" class="form-control">
+                        <input type="text" class="form-control" name="pendidikan" required>
                     </div>
                 </div>
 
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="submit" class="btn btn-primary">Save</button>
             </div>
+            </form>
         </div>
     </div>
 </div>

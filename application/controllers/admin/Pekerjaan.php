@@ -19,4 +19,56 @@ class Pekerjaan extends CI_Controller
 
         $this->load->view('layout_admin/base', $data);
     }
+    public function save()
+    {
+        $data = [
+            'pekerjaan' => $this->input->post('pekerjaan'),
+
+        ];
+
+        if ($this->PekerjaanModel->add($data)) {
+            $this->session->set_flashdata('flash', 'Data berhasil dimasukan');
+        } else {
+            $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
+        }
+
+        redirect(base_url('admin/pekerjaan'));
+    }
+
+    public function edit($id)
+    {
+        $data = [
+            'title' => 'Edit pekerjaan',
+            'pekerjaan' => $this->PekerjaanModel->findBy(['id' => $id])->row(),
+            'content' => 'admin/pekerjaan/edit'
+        ];
+
+        $this->load->view('layout_admin/base', $data);
+    }
+
+    public function update($id)
+    {
+        $data = [
+            'pekerjaan' => $this->input->post('pekerjaan'),
+
+        ];
+
+        if ($this->PekerjaanModel->update(['id' => $id], $data)) {
+            $this->session->set_flashdata('flash', 'Data berhasil diupdate');
+        } else {
+            $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
+        }
+
+        redirect(base_url('admin/pekerjaan'));
+    }
+
+    public function delete($id)
+    {
+        if ($this->PekerjaanModel->delete(['id' => $id])) {
+            $this->session->set_flashdata('flash', 'Data berhasil dihapus');
+        } else {
+            $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
+        }
+        redirect('admin/pekerjaan');
+    }
 }
