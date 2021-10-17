@@ -96,7 +96,7 @@
 										<form>
 											<div class="mb-3">
 												<label class="form-label">Username</label>
-												<input class="form-control" type="nohp" name="nohp" placeholder="Enter your email">
+												<input class="form-control" type="nohp" name="nohp" placeholder="contoh. 086786576568">
 											</div>
 											<div class="mb-3">
 												<label class="form-label">Password</label>
