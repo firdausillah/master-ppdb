@@ -11,7 +11,7 @@
  	}
 
  	function findBy($id){
- 		$this->db->where($id);
+ 		$this->db->where(['id' => $id]);
  		return $this->db->get('tb_siswa');
  	}
 

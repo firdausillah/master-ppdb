@@ -16,7 +16,7 @@
             </li>
 
             <li class="sidebar-item <?= $this->uri->segment(2) == 'biodata' ? 'active' : '' ?>">
-                <a class="sidebar-link" href="<?= base_url() ?>siswa/biodata">
+                <a class="sidebar-link" href="<?= base_url() ?>siswa/biodata?page=pribadi">
                     <i class="align-middle" data-feather="user"></i> <span class="align-middle">Biodata</span>
                 </a>
             </li>
