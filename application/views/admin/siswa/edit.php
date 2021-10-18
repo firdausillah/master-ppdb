@@ -31,7 +31,7 @@
                                         <!-- Tab panes -->
                                         <div class="tab-content">
                                             <div id="pribadi" class="container tab-pane <?= $page == 'pribadi' ? 'active' : 'fade'; ?>"><br>
-                                                <form action="<?= base_url('admin/siswa/savePribadi') ?>" method="POST">
+                                                <form action="<?= base_url('admin/siswa/savePribadi/'.$siswa->id) ?>" method="POST">
                                                     <div class="row">
                                                         <div class="mb-3 col-md-6">
                                                             <label class="form-label" for="kode_pendaftaran">Kode Pendaftaran <span class="text-danger">*</span></label>
@@ -39,7 +39,7 @@
                                                         </div>
                                                         <div class="mb-3 col-md-6">
                                                             <label class="form-label" for="password">Password <span class="text-danger">*</span></label>
-                                                            <input type="text" class="form-control" name="password" id="password" value="<?= $siswa->password ?>" required placeholder="">
+                                                            <input type="text" class="form-control" name="password" id="password" value="<?= $siswa->password ?>" required placeholder="" disabled>
                                                         </div>
                                                     </div>
                                                     <div class="row">
@@ -197,7 +197,7 @@
                                                         </div>
                                                         <div class="mb-3 col-md-6">
                                                             <label class="form-label" for="id_jurusan">Jurusan <span class="text-danger">*</span></label>
-                                                            <select class="form-control" name="id_jurusan" id="id_jurusan">
+                                                            <select class="form-control" disabled name="id_jurusan" id="id_jurusan">
                                                                 <option value="">----Pilih Di Sini----</option>
                                                                 <?php foreach ($jurusan as $key => $jur) : ?>
                                                                     <option value="<?= $jur->id ?>" <?= $siswa->id_jurusan == $jur->id ? 'selected' : '' ?>><?= $jur->jurusan ?></option>
@@ -213,7 +213,7 @@
                                                 </form>
                                             </div>
                                             <div id="ayah" class="container tab-pane <?= $page == 'ayah' ? 'active' : 'fade'; ?>"><br>
-                                                <form action="<?= base_url('admin/siswa/saveAyah') ?>" method="POST">
+                                                <form action="<?= base_url('admin/siswa/saveAyah/'.$siswa->id) ?>" method="POST">
                                                     <div class="row">
                                                         <div class="mb-3 col-md-6">
                                                             <label class="form-label" for="nama_ayah">Nama Ayah</label>
@@ -270,7 +270,7 @@
                                                 </form>
                                             </div>
                                             <div id="ibu" class="container tab-pane <?= $page == 'ibu' ? 'active' : 'fade'; ?>"><br>
-                                                <form action="<?= base_url('admin/siswa/saveIbu') ?>" method="POST">
+                                                <form action="<?= base_url('admin/siswa/saveIbu/'.$siswa->id) ?>" method="POST">
                                                     <div class="row">
                                                         <div class="mb-3 col-md-6">
                                                             <label class="form-label" for="nama_ibu">Nama Ibu</label>
@@ -327,7 +327,7 @@
                                                 </form>
                                             </div>
                                             <div id="wali" class="container tab-pane <?= $page == 'wali' ? 'active' : 'fade'; ?>"><br>
-                                                <form action="<?= base_url('admin/siswa/saveWali') ?>" method="POST">
+                                                <form action="<?= base_url('admin/siswa/saveWali/'.$siswa->id) ?>" method="POST">
                                                     <div class="row">
                                                         <div class="mb-3 col-md-6">
                                                             <label class="form-label" for="nama_wali">Nama Wali</label>

@@ -1,9 +1,8 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Biodata extends CI_Controller
+class Siswa extends CI_Controller
 {
-
     function __construct()
     {
         parent::__construct();
@@ -19,8 +18,43 @@ class Biodata extends CI_Controller
 
     public function index()
     {
-        $siswa = $this->SiswaModel->findBy(4)->row();
+        $data = [
+            'title' => 'Data Siswa',
+            'siswa' => $this->SiswaModel->get()->result(),
+            'content' => 'admin/siswa/table'
+        ];
 
+        $this->load->view('layout_admin/base', $data);
+    }
+    public function save()
+    {
+        $data = [
+            'siswa' => $this->input->post('siswa'),
+
+        ];
+
+        if ($this->SiswaModel->add($data)) {
+            $this->session->set_flashdata('flash', 'Data berhasil dimasukan');
+        } else {
+            $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
+        }
+
+        redirect(base_url('admin/siswa'));
+    }
+
+    public function edit($id)
+    {
+        // $data = [
+        //     'title' => 'Edit siswa',
+        //     'siswa' => $this->SiswaModel->findBy(['id' => $id])->row(),
+        //     'content' => 'admin/siswa/edit'
+        // ];
+
+        // $this->load->view('layout_admin/base', $data);
+
+
+
+        $siswa = $this->SiswaModel->findBy($id)->row();
         $jurusan = $this->JurusanModel->get()->result();
         $pekerjaan = $this->PekerjaanModel->get()->result();
         $pembawa = $this->PembawaModel->get()->result();
@@ -28,10 +62,10 @@ class Biodata extends CI_Controller
         $penghasilan = $this->PenghasilanModel->get()->result();
         $tempattinggal = $this->TempattinggalModel->get()->result();
         $transportasi = $this->TransportasiModel->get()->result();
-        
+
         $data = [
-            'title' => 'Biodata Siswa',
-            'content' => 'siswa/biodata/index',
+            'title' => 'Edit Data Siswa',
+            'content' => 'admin/siswa/edit',
             'siswa' => $siswa,
             'jurusan' => $jurusan,
             'pekerjaan' => $pekerjaan,
@@ -42,11 +76,27 @@ class Biodata extends CI_Controller
             'transportasi' => $transportasi
         ];
 
-        $this->load->view('layout_siswa/base', $data);
+        $this->load->view('layout_admin/base', $data);
     }
 
-    public function savePribadi(){
-        
+    public function update($id)
+    {
+        $data = [
+            'siswa' => $this->input->post('siswa'),
+        ];
+
+        if ($this->SiswaModel->update(['id' => $id], $data)) {
+            $this->session->set_flashdata('flash', 'Data berhasil diupdate');
+        } else {
+            $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
+        }
+
+        redirect(base_url('admin/siswa'));
+    }
+
+    public function savePribadi($id)
+    {
+
         $data = [
             'kode_pendaftaran'    => $this->input->post('kode_pendaftaran'),
             'password'    => $this->input->post('password'),
@@ -77,17 +127,18 @@ class Biodata extends CI_Controller
             'sekolah_asal'    => $this->input->post('sekolah_asal'),
             'id_jurusan'        => $this->input->post('id_jurusan')
         ];
-        
-        if ($this->SiswaModel->update(['id' => 4], $data)) {
+
+        if ($this->SiswaModel->update(['id' => $id], $data)) {
             $this->session->set_flashdata('flash', 'Data berhasil disimpan');
         } else {
             $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
         }
-        redirect('siswa/biodata?page=pribadi');
+        redirect('admin/siswa/edit/'.$id.'?page=pribadi');
     }
 
-    public function saveAyah(){
-        
+    public function saveAyah($id)
+    {
+
         $data = [
             'nama_ayah' => $this->input->post('nama_ayah'),
             'nik_ayah'  => $this->input->post('nik_ayah'),
@@ -96,17 +147,18 @@ class Biodata extends CI_Controller
             'pekerjaan_ayah'    => $this->input->post('pekerjaan_ayah'),
             'penghasilan_ayah'  => $this->input->post('penghasilan_ayah')
         ];
-        
-        if ($this->SiswaModel->update(['id' => 4], $data)) {
+
+        if ($this->SiswaModel->update(['id' => $id], $data)) {
             $this->session->set_flashdata('flash', 'Data berhasil disimpan');
         } else {
             $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
         }
-        redirect('siswa/biodata?page=ayah');
+        redirect('admin/siswa/edit/'.$id.'?page=ayah');
     }
 
-    public function saveIbu(){
-        
+    public function saveIbu($id)
+    {
+
         $data = [
             'nama_ibu' => $this->input->post('nama_ibu'),
             'nik_ibu'  => $this->input->post('nik_ibu'),
@@ -115,17 +167,18 @@ class Biodata extends CI_Controller
             'pekerjaan_ibu'    => $this->input->post('pekerjaan_ibu'),
             'penghasilan_ibu'  => $this->input->post('penghasilan_ibu')
         ];
-        
-        if ($this->SiswaModel->update(['id' => 4], $data)) {
+
+        if ($this->SiswaModel->update(['id' => $id], $data)) {
             $this->session->set_flashdata('flash', 'Data berhasil disimpan');
         } else {
             $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
         }
-        redirect('siswa/biodata?page=ibu');
+        redirect('admin/siswa/edit/'.$id.'?page=ibu');
     }
 
-    public function saveWali(){
-        
+    public function saveWali($id)
+    {
+
         $data = [
             'nama_wali' => $this->input->post('nama_wali'),
             'nik_wali'  => $this->input->post('nik_wali'),
@@ -134,12 +187,22 @@ class Biodata extends CI_Controller
             'pekerjaan_wali'    => $this->input->post('pekerjaan_wali'),
             'penghasilan_wali'  => $this->input->post('penghasilan_wali')
         ];
-        
-        if ($this->SiswaModel->update(['id' => 4], $data)) {
+
+        if ($this->SiswaModel->update(['id' => $id], $data)) {
             $this->session->set_flashdata('flash', 'Data berhasil disimpan');
         } else {
             $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
         }
-        redirect('siswa/biodata?page=wali');
+        redirect('admin/siswa/edit/'.$id.'?page=wali');
+    }
+
+    public function delete($id)
+    {
+        if ($this->SiswaModel->delete(['id' => $id])) {
+            $this->session->set_flashdata('flash', 'Data berhasil dihapus');
+        } else {
+            $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
+        }
+        redirect('admin/siswa');
     }
 }
