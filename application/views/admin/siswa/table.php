@@ -31,13 +31,18 @@
                                         <td><?= $s->nama ?></td>
                                         <td class="d-none d-xl-table-cell"><?= $s->nohp ?></td>
                                         <td>
-                                            <a href="" data-toggle="modal" data-target=".bd-example-modal-sm">
-                                                <span class="btn btn-success btn-pill btn-sm">Diterima</span>
-                                            </a>
+                                            <!-- <a href="" class="tombol-validasi" data-toggle="modal" data-target=".bd-example-modal-sm" data-idsis="<?= $s->id ?>"> -->
+                                            <!-- <a href="#<?= $s->status ?>" class="tombol-validasi" data-toggle="modal" data-target=".bd-example-modal-sm" data-idsis="<?= $s->status ?>"> -->
+                                                <?php if ($s->status == 'Sudah Verifikasi') : ?>
+                                                    <span class="btn btn-success btn-pill btn-sm">Verifikasi</span>
+                                                <?php else : ?>
+                                                    <span class="btn btn-secondary btn-pill btn-sm">Belum Verifikasi</span>
+                                                <?php endif ?>
+                                            <!-- </a> -->
                                         </td>
                                         <td><?= $s->sekolah_asal ?></td>
                                         <td>
-                                            <a href="<?= base_url('admin/siswa/delete/' . $s->id) ?>" class="btn btn-success btn-sm tombol-hapus"><i class="fa fa-print"></i></a>
+                                            <a href="<?= base_url('admin/siswa/print/' . $s->id) ?>" class="btn btn-success btn-sm"><i class="fa fa-print"></i></a>
                                             <a href="<?= base_url('admin/siswa/edit/' . $s->id . '?page=pribadi') ?>" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
                                             <a href="<?= base_url('admin/siswa/delete/' . $s->id) ?>" class="btn btn-danger btn-sm tombol-hapus"><i class="fa fa-trash"></i></a>
                                         </td>
@@ -47,36 +52,6 @@
                         </table>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-            <div class="modal-header">Ubah Status</div>
-            <div class="modal-body">
-                <div class="card-body">
-                    <div class="text-center">
-                        <label class="form-check form-check-inline">
-                            <input class="form-check-input" checked="" type="radio" name="inline-radios-example" value="option1">
-                            <span class="form-check-label">
-                                Diterima
-                            </span>
-                        </label>
-                        <label class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inline-radios-example" value="option2">
-                            <span class="form-check-label">
-                                Ditolak
-                            </span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Save</button>
             </div>
         </div>
     </div>

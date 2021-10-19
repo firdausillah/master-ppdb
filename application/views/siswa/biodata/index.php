@@ -11,7 +11,13 @@
                                         HEADER
                                     </div> -->
                                     <div class="card-body">
-                                        <?php $page = $_GET['page']; ?>
+                                        <?php
+                                        if (isset($_GET['page'])) {
+                                            $page = $_GET['page'];
+                                        } else {
+                                            $page = 'pribadi';
+                                        }
+                                        ?>
                                         <!-- Nav tabs -->
                                         <ul class="nav nav-tabs" role="tablist">
                                             <li class="nav-item">
@@ -25,6 +31,9 @@
                                             </li>
                                             <li class="nav-item">
                                                 <a class="nav-link <?= $page == 'wali' ? 'active' : ''; ?>" data-toggle="tab" href="#wali">Data Wali</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link <?= $page == 'persyaratan' ? 'active' : ''; ?>" data-toggle="tab" href="#persyaratan">Data persyaratan</a>
                                             </li>
                                         </ul>
 
@@ -381,6 +390,43 @@
                                                             <button type="submit" class="btn btn-primary">Simpan</button>
                                                         </div>
                                                     </div>
+                                                </form>
+                                            </div>
+                                            <div id="persyaratan" class="container tab-pane <?= $page == 'persyaratan' ? 'active' : 'fade'; ?>"><br>
+                                                <form action="<?= base_url('admin/siswa/savePersyaratan/' . $siswa->id) ?>" method="POST">
+                                                    <?php foreach ($persyaratan as $key => $val) : ?>
+                                                        <div class="row">
+                                                            <div class="mb-3 col-md-6">
+                                                                <label class="form-label" for=""><?= $val->persyaratan . ' <small class="text-success">' . $val->satuan . ' Lembar</small>' ?></label>
+                                                                <select class="form-control" disabled name="status[]" id="">
+                                                                    <option value="">----Belum dicek----</option>
+                                                                    <?php if (isset($persyaratan_siswa[$key]->id_siswa)) : ?>
+                                                                        <option <?= $persyaratan_siswa[$key]->id_siswa . $persyaratan_siswa[$key]->id_persyaratan != null && $persyaratan_siswa[$key]->status == 0 ? 'selected' : '' ?> value="0">Belum</option>
+                                                                        <option <?= $persyaratan_siswa[$key]->id_siswa . $persyaratan_siswa[$key]->id_persyaratan != null && $persyaratan_siswa[$key]->status == 1 ? 'selected' : '' ?> value="1">Sudah</option>
+                                                                    <?php else : ?>
+                                                                        <option value="0">Belum</option>
+                                                                        <option value="1">Sudah</option>
+                                                                    <?php endif ?>
+
+                                                                </select>
+                                                                <input type="hidden" name="id_siswa[]" value="<?= $siswa->id ?>">
+                                                                <input type="hidden" name="id_persyaratan[]" value="<?= $val->id ?>">
+                                                            </div>
+                                                        </div>
+                                                    <?php endforeach ?>
+                                                    <div class="mb-3 col-md-6">
+                                                        <label class="form-label" for="verifikasi">Status Verifikasi</label>
+                                                        <select class="form-control" disabled name="verifikasi">
+                                                            <option value="">----Belum dicek----</option>
+                                                            <option value="Sudah Verifikasi" <?= $siswa->status == "Sudah Verifikasi" ? 'selected' : '' ?>>Sudah Verifikasi</option>
+                                                            <option value="Belum Verifikasi" <?= $siswa->status == "Belum Verifikasi" ? 'selected' : '' ?>>Belum Verifikasi</option>
+                                                        </select>
+                                                    </div>
+                                                    <!-- <div class="row">
+                                                        <div class="mb-3 col-md-12 text-right">
+                                                            <button type="submit" class="btn btn-primary">Simpan</button>
+                                                        </div>
+                                                    </div> -->
                                                 </form>
                                             </div>
                                         </div>

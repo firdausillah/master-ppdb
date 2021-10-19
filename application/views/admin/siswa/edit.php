@@ -52,7 +52,6 @@
                                                         </div>
                                                         <div class="mb-3 col-md-6">
                                                             <label class="form-label" for="jk">Jenis Kelamin</label>
-                                                            <!-- <input type="text" class="form-control" name="jk" id="jk" value="<?= $siswa->jk ?>" placeholder=""> -->
                                                             <select class="form-control" name="jk" id="jk">
                                                                 <option value="">Pilih</option>
                                                                 <option <?= $siswa->jk == 'Laki-Laki' ? 'selected' : '' ?> value="Laki-laki">Laki-laki</option>
@@ -234,7 +233,6 @@
                                                         </div>
                                                         <div class="mb-3 col-md-6">
                                                             <label class="form-label" for="pendidikan_ayah">Pendidikan Ayah</label>
-                                                            <!-- <input type="text" class="form-control" name="pendidikan_ayah" id="pendidikan_ayah" value="<?= $siswa->pendidikan_ayah ?>" placeholder=""> -->
                                                             <select class="form-control" name="pendidikan_ayah">
                                                                 <option value="">----Pilih Di Sini----</option>
                                                                 <?php foreach ($pendidikan as $val) : ?>
@@ -246,7 +244,6 @@
                                                     <div class="row">
                                                         <div class="mb-3 col-md-6">
                                                             <label class="form-label" for="pekerjaan_ayah">Pekerjaan Ayah</label>
-                                                            <!-- <input type="text" class="form-control" name="pekerjaan_ayah" id="pekerjaan_ayah" value="<?= $siswa->pekerjaan_ayah ?>" placeholder=""> -->
                                                             <select class="form-control" name="pekerjaan_ayah">
                                                                 <option value="">----Pilih Di Sini----</option>
                                                                 <?php foreach ($pekerjaan as $val) : ?>
@@ -256,7 +253,6 @@
                                                         </div>
                                                         <div class="mb-3 col-md-6">
                                                             <label class="form-label" for="penghasilan_ayah">Penghasilan Ayah</label>
-                                                            <!-- <input type="text" class="form-control" name="penghasilan_ayah" id="penghasilan_ayah" value="<?= $siswa->penghasilan_ayah ?>" placeholder=""> -->
                                                             <select class="form-control" name="penghasilan_ayah">
                                                                 <option value="">----Pilih Di Sini----</option>
                                                                 <?php foreach ($penghasilan as $val) : ?>
@@ -291,7 +287,6 @@
                                                         </div>
                                                         <div class="mb-3 col-md-6">
                                                             <label class="form-label" for="pendidikan_ibu">Pendidikan Ibu</label>
-                                                            <!-- <input type="text" class="form-control" name="pendidikan_ibu" id="pendidikan_ibu" value="<?= $siswa->pendidikan_ibu ?>" placeholder=""> -->
                                                             <select class="form-control" name="pendidikan_ibu">
                                                                 <option value="">----Pilih Di Sini----</option>
                                                                 <?php foreach ($pendidikan as $val) : ?>
@@ -303,7 +298,6 @@
                                                     <div class="row">
                                                         <div class="mb-3 col-md-6">
                                                             <label class="form-label" for="pekerjaan_ibu">Pekerjaan Ibu</label>
-                                                            <!-- <input type="text" class="form-control" name="pekerjaan_ibu" id="pekerjaan_ibu" value="<?= $siswa->pekerjaan_ibu ?>" placeholder=""> -->
                                                             <select class="form-control" name="pekerjaan_ibu">
                                                                 <option value="">----Pilih Di Sini----</option>
                                                                 <?php foreach ($pekerjaan as $val) : ?>
@@ -313,7 +307,6 @@
                                                         </div>
                                                         <div class="mb-3 col-md-6">
                                                             <label class="form-label" for="penghasilan_ibu">Penghasilan Ibu</label>
-                                                            <!-- <input type="text" class="form-control" name="penghasilan_ibu" id="penghasilan_ibu" value="<?= $siswa->penghasilan_ibu ?>" placeholder=""> -->
                                                             <select class="form-control" name="penghasilan_ibu">
                                                                 <option value="">----Pilih Di Sini----</option>
                                                                 <?php foreach ($penghasilan as $val) : ?>
@@ -348,7 +341,6 @@
                                                         </div>
                                                         <div class="mb-3 col-md-6">
                                                             <label class="form-label" for="pendidikan_wali">Pendidikan Wali</label>
-                                                            <!-- <input type="text" class="form-control" name="pendidikan_wali" id="pendidikan_wali" value="<?= $siswa->pendidikan_wali ?>" placeholder=""> -->
                                                             <select class="form-control" name="pendidikan_wali">
                                                                 <option value="">----Pilih Di Sini----</option>
                                                                 <?php foreach ($pendidikan as $val) : ?>
@@ -360,7 +352,6 @@
                                                     <div class="row">
                                                         <div class="mb-3 col-md-6">
                                                             <label class="form-label" for="pekerjaan_wali">Pekerjaan Wali</label>
-                                                            <!-- <input type="text" class="form-control" name="pekerjaan_wali" id="pekerjaan_wali" value="<?= $siswa->pekerjaan_wali ?>" placeholder=""> -->
                                                             <select class="form-control" name="pekerjaan_wali">
                                                                 <option value="">----Pilih Di Sini----</option>
                                                                 <?php foreach ($pekerjaan as $val) : ?>
@@ -370,7 +361,6 @@
                                                         </div>
                                                         <div class="mb-3 col-md-6">
                                                             <label class="form-label" for="penghasilan_wali">Penghasilan Wali</label>
-                                                            <!-- <input type="text" class="form-control" name="penghasilan_wali" id="penghasilan_wali" value="<?= $siswa->penghasilan_wali ?>" placeholder=""> -->
                                                             <select class="form-control" name="penghasilan_wali">
                                                                 <option value="">----Pilih Di Sini----</option>
                                                                 <?php foreach ($penghasilan as $val) : ?>
@@ -391,12 +381,12 @@
                                                     <?php foreach ($persyaratan as $key => $val) : ?>
                                                         <div class="row">
                                                             <div class="mb-3 col-md-6">
-                                                                <label class="form-label" for=""><?= $val->persyaratan.' <small class="text-success">'.$val->satuan. ' Lembar</small>' ?></label>
+                                                                <label class="form-label" for=""><?= $val->persyaratan . ' <small class="text-success">' . $val->satuan . ' Lembar</small>' ?></label>
                                                                 <select class="form-control" name="status[]" id="">
                                                                     <option value="">----Pilih Di Sini----</option>
-                                                                    <?php if (isset($persyaratan_siswa[$key]->id_siswa)) :?>
-                                                                    <option <?= $persyaratan_siswa[$key]->id_siswa.$persyaratan_siswa[$key]->id_persyaratan != null && $persyaratan_siswa[$key]->status == 0 ? 'selected' : ''?> value="0">Belum</option>
-                                                                    <option <?= $persyaratan_siswa[$key]->id_siswa.$persyaratan_siswa[$key]->id_persyaratan != null && $persyaratan_siswa[$key]->status == 1 ? 'selected' : ''?> value="1">Sudah</option>
+                                                                    <?php if (isset($persyaratan_siswa[$key]->id_siswa)) : ?>
+                                                                        <option <?= $persyaratan_siswa[$key]->id_siswa . $persyaratan_siswa[$key]->id_persyaratan != null && $persyaratan_siswa[$key]->status == 0 ? 'selected' : '' ?> value="0">Belum</option>
+                                                                        <option <?= $persyaratan_siswa[$key]->id_siswa . $persyaratan_siswa[$key]->id_persyaratan != null && $persyaratan_siswa[$key]->status == 1 ? 'selected' : '' ?> value="1">Sudah</option>
                                                                     <?php else : ?>
                                                                         <option value="0">Belum</option>
                                                                         <option value="1">Sudah</option>
@@ -408,8 +398,16 @@
                                                             </div>
                                                         </div>
                                                     <?php endforeach ?>
+                                                    <div class="mb-3 col-md-6">
+                                                        <label class="form-label" for="verifikasi">Status Verifikasi</label>
+                                                        <select class="form-control" name="verifikasi">
+                                                            <option value="">----Pilih Di Sini----</option>
+                                                            <option value="Sudah Verifikasi" <?= $siswa->status == "Sudah Verifikasi" ? 'selected' : '' ?>>Sudah Verifikasi</option>
+                                                            <option value="Belum Verifikasi" <?= $siswa->status == "Belum Verifikasi" ? 'selected' : '' ?>>Belum Verifikasi</option>
+                                                        </select>
+                                                    </div>
                                                     <div class="row">
-                                                        <div class="mb-3 col-md-12 text-right">
+                                                        <div class="mb-3 col-md-6 text-right">
                                                             <button type="submit" class="btn btn-primary">Simpan</button>
                                                         </div>
                                                     </div>

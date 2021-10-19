@@ -203,12 +203,13 @@ class Siswa extends CI_Controller
 
     public function savePersyaratan($id){
         $persyaratan_siswa = $this->Persyaratan_siswaModel->leftJoinPersyaratan($id)->result();
+        $persyaratan = $this->PersyaratanModel->get()->result();
 
         $status = $_POST['status'];
         $id_siswa = $_POST['id_siswa'];
         $id_persyaratan = $_POST['id_persyaratan'];
 
-        for ($i=0; $i < count($status) ; $i++) {
+        for ($i=0; $i < count($persyaratan) ; $i++) {
             $data[] = ['status' => $status[$i], 'id_siswa' => $id_siswa[$i], 'id_persyaratan' => $id_persyaratan[$i]];
         }
         // echo "<pre>";
@@ -219,7 +220,7 @@ class Siswa extends CI_Controller
         // echo "</pre>";
         // exit();
 
-        for ($j=0; $j < count($status); $j++) { 
+        for ($j=0; $j < count($persyaratan); $j++) { 
             if (isset($persyaratan_siswa[$j]->id_siswa)) {
                 $this->Persyaratan_siswaModel->update($persyaratan_siswa[$j]->id_siswa, $persyaratan_siswa[$j]->id_persyaratan, $data[$j]);
                 // echo '<br>';
@@ -235,14 +236,17 @@ class Siswa extends CI_Controller
                 // echo '<br>';
                 // echo $data[$j]['id_siswa'] . $data[$j]['id_persyaratan'];
                 // echo '  =  ';
-                // echo $persyaratan_siswa[$j]->id_siswa . $persyaratan_siswa[$j]->id_persyaratan;
             }
         }
-        
+
+        $ver = ['status' => $this->input->post('verifikasi')];
         // echo "<pre>";
-        // print_r($_POST); 
+        // print_r($data); 
         // echo "</pre>";
         // exit();
+        
+        $this->SiswaModel->update(['id' => $id], $ver);
+
         $this->session->set_flashdata('flash', 'Data berhasil disimpan');
         redirect('admin/siswa/edit/' . $id . '?page=persyaratan');
     }
