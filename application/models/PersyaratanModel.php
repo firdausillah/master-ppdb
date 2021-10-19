@@ -28,4 +28,11 @@
  		$this->db->where($id);
  		return $this->db->delete('tb_persyaratan');
  	}
+
+	//  function peryaratan_siswa_join_persyaratan(){
+	// 	$this->db->select('*');
+	// 	$this->db->from('tb_persyaratan_siswa');
+	// 	$this->db->rightjoin('tb_persyaratan', 'tb_persyaratan_siswa.id = blogs.id');
+	// 	$query = $this->db->get();
+	//  }
  }

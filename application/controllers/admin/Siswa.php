@@ -14,6 +14,8 @@ class Siswa extends CI_Controller
         $this->load->model('PenghasilanModel');
         $this->load->model('TempattinggalModel');
         $this->load->model('TransportasiModel');
+        $this->load->model('PersyaratanModel');
+        $this->load->model('Persyaratan_siswaModel');
     }
 
     public function index()
@@ -44,16 +46,6 @@ class Siswa extends CI_Controller
 
     public function edit($id)
     {
-        // $data = [
-        //     'title' => 'Edit siswa',
-        //     'siswa' => $this->SiswaModel->findBy(['id' => $id])->row(),
-        //     'content' => 'admin/siswa/edit'
-        // ];
-
-        // $this->load->view('layout_admin/base', $data);
-
-
-
         $siswa = $this->SiswaModel->findBy($id)->row();
         $jurusan = $this->JurusanModel->get()->result();
         $pekerjaan = $this->PekerjaanModel->get()->result();
@@ -62,6 +54,17 @@ class Siswa extends CI_Controller
         $penghasilan = $this->PenghasilanModel->get()->result();
         $tempattinggal = $this->TempattinggalModel->get()->result();
         $transportasi = $this->TransportasiModel->get()->result();
+        $persyaratan = $this->PersyaratanModel->get()->result();
+        $persyaratan_siswa = $this->Persyaratan_siswaModel->leftJoinPersyaratan($id)->result();
+
+        // if (isset($persyaratan_siswa[1]->id_siswa)) {
+        // // if ($persyaratan_siswa->id_siswa && $persyaratan_siswa->id_persyaratan != null) {
+        //     echo 'ada';
+        // } else{
+        //     echo 'kosong';
+        // }
+        // print_r($persyaratan_siswa[1]);
+        // print_r($persyaratan_siswa); exit();
 
         $data = [
             'title' => 'Edit Data Siswa',
@@ -73,7 +76,9 @@ class Siswa extends CI_Controller
             'pendidikan' => $pendidikan,
             'penghasilan' => $penghasilan,
             'tempattinggal' => $tempattinggal,
-            'transportasi' => $transportasi
+            'transportasi' => $transportasi,
+            'persyaratan' => $persyaratan,
+            'persyaratan_siswa' => $persyaratan_siswa
         ];
 
         $this->load->view('layout_admin/base', $data);
@@ -194,6 +199,52 @@ class Siswa extends CI_Controller
             $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
         }
         redirect('admin/siswa/edit/'.$id.'?page=wali');
+    }
+
+    public function savePersyaratan($id){
+        $persyaratan_siswa = $this->Persyaratan_siswaModel->leftJoinPersyaratan($id)->result();
+
+        $status = $_POST['status'];
+        $id_siswa = $_POST['id_siswa'];
+        $id_persyaratan = $_POST['id_persyaratan'];
+
+        for ($i=0; $i < count($status) ; $i++) {
+            $data[] = ['status' => $status[$i], 'id_siswa' => $id_siswa[$i], 'id_persyaratan' => $id_persyaratan[$i]];
+        }
+        // echo "<pre>";
+        // print_r($_POST);
+        // echo "</pre>";
+        // echo "<pre>";
+        // print_r($data);
+        // echo "</pre>";
+        // exit();
+
+        for ($j=0; $j < count($status); $j++) { 
+            if (isset($persyaratan_siswa[$j]->id_siswa)) {
+                $this->Persyaratan_siswaModel->update($persyaratan_siswa[$j]->id_siswa, $persyaratan_siswa[$j]->id_persyaratan, $data[$j]);
+                // echo '<br>';
+                // echo 'update';
+                // echo '<br>';
+                // echo $data[$j]['id_siswa'] . $data[$j]['id_persyaratan'];
+                // echo '  =  ';
+                // echo $persyaratan_siswa[$j]->id_siswa . $persyaratan_siswa[$j]->id_persyaratan;
+            } else{
+                $this->Persyaratan_siswaModel->add($data[$j]);
+                // echo '<br>';
+                // echo 'add';
+                // echo '<br>';
+                // echo $data[$j]['id_siswa'] . $data[$j]['id_persyaratan'];
+                // echo '  =  ';
+                // echo $persyaratan_siswa[$j]->id_siswa . $persyaratan_siswa[$j]->id_persyaratan;
+            }
+        }
+        
+        // echo "<pre>";
+        // print_r($_POST); 
+        // echo "</pre>";
+        // exit();
+        $this->session->set_flashdata('flash', 'Data berhasil disimpan');
+        redirect('admin/siswa/edit/' . $id . '?page=persyaratan');
     }
 
     public function delete($id)

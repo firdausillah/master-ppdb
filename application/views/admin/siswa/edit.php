@@ -26,12 +26,15 @@
                                             <li class="nav-item">
                                                 <a class="nav-link <?= $page == 'wali' ? 'active' : ''; ?>" data-toggle="tab" href="#wali">Data Wali</a>
                                             </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link <?= $page == 'persyaratan' ? 'active' : ''; ?>" data-toggle="tab" href="#persyaratan">Data persyaratan</a>
+                                            </li>
                                         </ul>
 
                                         <!-- Tab panes -->
                                         <div class="tab-content">
                                             <div id="pribadi" class="container tab-pane <?= $page == 'pribadi' ? 'active' : 'fade'; ?>"><br>
-                                                <form action="<?= base_url('admin/siswa/savePribadi/'.$siswa->id) ?>" method="POST">
+                                                <form action="<?= base_url('admin/siswa/savePribadi/' . $siswa->id) ?>" method="POST">
                                                     <div class="row">
                                                         <div class="mb-3 col-md-6">
                                                             <label class="form-label" for="kode_pendaftaran">Kode Pendaftaran <span class="text-danger">*</span></label>
@@ -39,7 +42,7 @@
                                                         </div>
                                                         <div class="mb-3 col-md-6">
                                                             <label class="form-label" for="password">Password <span class="text-danger">*</span></label>
-                                                            <input type="text" class="form-control" name="password" id="password" value="<?= $siswa->password ?>" required placeholder="" disabled>
+                                                            <input type="text" class="form-control" name="password" id="password" value="<?= $siswa->password ?>" required placeholder="">
                                                         </div>
                                                     </div>
                                                     <div class="row">
@@ -197,7 +200,7 @@
                                                         </div>
                                                         <div class="mb-3 col-md-6">
                                                             <label class="form-label" for="id_jurusan">Jurusan <span class="text-danger">*</span></label>
-                                                            <select class="form-control" disabled name="id_jurusan" id="id_jurusan">
+                                                            <select class="form-control" name="id_jurusan" id="id_jurusan">
                                                                 <option value="">----Pilih Di Sini----</option>
                                                                 <?php foreach ($jurusan as $key => $jur) : ?>
                                                                     <option value="<?= $jur->id ?>" <?= $siswa->id_jurusan == $jur->id ? 'selected' : '' ?>><?= $jur->jurusan ?></option>
@@ -213,7 +216,7 @@
                                                 </form>
                                             </div>
                                             <div id="ayah" class="container tab-pane <?= $page == 'ayah' ? 'active' : 'fade'; ?>"><br>
-                                                <form action="<?= base_url('admin/siswa/saveAyah/'.$siswa->id) ?>" method="POST">
+                                                <form action="<?= base_url('admin/siswa/saveAyah/' . $siswa->id) ?>" method="POST">
                                                     <div class="row">
                                                         <div class="mb-3 col-md-6">
                                                             <label class="form-label" for="nama_ayah">Nama Ayah</label>
@@ -270,7 +273,7 @@
                                                 </form>
                                             </div>
                                             <div id="ibu" class="container tab-pane <?= $page == 'ibu' ? 'active' : 'fade'; ?>"><br>
-                                                <form action="<?= base_url('admin/siswa/saveIbu/'.$siswa->id) ?>" method="POST">
+                                                <form action="<?= base_url('admin/siswa/saveIbu/' . $siswa->id) ?>" method="POST">
                                                     <div class="row">
                                                         <div class="mb-3 col-md-6">
                                                             <label class="form-label" for="nama_ibu">Nama Ibu</label>
@@ -327,7 +330,7 @@
                                                 </form>
                                             </div>
                                             <div id="wali" class="container tab-pane <?= $page == 'wali' ? 'active' : 'fade'; ?>"><br>
-                                                <form action="<?= base_url('admin/siswa/saveWali/'.$siswa->id) ?>" method="POST">
+                                                <form action="<?= base_url('admin/siswa/saveWali/' . $siswa->id) ?>" method="POST">
                                                     <div class="row">
                                                         <div class="mb-3 col-md-6">
                                                             <label class="form-label" for="nama_wali">Nama Wali</label>
@@ -376,6 +379,35 @@
                                                             </select>
                                                         </div>
                                                     </div>
+                                                    <div class="row">
+                                                        <div class="mb-3 col-md-12 text-right">
+                                                            <button type="submit" class="btn btn-primary">Simpan</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div id="persyaratan" class="container tab-pane <?= $page == 'persyaratan' ? 'active' : 'fade'; ?>"><br>
+                                                <form action="<?= base_url('admin/siswa/savePersyaratan/' . $siswa->id) ?>" method="POST">
+                                                    <?php foreach ($persyaratan as $key => $val) : ?>
+                                                        <div class="row">
+                                                            <div class="mb-3 col-md-6">
+                                                                <label class="form-label" for=""><?= $val->persyaratan.' <small class="text-success">'.$val->satuan. ' Lembar</small>' ?></label>
+                                                                <select class="form-control" name="status[]" id="">
+                                                                    <option value="">----Pilih Di Sini----</option>
+                                                                    <?php if (isset($persyaratan_siswa[$key]->id_siswa)) :?>
+                                                                    <option <?= $persyaratan_siswa[$key]->id_siswa.$persyaratan_siswa[$key]->id_persyaratan != null && $persyaratan_siswa[$key]->status == 0 ? 'selected' : ''?> value="0">Belum</option>
+                                                                    <option <?= $persyaratan_siswa[$key]->id_siswa.$persyaratan_siswa[$key]->id_persyaratan != null && $persyaratan_siswa[$key]->status == 1 ? 'selected' : ''?> value="1">Sudah</option>
+                                                                    <?php else : ?>
+                                                                        <option value="0">Belum</option>
+                                                                        <option value="1">Sudah</option>
+                                                                    <?php endif ?>
+
+                                                                </select>
+                                                                <input type="hidden" name="id_siswa[]" value="<?= $siswa->id ?>">
+                                                                <input type="hidden" name="id_persyaratan[]" value="<?= $val->id ?>">
+                                                            </div>
+                                                        </div>
+                                                    <?php endforeach ?>
                                                     <div class="row">
                                                         <div class="mb-3 col-md-12 text-right">
                                                             <button type="submit" class="btn btn-primary">Simpan</button>

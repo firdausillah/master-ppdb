@@ -31,7 +31,7 @@
                                         <td><?= $s->nama ?></td>
                                         <td class="d-none d-xl-table-cell"><?= $s->nohp ?></td>
                                         <td>
-                                            <a href="" data-toggle="modal" data-target="#exampleModal">
+                                            <a href="" data-toggle="modal" data-target=".bd-example-modal-sm">
                                                 <span class="btn btn-success btn-pill btn-sm">Diterima</span>
                                             </a>
                                         </td>
@@ -52,30 +52,25 @@
     </div>
 </div>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+<div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Ubah Status</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <?= form_open_multipart('admin/syarat/save') ?>
+            <div class="modal-header">Ubah Status</div>
             <div class="modal-body">
-                <div class="mb-3 row">
-                    <label class="col-form-label col-sm-2 text-sm-right">Pilih Status</label>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                        <label class="form-check-label" for="exampleRadios1">
-                            Default radio
+                <div class="card-body">
+                    <div class="text-center">
+                        <label class="form-check form-check-inline">
+                            <input class="form-check-input" checked="" type="radio" name="inline-radios-example" value="option1">
+                            <span class="form-check-label">
+                                Diterima
+                            </span>
                         </label>
-                    </div>
-                </div>
-                <div class="mb-3 row">
-                    <label class="col-form-label col-sm-2 text-sm-right">Keterangan</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" name="satuan" required>
+                        <label class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inline-radios-example" value="option2">
+                            <span class="form-check-label">
+                                Ditolak
+                            </span>
+                        </label>
                     </div>
                 </div>
             </div>
@@ -83,7 +78,6 @@
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 <button type="submit" class="btn btn-primary">Save</button>
             </div>
-            </form>
         </div>
     </div>
 </div>
