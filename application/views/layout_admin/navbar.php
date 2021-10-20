@@ -11,8 +11,7 @@
                             </a>
 
                             <a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-toggle="dropdown">
-                                <img src="<?= base_url() ?>assets/img/avatars/avatar.jpg" class="avatar img-fluid rounded mr-1" alt="<?= $this->session->userdata('nama') ?>" /> <span class="text-dark"><?= $this->session->userdata('nama') ?></span>
-                            </a>
+                                <i class="avatar align-middle mr-1" data-feather="user"></i> <span class=" text-dark"><?= $this->session->userdata('nama') ?></span> </a>
                             <div class="dropdown-menu dropdown-menu-right">
                                 <a class="dropdown-item" href="<?= base_url('auth/logout') ?>">Log out</a>
                             </div>
