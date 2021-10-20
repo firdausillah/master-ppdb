@@ -10,6 +10,39 @@ class Auth extends CI_Controller {
 		$this->load->model('SiswaModel', 'mSiswa');
 	}
 
+	public function login(){
+		$this->load->view('login');
+	}
+
+	public function login_admin(){
+		$username = $this->input->post('username');
+		$password = $this->input->post('password');
+
+		$where = [
+			'username' => $username,
+			'password' => $password
+		];
+
+		$cek = $this->mAuth->cekLogin('tb_user', $where)->row();
+		
+		if (count($cek) > 0) {
+			$data_session = [
+				'id'	=> $cek->id,
+				'nama'	=> $cek->nama,
+				'username'	=> $cek->username,
+				'password'	=> $cek->password,
+				'role'	=> $cek->role
+			];
+
+			$this->session->set_userdata($data_session);
+			$this->session->set_flashdata('flash', 'Anda berhasil Login');
+			redirect('admin/dashboard');
+		}else{
+			$this->session->set_flashdata('error', 'Username atau Password salah!');
+			redirect('auth/login');
+		}
+	}
+
 	public function login_siswa(){
 		$nohp	= $this->input->post('nohp');
 		$password	= $this->input->post('password');
@@ -34,7 +67,7 @@ class Auth extends CI_Controller {
 			];
 
 			$this->session->set_userdata($data_session);
-			$this->session->set_flashdata('flash', 'Anda berhasil login');
+			$this->session->set_flashdata('flash', 'Anda berhasil Login');
 			redirect('siswa/dashboard');
 		} else {
 			$this->session->set_flashdata('error', 'Nomor Telepon atau Password salah!');
@@ -44,6 +77,7 @@ class Auth extends CI_Controller {
 
 	public function logout(){
 		$this->session->sess_destroy();
+		$this->session->set_fashdata('success', 'Berhasil Logout');
 		redirect(base_url('home'));
 	}
 }

@@ -6,6 +6,10 @@ section.info, section.contact, footer.bg{
     background: #222e3c;
 }
 
+.text-dark-blue{
+    color: #222e3c;
+}
+
 html {
   scroll-behavior: smooth;
 }

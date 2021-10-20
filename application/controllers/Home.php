@@ -7,6 +7,7 @@ class Home extends CI_Controller {
 		parent::__construct();
 		$this->load->model('GelombangModel', 'mGelombang');
 		$this->load->model('JurusanModel', 'mJurusan');
+		$this->load->model('PersyaratanModel', 'mPersyaratan');
 		$this->load->model('SiswaModel', 'mSiswa');
 		$this->load->model('ProfileModel', 'mProfile');
 	}
@@ -15,6 +16,7 @@ class Home extends CI_Controller {
 		$data = [
 			'gelombangs' => $this->mGelombang->get()->result(),
 			'jurusans' => $this->mJurusan->get()->result(),
+			'persyaratans' => $this->mPersyaratan->get()->result(),
 			'profile' => $this->mProfile->findBy(['id' => 1])->row()
 		];
 		// $this->session->set_flashdata('success', $data);

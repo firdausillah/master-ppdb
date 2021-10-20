@@ -61,11 +61,11 @@
 								<table class="table table-striped my-0">
 									<thead>
 										<tr>
-											<th>Gelombang</th>
-											<th class="d-none d-xl-table-cell">Tanggal Dibuka</th>
-											<th class="d-none d-xl-table-cell">Tanggal Ditutup</th>
-											<th class="d-none d-xl-table-cell">Status</th>
-											<th>Aksi</th>
+											<th class="text-dark-blue">Gelombang</th>
+											<th class="d-none d-xl-table-cell text-dark-blue">Tanggal Dibuka</th>
+											<th class="d-none d-xl-table-cell text-dark-blue">Tanggal Ditutup</th>
+											<th class="d-none d-xl-table-cell text-dark-blue">Status</th>
+											<th class="text-dark-blue">Aksi</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -127,7 +127,18 @@
 							<img src="<?= base_url() ?>/assets/img/ilustration/5100169.jpg" height="300px" alt="" class="shadow-md rounded img-fluid">
 						</div>
 						<div class="col-md-7">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, nobis animi? Ab, veritatis culpa ad odit explicabo iste repudiandae. Nesciunt repudiandae necessitatibus, autem architecto reiciendis nihil maiores. Qui, eum harum! Vel praesentium temporibus vitae quas beatae tenetur recusandae! Culpa architecto quaerat facere minus. Vel optio odio magnam repudiandae, perferendis quod nobis quae inventore itaque molestiae minima sunt deleniti animi aliquid ullam. Error molestiae, delectus, accusamus totam hic id tempora quis libero, ipsa reprehenderit veritatis porro ducimus! Explicabo vero maiores iure error nam hic fugit, aliquid eum optio fugiat deserunt eveniet expedita quos praesentium ut dolorum qui soluta voluptatem laboriosam quibusdam.</p>
+							<h3 class="text-dark-blue">Pesyaratan Pendaftaran</h3>
+							<div class="row mt-3">
+								<?php foreach ($persyaratans as $key => $value) : ?>
+									<div class="col-md-6">
+										<div class="card">
+											<div class="card-body">
+												<h5 class="text-dark-blue"><?= $value->persyaratan ?></h5>
+											</div>
+										</div>
+									</div>
+								<?php endforeach ?>
+							</div>
 						</div>
 					</div>
 				</div>
