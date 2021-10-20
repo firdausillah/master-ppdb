@@ -7,6 +7,12 @@ class Biodata extends CI_Controller
     function __construct()
     {
         parent::__construct();
+
+        if ($this->session->userdata('status') != "login") {
+            $this->session->set_flashdata('error', 'Silahkan Login');
+            redirect(base_url("home"));
+        }
+
         $this->load->model('SiswaModel');
         $this->load->model('JurusanModel');
         $this->load->model('PekerjaanModel');
@@ -21,7 +27,7 @@ class Biodata extends CI_Controller
 
     public function index()
     {
-        $siswa = $this->SiswaModel->findBy(4)->row();
+        $siswa = $this->SiswaModel->findBy($this->session->userdata('id'))->row();
 
         $jurusan = $this->JurusanModel->get()->result();
         $pekerjaan = $this->PekerjaanModel->get()->result();
@@ -31,7 +37,7 @@ class Biodata extends CI_Controller
         $tempattinggal = $this->TempattinggalModel->get()->result();
         $transportasi = $this->TransportasiModel->get()->result();
         $persyaratan = $this->PersyaratanModel->get()->result();
-        $persyaratan_siswa = $this->Persyaratan_siswaModel->leftJoinPersyaratan(4)->result();
+        $persyaratan_siswa = $this->Persyaratan_siswaModel->leftJoinPersyaratan($this->session->userdata('id'))->result();
         
         $data = [
             'title' => 'Biodata Siswa',
@@ -84,7 +90,7 @@ class Biodata extends CI_Controller
             'id_jurusan'        => $this->input->post('id_jurusan')
         ];
         
-        if ($this->SiswaModel->update(['id' => 4], $data)) {
+        if ($this->SiswaModel->update(['id' => $this->session->userdata('id')], $data)) {
             $this->session->set_flashdata('flash', 'Data berhasil disimpan');
         } else {
             $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
@@ -103,7 +109,7 @@ class Biodata extends CI_Controller
             'penghasilan_ayah'  => $this->input->post('penghasilan_ayah')
         ];
         
-        if ($this->SiswaModel->update(['id' => 4], $data)) {
+        if ($this->SiswaModel->update(['id' => $this->session->userdata('id')], $data)) {
             $this->session->set_flashdata('flash', 'Data berhasil disimpan');
         } else {
             $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
@@ -122,7 +128,7 @@ class Biodata extends CI_Controller
             'penghasilan_ibu'  => $this->input->post('penghasilan_ibu')
         ];
         
-        if ($this->SiswaModel->update(['id' => 4], $data)) {
+        if ($this->SiswaModel->update(['id' => $this->session->userdata('id')], $data)) {
             $this->session->set_flashdata('flash', 'Data berhasil disimpan');
         } else {
             $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
@@ -141,7 +147,7 @@ class Biodata extends CI_Controller
             'penghasilan_wali'  => $this->input->post('penghasilan_wali')
         ];
         
-        if ($this->SiswaModel->update(['id' => 4], $data)) {
+        if ($this->SiswaModel->update(['id' => $this->session->userdata('id')], $data)) {
             $this->session->set_flashdata('flash', 'Data berhasil disimpan');
         } else {
             $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');

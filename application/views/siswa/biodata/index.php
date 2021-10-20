@@ -48,7 +48,7 @@
                                                         </div>
                                                         <div class="mb-3 col-md-6">
                                                             <label class="form-label" for="password">Password <span class="text-danger">*</span></label>
-                                                            <input type="text" class="form-control" name="password" id="password" value="<?= $siswa->password ?>" required placeholder="">
+                                                            <input type="text" class="form-control" name="password" id="password" value="<?= $siswa->password ?>" required placeholder="" disabled>
                                                         </div>
                                                     </div>
                                                     <div class="row">

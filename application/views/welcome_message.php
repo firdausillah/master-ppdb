@@ -24,8 +24,8 @@
 		<div class="main">
 			<nav class="navbar navbar-expand-lg navbar-dark-blue bg-dark-blue fixed-top">
 				<div class="container">
-					<a class="navbar-brand" href="#">Navbar</a>
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<a class="navbar-brand" href="#"> <img src="<?= base_url() ?>assets/img/logo.png" height="30px" alt="" class="mr-1"> <span><?= $profile->nama_sekolah ?></span></a>
+					<button class="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>
 					</button>
 
@@ -90,31 +90,22 @@
 						</div>
 						<div class="col-sm-4">
 							<div class="card">
-								<div class="card-body">
+								<div class="card-header">
 									<h5 class="card-title mb-0">Login - Siswa</h5>
+								</div>
+								<div class="card-body">
 									<div class="m-sm-4">
-										<form>
-											<div class="mb-3">
-												<label class="form-label">Username</label>
-												<input class="form-control" type="nohp" name="nohp" placeholder="contoh. 086786576568">
+										<form action="<?= base_url('auth/login_siswa'); ?>" method="POST">
+											<div class="mb-4">
+												<label class="form-label">Nomor Telepon</label>
+												<input class="form-control" type="number" name="nohp" placeholder="contoh. 086786576568">
 											</div>
-											<div class="mb-3">
+											<div class="mb-4">
 												<label class="form-label">Password</label>
 												<input class="form-control" type="password" name="password" placeholder="Enter your password">
-												<small>
-													<a href="pages-reset-password.html">Forgot password?</a>
-												</small>
 											</div>
-											<div>
-												<label class="form-check">
-													<input class="form-check-input" type="checkbox" value="remember-me" name="remember-me" checked="">
-													<span class="form-check-label">
-														Remember me next time
-													</span>
-												</label>
-											</div>
-											<div class="text-center mt-3">
-												<a href="index.html" class="btn btn-md btn-primary">Login</a>
+											<div class="text-center mt-4">
+												<button type="submit" class="btn btn-md btn-primary">Login</button>
 											</div>
 										</form>
 									</div>
@@ -159,27 +150,37 @@
 				</div>
 			</section>
 
-			<footer class="footer">
+			<svg class="d-none d-md-block d-sm-none" style="margin-top: -150px; margin-bottom: -30px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+				<path fill="#a7b7cb" fill-opacity="1" d="M0,224L480,192L960,224L1440,160L1440,320L960,320L480,320L0,320Z"></path>
+			</svg>
+			<section id="contact" class="contact">
+				<div class="container">
+					<div class="row justify-content-beetwen">
+						<div class="col-sm-6">
+
+						</div>
+					</div>
+				</div>
+			</section>
+			<footer class="footer bg">
 				<div class="container-fluid">
-					<div class="row text-muted">
-						<div class="col-6 text-left">
+					<div class="row text-dark">
+						<div class="col-sm-12 col-md-5 text-left">
 							<p class="mb-0">
-								<a href="<?= base_url() ?>assets/index.html" class="text-muted"><strong>AdminKit Demo</strong></a> &copy;
+								Copyright &copy; <?= date('Y') ?> PPDB SMK GRISA
+								<!-- <a href="<?= base_url() ?>assets/index.html" class="text-dark"><strong>AdminKit Demo</strong></a> &copy; -->
 							</p>
 						</div>
-						<div class="col-6 text-right">
+						<div class="col-sm-12 col-md-7 text-right">
 							<ul class="list-inline">
 								<li class="list-inline-item">
-									<a class="text-muted" href="<?= base_url() ?>assets/#">Support</a>
+									<a class="text-dark" href="<?= base_url() ?>assets/#">Contact : </a>
 								</li>
 								<li class="list-inline-item">
-									<a class="text-muted" href="<?= base_url() ?>assets/#">Help Center</a>
+									<a class="text-dark" href="<?= base_url() ?>assets/#"><i class="align-middle mr-2" data-feather="phone"></i><?= $profile->cp_1; ?></a>
 								</li>
 								<li class="list-inline-item">
-									<a class="text-muted" href="<?= base_url() ?>assets/#">Privacy</a>
-								</li>
-								<li class="list-inline-item">
-									<a class="text-muted" href="<?= base_url() ?>assets/#">Terms</a>
+									<a class="text-dark" href="<?= base_url() ?>assets/#"><i class="align-middle mr-2" data-feather="phone"></i><?= $profile->cp_2; ?></a>
 								</li>
 							</ul>
 						</div>
@@ -256,7 +257,7 @@
 						<?php elseif ($this->session->flashdata('error')) : ?>
 							<div class="text-center">
 								<img src="https://cdn.dribbble.com/users/251873/screenshots/9288094/media/a1c2f89065f68e1b2b5dcb66bdb9beb1.gif" height="250px" alt="">
-								<h3>Hai!, <?= $this->session->flashdata('error'); ?> </h3>
+								<h3><?= $this->session->flashdata('error'); ?> </h3>
 							</div>
 						<?php endif ?>
 					</div>

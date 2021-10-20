@@ -1,4 +1,4 @@
-section.info{
+section.info, section.contact, footer.bg{
     background-color: #a7b7cb;
 }
 
@@ -55,4 +55,10 @@ html {
 }
 .navbar-dark-blue .navbar-text a,.navbar-dark-blue .navbar-text a:focus,.navbar-dark-blue .navbar-text a:hover{
     color:#fff
+}
+
+@media (max-width: 600px) {
+    .underwave{
+        margin-top: -150px;
+    }
 }

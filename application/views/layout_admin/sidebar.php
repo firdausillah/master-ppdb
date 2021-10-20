@@ -33,7 +33,7 @@
                     <li class="sidebar-item"><a class="sidebar-link" href="<?= base_url() ?>admin/pekerjaan">Pekerjaan</a></li>
                     <li class="sidebar-item"><a class="sidebar-link" href="<?= base_url() ?>admin/penghasilan">Penghasilan Orang Tua</a></li>
                 </ul>
-            </li>
+            </li> 
 
             <li class="sidebar-item <?= $this->uri->segment(2) == 'siswa' ? 'active' : '' ?>">
                 <a class="sidebar-link" href="<?= base_url() ?>admin/siswa">

@@ -8,12 +8,14 @@ class Home extends CI_Controller {
 		$this->load->model('GelombangModel', 'mGelombang');
 		$this->load->model('JurusanModel', 'mJurusan');
 		$this->load->model('SiswaModel', 'mSiswa');
+		$this->load->model('ProfileModel', 'mProfile');
 	}
 
 	public function index(){
 		$data = [
 			'gelombangs' => $this->mGelombang->get()->result(),
-			'jurusans' => $this->mJurusan->get()->result()
+			'jurusans' => $this->mJurusan->get()->result(),
+			'profile' => $this->mProfile->findBy(['id' => 1])->row()
 		];
 		// $this->session->set_flashdata('success', $data);
 		$this->load->view('welcome_message', $data);
