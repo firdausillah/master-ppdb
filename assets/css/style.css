@@ -1,9 +1,14 @@
 section.info, section.contact, footer.bg{
+    /* background-color: #C1DCEF; */
     background-color: #a7b7cb;
 }
 
 .bg-dark-blue{
     background: #222e3c;
+}
+
+.text-blue{
+    color: #0270BA;;
 }
 
 .text-dark-blue{

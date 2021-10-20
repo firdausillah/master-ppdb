@@ -7,6 +7,10 @@ class Syarat extends CI_Controller
     {
         parent::__construct();
         $this->load->model('PersyaratanModel');
+
+        if ($this->session->userdata('status') != "login") {
+            redirect(base_url("home"));
+        }
     }
 
     public function index()

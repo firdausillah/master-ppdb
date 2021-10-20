@@ -16,6 +16,10 @@ class Siswa extends CI_Controller
         $this->load->model('TransportasiModel');
         $this->load->model('PersyaratanModel');
         $this->load->model('Persyaratan_siswaModel');
+
+        if ($this->session->userdata('status') != "login") {
+            redirect(base_url("home"));
+        }
     }
 
     public function index()

@@ -131,11 +131,13 @@
 							<div class="row mt-3">
 								<?php foreach ($persyaratans as $key => $value) : ?>
 									<div class="col-md-6">
-										<div class="card">
-											<div class="card-body">
-												<h5 class="text-dark-blue"><?= $value->persyaratan ?></h5>
+										<a href="" style="text-decoration:none;">
+											<div class="card">
+												<div class="card-body text-center">
+													<h5 class="text-blue"><?= $value->persyaratan ?></h5>
+												</div>
 											</div>
-										</div>
+										</a>
 									</div>
 								<?php endforeach ?>
 							</div>
@@ -153,7 +155,7 @@
 						<div class="col-sm-8">
 							<div class="card">
 								<div class="card-body">
-									<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque cupiditate et dolore sapiente dolores nulla fugiat corporis molestias pariatur maiores quae blanditiis, quaerat deserunt obcaecati provident commodi libero. Nesciunt deserunt impedit obcaecati nemo exercitationem, ratione cum. Velit voluptatem assumenda amet fuga, molestias temporibus aliquid porro dignissimos quod impedit. Culpa totam vel veritatis ratione blanditiis, fugit dolor nesciunt ut aspernatur quia temporibus inventore rem saepe mollitia aliquam laborum omnis velit debitis laboriosam cumque soluta autem. Natus nisi dolorum vitae soluta expedita earum doloribus id perferendis sit deserunt quasi, consectetur numquam doloremque nostrum ex fugit! Veniam, labore? Ducimus doloremque iure porro vel?</p>
+									<img src="http://smkn1-salam.sch.id/media_library/posts/post-image-1591974469289.jpg" class="img-fluid" alt="">
 								</div>
 							</div>
 						</div>
@@ -185,13 +187,13 @@
 						<div class="col-sm-12 col-md-7 text-right">
 							<ul class="list-inline">
 								<li class="list-inline-item">
-									<a class="text-dark" href="<?= base_url() ?>assets/#">Contact : </a>
+									<a class="text-dark" href="#">Contact : </a>
 								</li>
 								<li class="list-inline-item">
-									<a class="text-dark" href="<?= base_url() ?>assets/#"><i class="align-middle mr-2" data-feather="phone"></i><?= $profile->cp_1; ?></a>
+									<a class="text-dark" href="#"><i class="align-middle mr-2" data-feather="phone"></i><?= $profile->cp_1; ?></a>
 								</li>
 								<li class="list-inline-item">
-									<a class="text-dark" href="<?= base_url() ?>assets/#"><i class="align-middle mr-2" data-feather="phone"></i><?= $profile->cp_2; ?></a>
+									<a class="text-dark" href="#"><i class="align-middle mr-2" data-feather="phone"></i><?= $profile->cp_2; ?></a>
 								</li>
 							</ul>
 						</div>

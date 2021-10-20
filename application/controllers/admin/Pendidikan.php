@@ -7,6 +7,10 @@ class Pendidikan extends CI_Controller
     {
         parent::__construct();
         $this->load->model('PendidikanModel');
+
+        if ($this->session->userdata('status') != "login") {
+            redirect(base_url("home"));
+        }
     }
 
     public function index()

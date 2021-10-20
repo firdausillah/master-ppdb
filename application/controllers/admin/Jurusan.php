@@ -7,7 +7,12 @@ class Jurusan extends CI_Controller
     {
         parent::__construct();
         $this->load->model('JurusanModel');
+
+                if ($this->session->userdata('status') != "login") {
+            redirect(base_url("home"));
+        }
     }
+    
 
     public function index()
     {
