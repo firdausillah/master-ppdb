@@ -206,7 +206,7 @@
                                                         </div>
                                                         <div class="mb-3 col-md-6">
                                                             <label class="form-label" for="id_jurusan">Jurusan <span class="text-danger">*</span></label>
-                                                            <select class="form-control" name="id_jurusan" id="id_jurusan">
+                                                            <select class="form-control" disabled name="id_jurusan" id="id_jurusan">
                                                                 <option value="">----Pilih Di Sini----</option>
                                                                 <?php foreach ($jurusan as $key => $jur) : ?>
                                                                     <option value="<?= $jur->id ?>" <?= $siswa->id_jurusan == $jur->id ? 'selected' : '' ?>><?= $jur->jurusan ?></option>

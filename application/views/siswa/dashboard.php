@@ -7,6 +7,41 @@
 
                     </div>
                     <div class="row">
+                        <div class="col-12 col-lg-4 d-flex">
+                            <div class="card flex-fill">
+                                <div class="card-header">
+                                    <h5 class="card-title mb-0">Status Persyaratan</h5>
+                                </div>
+                                <div class="m-2">
+                                    <table class="table my-0">
+                                        <thead>
+                                            <tr>
+                                                <th>Persyaratan</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php foreach ($persyaratan as $key => $syarat) : ?>
+                                                <tr>
+                                                    <td><?= $syarat->persyaratan ?> <br>
+                                                        <small class="text-info"><?= $syarat->satuan ?> Lembar</small>
+                                                    </td>
+                                                    <td>
+                                                        <?php if (isset($persyaratan_siswa[$key]->id_siswa)) :
+                                                            if ($persyaratan_siswa[$key]->id_siswa . $persyaratan_siswa[$key]->id_persyaratan != null && $persyaratan_siswa[$key]->status == 1) : ?>
+                                                                <span class="badge bg-success">Sudah Lengkap</span>
+                                                            <?php else : ?>
+                                                                <span class="badge bg-danger">Belum Lengkap</span>
+                                                            <?php endif ?>
+                                                        <?php endif ?>
+                                                    </td>
+                                                </tr>
+                                            <?php endforeach ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
                         <div class="col-12 col-lg-8 d-flex">
                             <div class="card flex-fill w-100">
                                 <div class="card-header">
@@ -46,12 +81,12 @@
                                                         <tr>
                                                             <td>Jurusan Pilihan</td>
                                                             <td>:</td>
-                                                            <td><?= $siswa->id_jurusan ?></td>
+                                                            <td><?= $siswa->jurusan ?></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
                                             </div>
-                                            <button class="btn btn-primary btn-lg btn-block my-3"> <i data-feather="save"></i> Cetak Bukti Pendaftaran</button>
+                                            <a href="<?= base_url() ?>cetak/bukti/<?= $siswa->id ?>" target='_blank' class="btn btn-primary btn-lg btn-block my-3"> <i data-feather="save"></i> Cetak Bukti Pendaftaran</a>
                                         </div>
                                         <div class="col-md-6">
                                             <label for="" class="font-weight-bold">Data Ayah</label>
@@ -107,35 +142,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-lg-4 d-flex">
-                            <div class="card flex-fill">
-                                <div class="card-header">
-                                    <h5 class="card-title mb-0">Status Persyaratan</h5>
-                                </div>
-                                <div class="m-2">
-                                    <table class="table my-0">
-                                        <thead>
-                                            <tr>
-                                                <th>Persyaratan</th>
-                                                <th>Status Persyaratan</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php foreach ($persyaratan as $syarat) : ?>
-                                                <tr>
-                                                    <td><?= $syarat->persyaratan ?> <br>
-                                                        <small class="text-info"><?= $syarat->satuan ?> Lembar</small>
-                                                    </td>
-                                                    <td>
-                                                        <span class="badge bg-success">Done</span>
-                                                    </td>
-                                                </tr>
-                                            <?php endforeach ?>
-                                        </tbody>
-                                    </table>
                                 </div>
                             </div>
                         </div>

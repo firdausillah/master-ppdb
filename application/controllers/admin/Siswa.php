@@ -17,8 +17,8 @@ class Siswa extends CI_Controller
         $this->load->model('PersyaratanModel');
         $this->load->model('Persyaratan_siswaModel');
 
-        if ($this->session->userdata('status') != "login") {
-            redirect(base_url("home"));
+        if ($this->session->userdata('status') != "login" && $this->session->userdata('role') == null) {
+            redirect(base_url("auth/login"));
         }
     }
 

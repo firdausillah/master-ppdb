@@ -8,7 +8,7 @@ class Biodata extends CI_Controller
     {
         parent::__construct();
 
-        if ($this->session->userdata('status') != "login") {
+        if ($this->session->userdata('status') != "login" && $this->session->userdata('nohp') == null ) {
             $this->session->set_flashdata('error', 'Silahkan Login');
             redirect(base_url("home"));
         }

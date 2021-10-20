@@ -31,7 +31,8 @@ class Auth extends CI_Controller {
 				'nama'	=> $cek->nama,
 				'username'	=> $cek->username,
 				'password'	=> $cek->password,
-				'role'	=> $cek->role
+				'role'	=> $cek->role,
+				'status'	=> 'login'
 			];
 
 			$this->session->set_userdata($data_session);
@@ -76,8 +77,10 @@ class Auth extends CI_Controller {
 	}
 
 	public function logout(){
-		$this->session->sess_destroy();
-		$this->session->set_fashdata('success', 'Berhasil Logout');
+		if ($this->session->userdata() !== null) {
+			$this->session->sess_destroy();
+		}
+		$this->session->set_flashdata('success', 'Berhasil Logout');
 		redirect(base_url('home'));
 	}
 }

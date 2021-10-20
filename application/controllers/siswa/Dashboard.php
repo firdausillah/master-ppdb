@@ -7,13 +7,15 @@ class Dashboard extends CI_Controller
     {
         parent::__construct();
 
-        if ($this->session->userdata('status') != "login") {
+        if ($this->session->userdata('status') != "login" && $this->session->userdata('nohp') == null) {
             $this->session->set_flashdata('error', 'Silahkan Login');
             redirect(base_url("home"));
         }
 
         $this->load->model('SiswaModel');
         $this->load->model('PersyaratanModel');
+        $this->load->model('Persyaratan_siswaModel');
+        $this->load->model('JurusanModel');
     }
 
     public function index()
@@ -21,8 +23,10 @@ class Dashboard extends CI_Controller
         $data = [
             'title' => 'Dashboard Siswa',
             'content' => 'siswa/dashboard',
-            'siswa' => $this->SiswaModel->findBy($this->session->userdata('id'))->row(),
-            'persyaratan' => $this->PersyaratanModel->get()->result()
+            'siswa' => $this->SiswaModel->joinJurusan($this->session->userdata('id'))->row(),
+            'persyaratan' => $this->PersyaratanModel->get()->result(),
+            'persyaratan_siswa' => $this->Persyaratan_siswaModel->leftJoinPersyaratan($this->session->userdata('id'))->result(),
+            'jurusan' => $this->JurusanModel->findBy($this->session->userdata('id'))->row()
         ];
 
         $this->load->view('layout_siswa/base', $data);
