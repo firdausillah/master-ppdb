@@ -24,7 +24,7 @@ class Siswa extends CI_Controller
 
     public function index()
     {
-        print_r($this->session->userdata('role')); exit();
+        // print_r($this->session->userdata('role')); exit();
         $data = [
             'title' => 'Data Siswa',
             'siswa' => $this->SiswaModel->get()->result(),
