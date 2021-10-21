@@ -64,7 +64,8 @@ class Auth extends CI_Controller {
 				'id' => $data_siswa->id,
 				'nama' => $data_siswa->nama,
 				'nohp' => $data_siswa->nohp,
-				'status' => 'login',
+				'role' => 'siswa',
+				'status' => 'login'
 			];
 
 			$this->session->set_userdata($data_session);

@@ -18,6 +18,14 @@
 		return $this->db->get();
 	}
 
+	function joinJurusanKode($kode){
+		$this->db->select('*');
+		$this->db->from('tb_siswa');
+		$this->db->join('tb_jurusan', 'tb_siswa.id = tb_siswa.id_jurusan', 'left');
+		$this->db->where(['tb_siswa.kode_pendaftaran' => $kode]);
+		return $this->db->get();
+	}
+
  	function findBy($id){
  		$this->db->where(['id' => $id]);
  		return $this->db->get('tb_siswa');

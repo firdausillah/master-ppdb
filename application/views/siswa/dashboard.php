@@ -86,7 +86,7 @@
                                                     </tbody>
                                                 </table>
                                             </div>
-                                            <a href="<?= base_url() ?>cetak/bukti/<?= $siswa->id ?>" target='_blank' class="btn btn-primary btn-lg btn-block my-3"> <i data-feather="save"></i> Cetak Bukti Pendaftaran</a>
+                                            <a href="<?= base_url() ?>cetak/bukti/<?= $siswa->kode_pendaftaran ?>" target='_blank' class="btn btn-primary btn-lg btn-block my-3"> <i data-feather="save"></i> Cetak Bukti Pendaftaran</a>
                                         </div>
                                         <div class="col-md-6">
                                             <label for="" class="font-weight-bold">Data Ayah</label>

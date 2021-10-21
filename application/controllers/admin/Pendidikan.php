@@ -8,7 +8,7 @@ class Pendidikan extends CI_Controller
         parent::__construct();
         $this->load->model('PendidikanModel');
 
-        if ($this->session->userdata('status') != "login" && $this->session->userdata('role') == null) {
+        if ($this->session->userdata('role') != 'admin') {
             redirect(base_url("auth/login"));
         }
     }

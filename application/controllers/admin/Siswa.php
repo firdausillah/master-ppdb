@@ -17,13 +17,14 @@ class Siswa extends CI_Controller
         $this->load->model('PersyaratanModel');
         $this->load->model('Persyaratan_siswaModel');
 
-        if ($this->session->userdata('status') != "login" && $this->session->userdata('role') == null) {
+        if ($this->session->userdata('role') != 'admin') {
             redirect(base_url("auth/login"));
         }
     }
 
     public function index()
     {
+        print_r($this->session->userdata('role')); exit();
         $data = [
             'title' => 'Data Siswa',
             'siswa' => $this->SiswaModel->get()->result(),
