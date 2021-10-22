@@ -20,6 +20,7 @@ class Dashboard extends CI_Controller
 
     public function index()
     {
+        // print_r($this->SiswaModel->joinJurusan($this->session->userdata('id'))->row()); exit();
         $data = [
             'title' => 'Dashboard Siswa',
             'content' => 'siswa/dashboard',

@@ -41,11 +41,11 @@
                                                     <div class="row">
                                                         <div class="mb-3 col-md-6">
                                                             <label class="form-label" for="kode_pendaftaran">Kode Pendaftaran <span class="text-danger">*</span></label>
-                                                            <input type="text" class="form-control" name="kode_pendaftaran" id="kode_pendaftaran" value="<?= $siswa->kode_pendaftaran ?>" required placeholder="" readonly>
+                                                            <input type="text" class="form-control" disabled name="kode_pendaftaran" id="kode_pendaftaran" value="<?= $siswa->kode_pendaftaran ?>" required placeholder="" readonly>
                                                         </div>
                                                         <div class="mb-3 col-md-6">
                                                             <label class="form-label" for="password">Password <span class="text-danger">*</span></label>
-                                                            <input type="text" class="form-control" name="password" id="password" value="<?= $siswa->password ?>" required placeholder="">
+                                                            <input type="text" class="form-control" disabled name="password" id="password" value="<?= $siswa->password ?>" required placeholder="">
                                                         </div>
                                                     </div>
                                                     <div class="row">
@@ -56,7 +56,7 @@
                                                         <div class="mb-3 col-md-6">
                                                             <label class="form-label" for="jk">Jenis Kelamin</label>
                                                             <select class="form-control" name="jk" id="jk">
-                                                                <option value="">Pilih</option>
+                                                                <option value="">----Pilih Di Sini----</option>
                                                                 <option <?= $siswa->jk == 'Laki-laki' ? 'selected' : '' ?> value="Laki-laki">Laki-laki</option>
                                                                 <option <?= $siswa->jk == 'Perempuan' ? 'selected' : '' ?> value="Perempuan">Perempuan</option>
                                                             </select>
@@ -232,8 +232,8 @@
                                                 <form action="<?= base_url('admin/siswa/saveAyah/' . $siswa->id) ?>" method="POST">
                                                     <div class="row">
                                                         <div class="mb-3 col-md-6">
-                                                            <label class="form-label" for="nama_ayah">Nama Ayah</label>
-                                                            <input type="text" class="form-control" name="nama_ayah" id="nama_ayah" value="<?= $siswa->nama_ayah ?>" placeholder="">
+                                                            <label class="form-label" for="nama_ayah">Nama Ayah <span class="text-danger">*</span></label>
+                                                            <input type="text" class="form-control" name="nama_ayah" id="nama_ayah" value="<?= $siswa->nama_ayah ?>" required placeholder="">
                                                         </div>
                                                         <div class="mb-3 col-md-6">
                                                             <label class="form-label" for="nik_ayah">NIK Ayah</label>
@@ -257,8 +257,8 @@
                                                     </div>
                                                     <div class="row">
                                                         <div class="mb-3 col-md-6">
-                                                            <label class="form-label" for="pekerjaan_ayah">Pekerjaan Ayah</label>
-                                                            <select class="form-control" name="pekerjaan_ayah">
+                                                            <label class="form-label" for="pekerjaan_ayah">Pekerjaan Ayah <span class="text-danger">*</span></label>
+                                                            <select class="form-control" required name="pekerjaan_ayah">
                                                                 <option value="">----Pilih Di Sini----</option>
                                                                 <?php foreach ($pekerjaan as $val) : ?>
                                                                     <option value="<?= $val->id ?>" <?= $siswa->pekerjaan_ayah == $val->id ? 'selected' : '' ?>><?= $val->pekerjaan ?></option>
@@ -292,8 +292,8 @@
                                                 <form action="<?= base_url('admin/siswa/saveIbu/' . $siswa->id) ?>" method="POST">
                                                     <div class="row">
                                                         <div class="mb-3 col-md-6">
-                                                            <label class="form-label" for="nama_ibu">Nama Ibu</label>
-                                                            <input type="text" class="form-control" name="nama_ibu" id="nama_ibu" value="<?= $siswa->nama_ibu ?>" placeholder="">
+                                                            <label class="form-label" for="nama_ibu">Nama Ibu <span class="text-danger">*</span></label>
+                                                            <input type="text" class="form-control" name="nama_ibu" id="nama_ibu" value="<?= $siswa->nama_ibu ?>" required placeholder="">
                                                         </div>
                                                         <div class="mb-3 col-md-6">
                                                             <label class="form-label" for="nik_ibu">NIK Ibu</label>
@@ -317,8 +317,8 @@
                                                     </div>
                                                     <div class="row">
                                                         <div class="mb-3 col-md-6">
-                                                            <label class="form-label" for="pekerjaan_ibu">Pekerjaan Ibu</label>
-                                                            <select class="form-control" name="pekerjaan_ibu">
+                                                            <label class="form-label" for="pekerjaan_ibu">Pekerjaan Ibu <span class="text-danger">*</span></label>
+                                                            <select class="form-control" required name="pekerjaan_ibu">
                                                                 <option value="">----Pilih Di Sini----</option>
                                                                 <?php foreach ($pekerjaan as $val) : ?>
                                                                     <option value="<?= $val->id ?>" <?= $siswa->pekerjaan_ibu == $val->id ? 'selected' : '' ?>><?= $val->pekerjaan ?></option>

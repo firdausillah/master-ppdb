@@ -108,7 +108,7 @@ class Siswa extends CI_Controller
     {
 
         $data = [
-            'kode_pendaftaran'    => $this->input->post('kode_pendaftaran'),
+            // 'kode_pendaftaran'    => $this->input->post('kode_pendaftaran'),
             'password'    => $this->input->post('password'),
             'nama'    => $this->input->post('nama'),
             'jk'        => $this->input->post('jk'),

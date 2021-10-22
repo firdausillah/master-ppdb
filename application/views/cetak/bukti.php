@@ -26,20 +26,22 @@
                     <table class="table table-bordered table-sm">
                         <tbody>
                             <tr>
-                                <td colspan="1" class="text-center" style="width: 10%;"><img src="<?= base_url('assets/img/logo.png') ?>" height="90px" alt=""></td>
+                                <td colspan="1" class="text-center align-middle" style="width: 10%;"><img src="<?= base_url('assets/img/logo.png') ?>" height="90px" alt=""></td>
                                 <td colspan="4" style="width: 20%;">
                                     <h5>PENERIMAAN PESERTA DIDIK BARU</h5>
                                     <h5><?= $profile->nama_sekolah ?></h5>
                                     <h5>TAHUN AJARAN <?= $profile->tahun_ajaran ?></h5>
                                 </td>
-                                <td colspan="3" style="width: 20%;">
-                                    <h4>PPDB</h4>
-                                    <h4>ONLINE</h4>
+                                <td colspan="3" style="width: 20%;" class="text-center align-middle">
+                                    <!-- <h4>PPDB</h4>
+                                    <h4>ONLINE</h4> -->
+                                    <img src="<?= base_url('assets/img/smkbisa.png') ?>" height="60px" alt="">
+                                    <img src="<?= base_url('assets/img/vokasi.png') ?>" height="60px" alt="">
                                 </td>
                             </tr>
                             <tr>
                                 <td colspan="1" class="text-center"><img src="<?= base_url('uploads/img/siswa/' . $siswa->foto) ?>" height="90px" alt=""></td>
-                                <td colspan="4">
+                                <td colspan="4" class="align-middle">
                                     <span>TANDA BUKTI PENDAFTARAN</span><br>
                                     <span>PENERIMAAN PESERTA DIDIK BARU</span><br>
                                     <span>TAHUN AJARN <?= $profile->tahun_ajaran ?></span>
@@ -62,7 +64,7 @@
                             <tr class="text-center">
                                 <td colspan="3" style="width: 20%;"><?= $siswa->kode_pendaftaran ?></td>
                                 <td colspan="2" style="width: 20%;"><?= $siswa->tgl_daftar ?></td>
-                                <td colspan="3" style="width: 20%;"><?= $siswa->id_jurusan ?></td>
+                                <td colspan="3" style="width: 20%;"><?= $siswa->jurusan ?></td>
                             </tr>
                         </tbody>
                     </table>
@@ -124,13 +126,22 @@
                                 <td colspan="5"><?= $siswa->nohp_wali ?></td>
                             </tr>
                             <tr>
+                                <?php if ($siswa->status == 'Sudah Verifikasi') : ?>
+                                    <td colspan="8" class="text-center">Data persyaratan anda <span class="text-success"><?= $siswa->status ?></span> oleh admin</td>
+                                <?php elseif ($siswa->status == 'Sudah Verifikasi') : ?>
+                                    <td colspan="8" class="text-center">Data persyaratan anda <span class="text-danger"><?= $siswa->status ?></span> oleh admin</td>
+                                <?php else : ?>
+                                    <td colspan="8" class="text-center">Data persyaratan anda <span class="text-danger"> Belum Diverifikasi</span> oleh admin</td>
+                                <?php endif ?>
+                            </tr>
+                            <tr>
                                 <td colspan="8" class="text-center">Warning! Siswa yang di terima pada gelombang ini, namun belum daftar ulang sesuai jadwal yang di tentukan, maka akan membayar daftar ulang sesuai ketentuan gelombang berikutnya. </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
-            <div class="row justify-content-center">
+            <!-- <div class="row justify-content-center">
                 <div class="col-md-6">
                     <table class="table table-bordered table-sm my-0">
                         <thead>
@@ -142,7 +153,7 @@
                         <tbody>
                             <?php foreach ($persyaratan as $key => $syarat) : ?>
                                 <tr>
-                                    <td><?= $syarat->persyaratan ?> <br>
+                                    <td><?= $syarat->persyaratan ?>
                                         <small class="text-info"><?= $syarat->satuan ?> Lembar</small>
                                     </td>
                                     <td>
@@ -161,12 +172,51 @@
                         </tbody>
                     </table>
                 </div>
-            </div>
-            <div class="row d-flex justify-content-end">
+            </div> -->
+            <div class="row d-flex justify-content-end mt-3">
                 <div class="col-4">
                     <span>Banyuwangi, <?= date('d F Y') ?></span><br>
                     <span>Pendaftar</span><br>
                     <p class="pt-5 mt-2"><?= $siswa->nama ?></p>
+                </div>
+            </div>
+            <hr>
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    <div class="text-center mb-4">
+                        <h4>BUKTI PEMBAYARAN PPDB ONLINE <?= $profile->nama_sekolah ?></h4>
+                    </div>
+                    <table class="table table-bordered table-sm">
+                        <tr>
+                            <td style="width: 20%;">Kode Pembayaran</td>
+                            <td><?= $siswa->kode_pendaftaran ?></td>
+                            <td style="width: 20%;">Tanggal</td>
+                            <td style="width: 30%;"></td>
+                        </tr>
+                        <tr>
+                            <td>Terima Dari</td>
+                            <td colspan="3"><?= $siswa->nama ?></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 50px;">Terbilang</td>
+                            <td colspan="3"></td>
+                        </tr>
+                        <tr>
+                            <td>Untuk Pembayaran</td>
+                            <td colspan="3">Biaya Registrasi Peserta Didik Baru <?= $profile->nama_sekolah ?></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    <table class="table table-bordered table-sm">
+                        <tr>
+                            <td style="width: 40%; height: 100px;" class="text-center">Terbilang dalam nominal</td>
+                            <td style="width: 30%; height: 100px;" class="text-center">Tanda Tangan Penerima</td>
+                            <td style="width: 30%; height: 100px;" class="text-center">Tanda Tangan Penyetor</td>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </div>

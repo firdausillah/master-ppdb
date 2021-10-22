@@ -62,7 +62,7 @@
                                             <label class="form-label" for="jk">Jenis Kelamin</label>
                                             <!-- <input type="text" class="form-control" name="jk" id="jk" value="<?= $siswa->jk ?>" placeholder=""> -->
                                             <select class="form-control" name="jk" id="jk">
-                                                <option value="">Pilih</option>
+                                                <option value="">----Pilih Di Sini----</option>
                                                 <option <?= $siswa->jk == 'Laki-laki' ? 'selected' : '' ?> value="Laki-laki">Laki-laki</option>
                                                 <option <?= $siswa->jk == 'Perempuan' ? 'selected' : '' ?> value="Perempuan">Perempuan</option>
                                             </select>
@@ -212,7 +212,7 @@
                                         </div>
                                         <div class="mb-3 col-md-6">
                                             <label class="form-label" for="id_jurusan">Jurusan <span class="text-danger">*</span></label>
-                                            <select class="form-control" readonly name="id_jurusan" id="id_jurusan">
+                                            <select class="form-control" disabled id="id_jurusan">
                                                 <option value="">----Pilih Di Sini----</option>
                                                 <?php foreach ($jurusan as $key => $jur) : ?>
                                                     <option value="<?= $jur->id ?>" <?= $siswa->id_jurusan == $jur->id ? 'selected' : '' ?>><?= $jur->jurusan ?></option>
@@ -231,8 +231,8 @@
                                 <form action="<?= base_url('siswa/biodata/saveAyah') ?>" method="POST">
                                     <div class="row">
                                         <div class="mb-3 col-md-6">
-                                            <label class="form-label" for="nama_ayah">Nama Ayah</label>
-                                            <input type="text" class="form-control" name="nama_ayah" id="nama_ayah" value="<?= $siswa->nama_ayah ?>" placeholder="">
+                                            <label class="form-label" for="nama_ayah">Nama Ayah <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" name="nama_ayah" id="nama_ayah" value="<?= $siswa->nama_ayah ?>" required placeholder="">
                                         </div>
                                         <div class="mb-3 col-md-6">
                                             <label class="form-label" for="nik_ayah">NIK Ayah</label>
@@ -257,9 +257,9 @@
                                     </div>
                                     <div class="row">
                                         <div class="mb-3 col-md-6">
-                                            <label class="form-label" for="pekerjaan_ayah">Pekerjaan Ayah</label>
+                                            <label class="form-label" for="pekerjaan_ayah">Pekerjaan Ayah <span class="text-danger">*</span></label>
                                             <!-- <input type="text" class="form-control" name="pekerjaan_ayah" id="pekerjaan_ayah" value="<?= $siswa->pekerjaan_ayah ?>" placeholder=""> -->
-                                            <select class="form-control" name="pekerjaan_ayah">
+                                            <select class="form-control" required name="pekerjaan_ayah">
                                                 <option value="">----Pilih Di Sini----</option>
                                                 <?php foreach ($pekerjaan as $val) : ?>
                                                     <option value="<?= $val->id ?>" <?= $siswa->pekerjaan_ayah == $val->id ? 'selected' : '' ?>><?= $val->pekerjaan ?></option>
@@ -280,7 +280,7 @@
                                     <div class="row">
                                         <div class="mb-3 col-md-6">
                                             <label class="form-label" for="nohp_ayah">Nomor HP Ayah</label>
-                                            <input type="number" class="form-control" name="nohp_ayah" id="nohp_ayah" value="<?= $siswa->nohp_ayah ?>" required placeholder="">
+                                            <input type="number" class="form-control" name="nohp_ayah" id="nohp_ayah" value="<?= $siswa->nohp_ayah ?>" placeholder="">
                                         </div>
                                     </div>
                                     <div class="row">
@@ -294,8 +294,8 @@
                                 <form action="<?= base_url('siswa/biodata/saveIbu') ?>" method="POST">
                                     <div class="row">
                                         <div class="mb-3 col-md-6">
-                                            <label class="form-label" for="nama_ibu">Nama Ibu</label>
-                                            <input type="text" class="form-control" name="nama_ibu" id="nama_ibu" value="<?= $siswa->nama_ibu ?>" placeholder="">
+                                            <label class="form-label" for="nama_ibu">Nama Ibu <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" name="nama_ibu" id="nama_ibu" value="<?= $siswa->nama_ibu ?>" required placeholder="">
                                         </div>
                                         <div class="mb-3 col-md-6">
                                             <label class="form-label" for="nik_ibu">NIK Ibu</label>
@@ -320,9 +320,9 @@
                                     </div>
                                     <div class="row">
                                         <div class="mb-3 col-md-6">
-                                            <label class="form-label" for="pekerjaan_ibu">Pekerjaan Ibu</label>
+                                            <label class="form-label" for="pekerjaan_ibu">Pekerjaan Ibu <span class="text-danger">*</span></label>
                                             <!-- <input type="text" class="form-control" name="pekerjaan_ibu" id="pekerjaan_ibu" value="<?= $siswa->pekerjaan_ibu ?>" placeholder=""> -->
-                                            <select class="form-control" name="pekerjaan_ibu">
+                                            <select class="form-control" required name="pekerjaan_ibu">
                                                 <option value="">----Pilih Di Sini----</option>
                                                 <?php foreach ($pekerjaan as $val) : ?>
                                                     <option value="<?= $val->id ?>" <?= $siswa->pekerjaan_ibu == $val->id ? 'selected' : '' ?>><?= $val->pekerjaan ?></option>
@@ -343,7 +343,7 @@
                                     <div class="row">
                                         <div class="mb-3 col-md-6">
                                             <label class="form-label" for="nohp_ibu">Nomor HP Ibu</label>
-                                            <input type="number" class="form-control" name="nohp_ibu" id="nohp_ibu" value="<?= $siswa->nohp_ibu ?>" required placeholder="">
+                                            <input type="number" class="form-control" name="nohp_ibu" id="nohp_ibu" value="<?= $siswa->nohp_ibu ?>" placeholder="">
                                         </div>
                                     </div>
                                     <div class="row">
@@ -406,7 +406,7 @@
                                     <div class="row">
                                         <div class="mb-3 col-md-6">
                                             <label class="form-label" for="nohp_wali">Nomor HP Wali</label>
-                                            <input type="number" class="form-control" name="nohp_wali" id="nohp_wali" value="<?= $siswa->nohp_wali ?>" required placeholder="">
+                                            <input type="number" class="form-control" name="nohp_wali" id="nohp_wali" value="<?= $siswa->nohp_wali ?>" placeholder="">
                                         </div>
                                     </div>
                                     <div class="row">
@@ -420,7 +420,7 @@
                                 <?= form_open_multipart('siswa/biodata/saveImg/' . $siswa->id) ?>
                                 <div class="row">
                                     <div class="mb-3 col-md-6">
-                                        <label class="form-label" for="gambar">Foto</label>
+                                        <label class="form-label" for="gambar">Foto <small class="text-danger">maksimal 2 MB</small> </label>
                                         <input type="hidden" name="id" value="<?= @$siswa->id ?>">
                                         <input type="hidden" name="foto" value="<?= @$siswa->foto ?>">
                                         <input type="hidden" name="kode" value="<?= @$siswa->kode_pendaftaran ?>">
@@ -447,7 +447,7 @@
                                         <div class="row">
                                             <div class="mb-3 col-md-6">
                                                 <label class="form-label" for=""><?= $val->persyaratan . ' <small class="text-success">' . $val->satuan . ' Lembar</small>' ?></label>
-                                                <select class="form-control" readonly name="status[]" id="">
+                                                <select class="form-control" disabled name="status[]" id="">
                                                     <option value="">----Belum dicek----</option>
                                                     <?php if (isset($persyaratan_siswa[$key]->id_siswa)) : ?>
                                                         <option <?= $persyaratan_siswa[$key]->id_siswa . $persyaratan_siswa[$key]->id_persyaratan != null && $persyaratan_siswa[$key]->status == 0 ? 'selected' : '' ?> value="0">Belum</option>
@@ -464,7 +464,7 @@
                                     <?php endforeach ?>
                                     <div class="mb-3 col-md-6">
                                         <label class="form-label" for="verifikasi">Status Verifikasi</label>
-                                        <select class="form-control" readonly name="verifikasi">
+                                        <select class="form-control" disabled name="verifikasi">
                                             <option value="">----Belum dicek----</option>
                                             <option value="Sudah Verifikasi" <?= $siswa->status == "Sudah Verifikasi" ? 'selected' : '' ?>>Sudah Verifikasi</option>
                                             <option value="Belum Verifikasi" <?= $siswa->status == "Belum Verifikasi" ? 'selected' : '' ?>>Belum Verifikasi</option>

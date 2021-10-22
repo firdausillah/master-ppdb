@@ -61,8 +61,8 @@ class Biodata extends CI_Controller
         
         
         $data = [
-            'kode_pendaftaran'    => $this->input->post('kode_pendaftaran'),
-            'password'    => $this->input->post('password'),
+            // 'kode_pendaftaran'    => $this->input->post('kode_pendaftaran'),
+            // 'password'    => $this->input->post('password'),
             'nama'    => $this->input->post('nama'),
             'jk'        => $this->input->post('jk'),
             'nisn'    => $this->input->post('nisn'),
@@ -88,8 +88,8 @@ class Biodata extends CI_Controller
             'moda_transportasi'  => $this->input->post('moda_transportasi'),
             'anak_berapa'      => $this->input->post('anak_berapa'),
             'punya_kip'  => $this->input->post('punya_kip'),
-            'sekolah_asal'    => $this->input->post('sekolah_asal'),
-            'id_jurusan'        => $this->input->post('id_jurusan')
+            'sekolah_asal'    => $this->input->post('sekolah_asal')
+            // 'id_jurusan'        => $this->input->post('id_jurusan')
         ];
         // print_r($data);
         // exit();
