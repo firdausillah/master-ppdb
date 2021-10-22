@@ -59,7 +59,7 @@
                             <tr class="text-center">
                                 <td colspan="3" style="width: 20%;">Kode Pendaftaran</td>
                                 <td colspan="2" style="width: 20%;">Tanggal Pendaftaran</td>
-                                <td colspan="3" style="width: 20%;">jurusan</td>
+                                <td colspan="3" style="width: 20%;">Jurusan</td>
                             </tr>
                             <tr class="text-center">
                                 <td colspan="3" style="width: 20%;"><?= $siswa->kode_pendaftaran ?></td>
