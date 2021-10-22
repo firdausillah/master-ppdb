@@ -7,7 +7,7 @@ class Dashboard extends CI_Controller
     {
         parent::__construct();
 
-        if ($this->session->userdata('status') != "login" && $this->session->userdata('nohp') == null) {
+        if ($this->session->userdata('role') != "siswa") {
             $this->session->set_flashdata('error', 'Silahkan Login');
             redirect(base_url("home"));
         }

@@ -38,7 +38,7 @@
                                                     <div class="row">
                                                         <div class="mb-3 col-md-6">
                                                             <label class="form-label" for="kode_pendaftaran">Kode Pendaftaran <span class="text-danger">*</span></label>
-                                                            <input type="text" class="form-control" name="kode_pendaftaran" id="kode_pendaftaran" value="<?= $siswa->kode_pendaftaran ?>" required placeholder="" disabled>
+                                                            <input type="text" class="form-control" name="kode_pendaftaran" id="kode_pendaftaran" value="<?= $siswa->kode_pendaftaran ?>" required placeholder="" readonly>
                                                         </div>
                                                         <div class="mb-3 col-md-6">
                                                             <label class="form-label" for="password">Password <span class="text-danger">*</span></label>
@@ -184,7 +184,7 @@
                                                             <input type="number" class="form-control" name="anak_berapa" id="anak_berapa" value="<?= $siswa->anak_berapa ?>" placeholder="">
                                                         </div>
                                                         <div class="mb-3 col-md-6">
-                                                            <label class="form-label" for="punya_kip">Kartu Indonesia Pintar (KIP)</label>
+                                                            <label class="form-label" for="punya_kip">Apakah Punya Kartu Indonesia Pintar (KIP)</label>
                                                             <select class="form-control" name="punya_kip">
                                                                 <option value="">----Pilih Di Sini----</option>
                                                                 <option value="Ya" <?= $siswa->punya_kip == 'Ya' ? 'selected' : '' ?>>Ya</option>
@@ -203,6 +203,17 @@
                                                                 <option value="">----Pilih Di Sini----</option>
                                                                 <?php foreach ($jurusan as $key => $jur) : ?>
                                                                     <option value="<?= $jur->id ?>" <?= $siswa->id_jurusan == $jur->id ? 'selected' : '' ?>><?= $jur->jurusan ?></option>
+                                                                <?php endforeach ?>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="mb-3 col-md-6 text-left">
+                                                            <label class="form-label" for="id_pembawa">Marketing</label>
+                                                            <select class="form-control" name="id_pembawa" id="id_pembawa">
+                                                                <option value="">----Pilih Di Sini----</option>
+                                                                <?php foreach ($pembawa as $key => $p) : ?>
+                                                                    <option value="<?= $p->id ?>" <?= $siswa->id_pembawa == $p->id ? 'selected' : '' ?>><?= $p->nama_lengkap ?></option>
                                                                 <?php endforeach ?>
                                                             </select>
                                                         </div>

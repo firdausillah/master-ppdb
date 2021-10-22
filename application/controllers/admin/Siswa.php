@@ -24,10 +24,10 @@ class Siswa extends CI_Controller
 
     public function index()
     {
-        // print_r($this->session->userdata('role')); exit();
+        // print_r($this->SiswaModel->joinPembawa()->result()); exit();
         $data = [
             'title' => 'Data Siswa',
-            'siswa' => $this->SiswaModel->get()->result(),
+            'siswa' => $this->SiswaModel->joinPembawa()->result(),
             'content' => 'admin/siswa/table'
         ];
 
@@ -135,7 +135,8 @@ class Siswa extends CI_Controller
             'anak_berapa'      => $this->input->post('anak_berapa'),
             'punya_kip'  => $this->input->post('punya_kip'),
             'sekolah_asal'    => $this->input->post('sekolah_asal'),
-            'id_jurusan'        => $this->input->post('id_jurusan')
+            'id_jurusan'        => $this->input->post('id_jurusan'),
+            'id_pembawa'        => $this->input->post('id_pembawa')
         ];
 
         if ($this->SiswaModel->update(['id' => $id], $data)) {

@@ -131,13 +131,11 @@
 							<div class="row mt-3">
 								<?php foreach ($persyaratans as $key => $value) : ?>
 									<div class="col-md-6">
-										<a href="" style="text-decoration:none;">
-											<div class="card">
-												<div class="card-body text-center">
-													<h5 class="text-blue"><?= $value->persyaratan ?></h5>
-												</div>
+										<div class="card">
+											<div class="card-body text-center">
+												<h5 class="text-blue"><?= $value->persyaratan ?></h5>
 											</div>
-										</a>
+										</div>
 									</div>
 								<?php endforeach ?>
 							</div>

@@ -17,7 +17,7 @@
                                     <th>No</th>
                                     <th class="text-midle">Kode pendaftaran</th>
                                     <th class="text-midle">Nama Pendaftar</th>
-                                    <th class="d-none d-xl-table-cell">Nomor HP</th>
+                                    <th class="d-none d-xl-table-cell">Pembawa</th>
                                     <th class="text-midle">Status</th>
                                     <th class="text-midle">Asal Sekolah</th>
                                     <th class="text-midle">Action</th>
@@ -29,7 +29,7 @@
                                         <td><?= $no + 1; ?></td>
                                         <td><?= $s->kode_pendaftaran ?></td>
                                         <td><?= $s->nama ?></td>
-                                        <td class="d-none d-xl-table-cell"><?= $s->nohp ?></td>
+                                        <td class="d-none d-xl-table-cell"><?= $s->nama_lengkap ?></td>
                                         <td>
                                             <!-- <a href="" class="tombol-validasi" data-toggle="modal" data-target=".bd-example-modal-sm" data-idsis="<?= $s->id ?>"> -->
                                             <!-- <a href="#<?= $s->status ?>" class="tombol-validasi" data-toggle="modal" data-target=".bd-example-modal-sm" data-idsis="<?= $s->status ?>"> -->

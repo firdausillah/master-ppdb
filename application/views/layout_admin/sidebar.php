@@ -1,7 +1,7 @@
 <nav id="sidebar" class="sidebar">
     <div class="sidebar-content js-simplebar">
-        <a class="sidebar-brand" href="<?= base_url() ?>assets/index.html">
-            <span class="align-middle">AdminKit</span>
+        <a class="sidebar-brand text-center" href="<?= base_url() ?>assets/index.html">
+            <span class="align-middle">SMK PGRI PESANGGARAN</span>
         </a>
 
         <ul class="sidebar-nav">
@@ -14,7 +14,7 @@
                     <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
                 </a>
             </li>
-            
+
             <li class="sidebar-item">
                 <a data-target="#forms" data-toggle="collapse" class="sidebar-link">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle align-middle">
@@ -33,11 +33,16 @@
                     <li class="sidebar-item"><a class="sidebar-link" href="<?= base_url() ?>admin/pekerjaan">Pekerjaan</a></li>
                     <li class="sidebar-item"><a class="sidebar-link" href="<?= base_url() ?>admin/penghasilan">Penghasilan Orang Tua</a></li>
                 </ul>
-            </li> 
+            </li>
 
             <li class="sidebar-item <?= $this->uri->segment(2) == 'siswa' ? 'active' : '' ?>">
                 <a class="sidebar-link" href="<?= base_url() ?>admin/siswa">
                     <i class="align-middle" data-feather="users"></i> <span class="align-middle">Siswa</span>
+                </a>
+            </li>
+            <li class="sidebar-item <?= $this->uri->segment(2) == 'user' ? 'active' : '' ?>">
+                <a class="sidebar-link" href="<?= base_url() ?>admin/user">
+                    <i class="align-middle" data-feather="user"></i> <span class="align-middle">User</span>
                 </a>
             </li>
 

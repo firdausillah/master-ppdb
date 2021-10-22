@@ -8,7 +8,7 @@ class Biodata extends CI_Controller
     {
         parent::__construct();
 
-        if ($this->session->userdata('status') != "login" && $this->session->userdata('nohp') == null ) {
+        if ($this->session->userdata('role') != "siswa") {
             $this->session->set_flashdata('error', 'Silahkan Login');
             redirect(base_url("home"));
         }
@@ -59,6 +59,7 @@ class Biodata extends CI_Controller
 
     public function savePribadi(){
         
+        
         $data = [
             'kode_pendaftaran'    => $this->input->post('kode_pendaftaran'),
             'password'    => $this->input->post('password'),
@@ -89,6 +90,8 @@ class Biodata extends CI_Controller
             'sekolah_asal'    => $this->input->post('sekolah_asal'),
             'id_jurusan'        => $this->input->post('id_jurusan')
         ];
+        // print_r($data);
+        // exit();
         
         if ($this->SiswaModel->update(['id' => $this->session->userdata('id')], $data)) {
             $this->session->set_flashdata('flash', 'Data berhasil disimpan');

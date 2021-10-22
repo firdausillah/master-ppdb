@@ -18,6 +18,13 @@
 		return $this->db->get();
 	}
 
+	function joinPembawa(){
+		$this->db->select('*');
+		$this->db->from('tb_siswa');
+		$this->db->join('tb_pembawa', 'tb_pembawa.id = tb_siswa.id_pembawa', 'left');
+		return $this->db->get();
+	}
+
 	function joinJurusanKode($kode){
 		$this->db->select('*');
 		$this->db->from('tb_siswa');
