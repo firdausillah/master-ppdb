@@ -102,7 +102,7 @@
 											</div>
 											<div class="mb-4">
 												<label class="form-label">Password</label>
-												<input class="form-control" type="password" name="password" placeholder="Enter your password">
+												<input class="form-control" type="password" name="password" placeholder="Masukan password">
 											</div>
 											<div class="text-center mt-4">
 												<button type="submit" class="btn btn-md btn-primary">Login</button>
