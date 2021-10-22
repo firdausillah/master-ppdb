@@ -7,7 +7,8 @@
 
                     </div>
                     <div class="row">
-                        <div class="col-12 col-lg-4 d-flex">
+                        <div class="col-12 col-lg-4 ">
+                            <!-- <div class="col-12 col-lg-4 d-flex"> -->
                             <div class="card flex-fill">
                                 <div class="card-header">
                                     <h5 class="card-title mb-0">Status Persyaratan</h5>
@@ -33,12 +34,15 @@
                                                             <?php else : ?>
                                                                 <span class="badge bg-danger">Belum Lengkap</span>
                                                             <?php endif ?>
+                                                        <?php else : ?>
+                                                            <span class="badge bg-danger">Belum Lengkap</span>
                                                         <?php endif ?>
                                                     </td>
                                                 </tr>
                                             <?php endforeach ?>
                                         </tbody>
                                     </table>
+                                    <a href="<?= base_url() ?>cetak/bukti/<?= $siswa->kode_pendaftaran ?>" target='_blank' class="btn btn-primary btn-lg btn-block my-3"> <i data-feather="save"></i> Cetak Bukti Pendaftaran</a>
                                 </div>
                             </div>
                         </div>
@@ -86,7 +90,9 @@
                                                     </tbody>
                                                 </table>
                                             </div>
-                                            <a href="<?= base_url() ?>cetak/bukti/<?= $siswa->kode_pendaftaran ?>" target='_blank' class="btn btn-primary btn-lg btn-block my-3"> <i data-feather="save"></i> Cetak Bukti Pendaftaran</a>
+                                            <a href="<?= $img = base_url('uploads/img/siswa/' . $siswa->foto) ?>" class="pt-5">
+                                                <img src="<?= $img ?>" height="150px" alt="" class="rounded">
+                                            </a>
                                         </div>
                                         <div class="col-md-6">
                                             <label for="" class="font-weight-bold">Data Ayah</label>

@@ -27,6 +27,9 @@
                                                 <a class="nav-link <?= $page == 'wali' ? 'active' : ''; ?>" data-toggle="tab" href="#wali">Data Wali</a>
                                             </li>
                                             <li class="nav-item">
+                                                <a class="nav-link <?= $page == 'foto' ? 'active' : ''; ?>" data-toggle="tab" href="#foto">Foto</a>
+                                            </li>
+                                            <li class="nav-item">
                                                 <a class="nav-link <?= $page == 'persyaratan' ? 'active' : ''; ?>" data-toggle="tab" href="#persyaratan">Data persyaratan</a>
                                             </li>
                                         </ul>
@@ -386,6 +389,15 @@
                                                         </div>
                                                     </div>
                                                 </form>
+                                            </div>
+                                            <div id="foto" class="container tab-pane <?= $page == 'foto' ? 'active' : 'fade'; ?>"><br>
+                                                <div class="row">
+                                                    <div class="mb-3 col-md-6">
+                                                        <a href="<?= $img = base_url('uploads/img/siswa/' . $siswa->foto) ?>" class="pt-5">
+                                                            <img src="<?= $img ?>" height="150px" alt="" class="rounded">
+                                                        </a>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div id="persyaratan" class="container tab-pane <?= $page == 'persyaratan' ? 'active' : 'fade'; ?>"><br>
                                                 <form action="<?= base_url('admin/siswa/savePersyaratan/' . $siswa->id) ?>" method="POST">

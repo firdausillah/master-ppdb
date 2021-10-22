@@ -19,7 +19,8 @@
 	}
 
 	function joinPembawa(){
-		$this->db->select('*');
+		// $this->db->select('tb_siswa.id as id ', 'kode_pendaftaran', 'nama', 'status', 'sekolah_asal', 'nama_lengkap as pembawa');
+		$this->db->select('tb_siswa.id as id, kode_pendaftaran, nama, status, sekolah_asal, nama_lengkap as pembawa');
 		$this->db->from('tb_siswa');
 		$this->db->join('tb_pembawa', 'tb_pembawa.id = tb_siswa.id_pembawa', 'left');
 		return $this->db->get();

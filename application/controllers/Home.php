@@ -44,6 +44,7 @@ class Home extends CI_Controller {
 			'nohp'	=> $this->input->post('nohp'),
 			'sekolah_asal'	=> $this->input->post('sekolah_asal'),
 			'id_jurusan'	=> $this->input->post('jurusan'),
+			'id_gelombang'	=> $this->input->post('id_gel'),
 			'password'	=> $this->input->post('password'),
 			// 'tgl_daftar'	=> ''
 		];

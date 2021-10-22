@@ -157,4 +157,36 @@ class Biodata extends CI_Controller
         }
         redirect('siswa/biodata?page=wali');
     }
+
+    public function saveImg(){
+        // print_r($this->input->post('foto')); exit();
+        $kode = $this->input->post('kode');
+        $foto = $this->input->post('foto');
+        $id = $this->input->post('id');
+        if (!empty($_FILES['gambar']['name'])) { // $_FILES untuk mengambil data foto
+            $cfg = [
+                'upload_path' => './uploads/img/siswa',
+                'allowed_types' => 'gif|jpg|png',
+                // 'max_size' => '5000',
+                'overwrite' => (empty($foto) ? FALSE : TRUE)
+            ];
+            if (!empty($foto)) $cfg['file_name'] = $kode;
+            // print_r($cfg); exit();
+            $this->load->library('upload', $cfg);
+            
+            if ($this->upload->do_upload('gambar')) $foto = $this->upload->data('file_name');
+            else exit('Error : ' . $this->upload->display_errors());
+        }
+        // print_r($foto); exit();
+        
+        if (empty($id)) {
+            unset($id);
+            if (!$this->SiswaModel->add(['foto' => $foto])) exit('Insert Data Error.');
+        } else {
+            // print_r(['foto' => $foto]); exit();
+
+            if (!$this->SiswaModel->update(['id' => $id], ['foto' => $foto])) exit("Update Data Error.");
+        }
+        redirect('siswa/biodata?page=foto');
+    }
 }
