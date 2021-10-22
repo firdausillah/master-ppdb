@@ -63,7 +63,7 @@
                                             <!-- <input type="text" class="form-control" name="jk" id="jk" value="<?= $siswa->jk ?>" placeholder=""> -->
                                             <select class="form-control" name="jk" id="jk">
                                                 <option value="">Pilih</option>
-                                                <option <?= $siswa->jk == 'Laki-Laki' ? 'selected' : '' ?> value="Laki-laki">Laki-laki</option>
+                                                <option <?= $siswa->jk == 'Laki-laki' ? 'selected' : '' ?> value="Laki-laki">Laki-laki</option>
                                                 <option <?= $siswa->jk == 'Perempuan' ? 'selected' : '' ?> value="Perempuan">Perempuan</option>
                                             </select>
                                         </div>
@@ -429,7 +429,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="mb-3 col-md-6">
-                                        <a href="<?= $img = base_url('uploads/img/siswa/' . $siswa->foto) ?>" class="pt-5">
+                                        <a href="<?= $img = base_url('uploads/img/siswa/' . $siswa->foto) ?>" target='_blank' class="pt-5">
                                             <img src="<?= $img ?>" height="150px" alt="" class="rounded">
                                         </a>
                                     </div>

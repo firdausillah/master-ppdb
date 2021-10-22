@@ -57,7 +57,7 @@
                                                             <label class="form-label" for="jk">Jenis Kelamin</label>
                                                             <select class="form-control" name="jk" id="jk">
                                                                 <option value="">Pilih</option>
-                                                                <option <?= $siswa->jk == 'Laki-Laki' ? 'selected' : '' ?> value="Laki-laki">Laki-laki</option>
+                                                                <option <?= $siswa->jk == 'Laki-laki' ? 'selected' : '' ?> value="Laki-laki">Laki-laki</option>
                                                                 <option <?= $siswa->jk == 'Perempuan' ? 'selected' : '' ?> value="Perempuan">Perempuan</option>
                                                             </select>
                                                         </div>
@@ -411,7 +411,7 @@
                                             <div id="foto" class="container tab-pane <?= $page == 'foto' ? 'active' : 'fade'; ?>"><br>
                                                 <div class="row">
                                                     <div class="mb-3 col-md-6">
-                                                        <a href="<?= $img = base_url('uploads/img/siswa/' . $siswa->foto) ?>" class="pt-5">
+                                                        <a href="<?= $img = base_url('uploads/img/siswa/' . $siswa->foto) ?>" target='_blank' class="pt-5">
                                                             <img src="<?= $img ?>" height="150px" alt="" class="rounded">
                                                         </a>
                                                     </div>
