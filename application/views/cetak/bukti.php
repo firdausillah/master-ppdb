@@ -9,58 +9,130 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Cetak Bukti Pendaftaran <?= $siswa->nama ?></title>
 </head>
 
 <body>
     <section id="cetak">
         <div class="container pt-5 py-5">
-            <div class="row justify-content-center">
+            <div class="row justify-content-center mb-4">
                 <div class="col-md-12 text-center">
-                    <h4>BUKTI PENDAFTARAN SISWA BARU</h4>
-                    <h4>SMK PGRI PESANGGARAN</h4>
-                    <h4>TAHUN PELAJARAN 2021-2022</h4>
+                    <h4>BUKTI PENDAFTARAN PPDB ONLINE <?= $profile->nama_sekolah ?></h4>
                 </div>
             </div>
-            <hr>
             <button class="btn btn-secondary d-print-none" onclick="window.print()">Print</button>
             <div class="row">
-                <div class="col-md-6">
-                    <table class="table table-borderless">
+                <div class="col-md-12">
+                    <table class="table table-bordered table-sm">
                         <tbody>
                             <tr>
-                                <td>Kode Pendaftaran</td>
-                                <td>:</td>
-                                <td style="width:60%"><?= $siswa->kode_pendaftaran ?></td>
+                                <td colspan="1" class="text-center" style="width: 10%;"><img src="<?= base_url('assets/img/logo.png') ?>" height="90px" alt=""></td>
+                                <td colspan="4" style="width: 20%;">
+                                    <h5>PENERIMAAN PESERTA DIDIK BARU</h5>
+                                    <h5><?= $profile->nama_sekolah ?></h5>
+                                    <h5>TAHUN AJARAN <?= $profile->tahun_ajaran ?></h5>
+                                </td>
+                                <td colspan="3" style="width: 20%;">
+                                    <h4>PPDB</h4>
+                                    <h4>ONLINE</h4>
+                                </td>
                             </tr>
                             <tr>
-                                <td>Nama Lengkap</td>
-                                <td>:</td>
-                                <td><?= $siswa->nama ?></td>
+                                <td colspan="1" class="text-center"><img src="<?= base_url('uploads/img/siswa/' . $siswa->foto) ?>" height="90px" alt=""></td>
+                                <td colspan="4">
+                                    <span>TANDA BUKTI PENDAFTARAN</span><br>
+                                    <span>PENERIMAAN PESERTA DIDIK BARU</span><br>
+                                    <span>TAHUN AJARN <?= $profile->tahun_ajaran ?></span>
+                                </td>
+                                <td colspan="3">
+                                    <span><?= $profile->nama_sekolah ?> Menyatakan</span>
+                                    <span>Dokumen ini adalah Bukti Sah Pendaftaran</span>
+                                    <span>Peneriman Peserta Didik Baru</span>
+                                    <span>TAHUN AJARAN <?= $profile->tahun_ajaran ?></span>
+                                </td>
+                            </tr>
+                            <tr class="text-center">
+                                <td colspan="8">Info Pendaftaran</td>
+                            </tr>
+                            <tr class="text-center">
+                                <td colspan="3" style="width: 20%;">Kode Pendaftaran</td>
+                                <td colspan="2" style="width: 20%;">Tanggal Pendaftaran</td>
+                                <td colspan="3" style="width: 20%;">jurusan</td>
+                            </tr>
+                            <tr class="text-center">
+                                <td colspan="3" style="width: 20%;"><?= $siswa->kode_pendaftaran ?></td>
+                                <td colspan="2" style="width: 20%;"><?= $siswa->tgl_daftar ?></td>
+                                <td colspan="3" style="width: 20%;"><?= $siswa->id_jurusan ?></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-bordered table-sm">
+                        <tbody>
+                            <tr class="text-center">
+                                <td colspan="4" style="width: 50%;">Biodata Siswa</td>
+                                <td colspan="4" style="width: 50%;">Alamat</td>
+                            </tr>
+                            <tr class="">
+                                <td colspan="2" style="width: 20%;">Gelombang Daftar</td>
+                                <td colspan="2" style="width: 30%;"><?= $siswa->kode_pendaftaran ?></td>
+                                <td colspan="2" style="width: 20%;">RT / RW</td>
+                                <td colspan="2" style="width: 30%;"><?= $siswa->rt . ' / ' . $siswa->rw ?></td>
+                            </tr>
+                            <tr class="">
+                                <td colspan="2" style="width: 20%;">Nama Lengkap</td>
+                                <td colspan="2" style="width: 30%;"><?= $siswa->nama ?></td>
+                                <td colspan="2" style="width: 20%;">Dusun</td>
+                                <td colspan="2" style="width: 30%;"><?= $siswa->dusun ?></td>
+                            </tr>
+                            <tr class="">
+                                <td colspan="2" style="width: 20%;">Tempat Lahir</td>
+                                <td colspan="2" style="width: 30%;"><?= $siswa->tempatlahir_siswa ?></td>
+                                <td colspan="2" style="width: 20%;">Desa</td>
+                                <td colspan="2" style="width: 30%;"><?= $siswa->desa ?></td>
+                            </tr>
+                            <tr class="">
+                                <td colspan="2" style="width: 20%;">Tanggal Lahir</td>
+                                <td colspan="2" style="width: 30%;"><?= $siswa->tgllahir_siswa ?></td>
+                                <td colspan="2" style="width: 20%;">Kecamatan</td>
+                                <td colspan="2" style="width: 30%;"><?= $siswa->kec ?></td>
+                            </tr>
+                            <tr class="">
+                                <td colspan="2" style="width: 20%;">Jenis Kelamin</td>
+                                <td colspan="2" style="width: 30%;"><?= $siswa->jk ?></td>
+                                <td colspan="2" style="width: 20%;">Kabupaten</td>
+                                <td colspan="2" style="width: 30%;">Banyuwangi</td>
+                            </tr>
+                            <tr class="">
+                                <td colspan="2" style="width: 20%;">Sekolah Asal</td>
+                                <td colspan="2" style="width: 30%;"><?= $siswa->sekolah_asal ?></td>
+                                <td colspan="2" style="width: 20%;">No. HP</td>
+                                <td colspan="2" style="width: 30%;"><?= $siswa->nohp ?></td>
                             </tr>
                             <tr>
-                                <td>NIK</td>
-                                <td>:</td>
-                                <td><?= $siswa->nik_siswa ?></td>
+                                <td colspan="8" class="text-center">Data Orang tua</td>
                             </tr>
                             <tr>
-                                <td>Nomor HP</td>
-                                <td>:</td>
-                                <td><?= $siswa->nohp ?></td>
+                                <td colspan="3">Nama Ayah Kandung</td>
+                                <td colspan="5"><?= $siswa->nama_ayah ?></td>
                             </tr>
                             <tr>
-                                <td>Jurusan Pilihan</td>
-                                <td>:</td>
-                                <td><?= $siswa->jurusan ?></td>
+                                <td colspan="3">Nama Ibu Kandung</td>
+                                <td colspan="5"><?= $siswa->nama_ibu ?></td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">No. Hp Wali</td>
+                                <td colspan="5"><?= $siswa->nohp_wali ?></td>
+                            </tr>
+                            <tr>
+                                <td colspan="8" class="text-center">Warning! Siswa yang di terima pada gelombang ini, namun belum daftar ulang sesuai jadwal yang di tentukan, maka akan membayar daftar ulang sesuai ketentuan gelombang berikutnya. </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
-            <p>Siswa tersebut dinyatakan sudah mendaftar dan <span class="text-uppercase"> <u><?= $siswa->status == 1 ? 'Sudah verifikasi' : 'belum verifikasi' ?></u> </span> kelengkapan datanya oleh admin, dengan persyaratan berikut : </p>
             <div class="row justify-content-center">
                 <div class="col-md-6">
-                    <table class="table my-0">
+                    <table class="table table-bordered table-sm my-0">
                         <thead>
                             <tr>
                                 <th>Persyaratan</th>
@@ -97,7 +169,6 @@
                     <p class="pt-5 mt-2"><?= $siswa->nama ?></p>
                 </div>
             </div>
-            <hr>
         </div>
     </section>
 

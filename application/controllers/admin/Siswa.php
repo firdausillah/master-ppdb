@@ -129,6 +129,7 @@ class Siswa extends CI_Controller
             'dusun'  => $this->input->post('dusun'),
             'desa'    => $this->input->post('desa'),
             'kec'      => $this->input->post('kec'),
+            'kab'      => $this->input->post('kab'),
             'kodepos'      => $this->input->post('kodepos'),
             'tempat_tinggal'        => $this->input->post('tempat_tinggal'),
             'moda_transportasi'  => $this->input->post('moda_transportasi'),
@@ -152,6 +153,7 @@ class Siswa extends CI_Controller
 
         $data = [
             'nama_ayah' => $this->input->post('nama_ayah'),
+            'nohp_ayah' => $this->input->post('nohp_ayah'),
             'nik_ayah'  => $this->input->post('nik_ayah'),
             'tgllahir_ayah' => $this->input->post('tgllahir_ayah'),
             'pendidikan_ayah'   => $this->input->post('pendidikan_ayah'),
@@ -172,6 +174,7 @@ class Siswa extends CI_Controller
 
         $data = [
             'nama_ibu' => $this->input->post('nama_ibu'),
+            'nohp_ibu' => $this->input->post('nohp_ibu'),
             'nik_ibu'  => $this->input->post('nik_ibu'),
             'tgllahir_ibu' => $this->input->post('tgllahir_ibu'),
             'pendidikan_ibu'   => $this->input->post('pendidikan_ibu'),
@@ -192,6 +195,7 @@ class Siswa extends CI_Controller
 
         $data = [
             'nama_wali' => $this->input->post('nama_wali'),
+            'nohp_wali' => $this->input->post('nohp_wali'),
             'nik_wali'  => $this->input->post('nik_wali'),
             'tgllahir_wali' => $this->input->post('tgllahir_wali'),
             'pendidikan_wali'   => $this->input->post('pendidikan_wali'),

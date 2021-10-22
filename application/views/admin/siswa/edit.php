@@ -157,8 +157,8 @@
                                                             <input type="text" class="form-control" name="kec" id="kec" value="<?= $siswa->kec ?>" placeholder="">
                                                         </div>
                                                         <div class="mb-3 col-md-6">
-                                                            <label class="form-label" for="kodepos">Kodepos</label>
-                                                            <input type="text" class="form-control" name="kodepos" id="kodepos" value="<?= $siswa->kodepos ?>" placeholder="">
+                                                            <label class="form-label" for="kab">Kabupaten</label>
+                                                            <input type="text" class="form-control" name="kab" id="kab" value="<?= $siswa->kab ?>" placeholder="">
                                                         </div>
                                                     </div>
                                                     <div class="row">
@@ -276,6 +276,12 @@
                                                         </div>
                                                     </div>
                                                     <div class="row">
+                                                        <div class="mb-3 col-md-6">
+                                                            <label class="form-label" for="nohp_ayah">Nomor HP Ayah</label>
+                                                            <input type="number" class="form-control" name="nohp_ayah" id="nohp_ayah" value="<?= $siswa->nohp_ayah ?>" required placeholder="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
                                                         <div class="mb-3 col-md-12 text-right">
                                                             <button type="submit" class="btn btn-primary">Simpan</button>
                                                         </div>
@@ -330,6 +336,12 @@
                                                         </div>
                                                     </div>
                                                     <div class="row">
+                                                        <div class="mb-3 col-md-6">
+                                                            <label class="form-label" for="nohp_ibu">Nomor HP Ibu</label>
+                                                            <input type="number" class="form-control" name="nohp_ibu" id="nohp_ibu" value="<?= $siswa->nohp_ibu ?>" required placeholder="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
                                                         <div class="mb-3 col-md-12 text-right">
                                                             <button type="submit" class="btn btn-primary">Simpan</button>
                                                         </div>
@@ -381,6 +393,12 @@
                                                                     <option value="<?= $val->id ?>" <?= $siswa->penghasilan_wali == $val->id ? 'selected' : '' ?>><?= $val->penghasilan ?></option>
                                                                 <?php endforeach ?>
                                                             </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="mb-3 col-md-6">
+                                                            <label class="form-label" for="nohp_wali">Nomor HP Wali</label>
+                                                            <input type="number" class="form-control" name="nohp_wali" id="nohp_wali" value="<?= $siswa->nohp_wali ?>" required placeholder="">
                                                         </div>
                                                     </div>
                                                     <div class="row">

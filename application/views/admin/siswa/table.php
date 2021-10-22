@@ -33,16 +33,16 @@
                                         <td>
                                             <!-- <a href="" class="tombol-validasi" data-toggle="modal" data-target=".bd-example-modal-sm" data-idsis="<?= $s->id ?>"> -->
                                             <!-- <a href="#<?= $s->status ?>" class="tombol-validasi" data-toggle="modal" data-target=".bd-example-modal-sm" data-idsis="<?= $s->status ?>"> -->
-                                                <?php if ($s->status == 'Sudah Verifikasi') : ?>
-                                                    <span class="btn btn-success btn-pill btn-sm">Verifikasi</span>
-                                                <?php else : ?>
-                                                    <span class="btn btn-secondary btn-pill btn-sm">Belum Verifikasi</span>
-                                                <?php endif ?>
+                                            <?php if ($s->status == 'Sudah Verifikasi') : ?>
+                                                <span class="btn btn-success btn-pill btn-sm">Verifikasi</span>
+                                            <?php else : ?>
+                                                <span class="btn btn-secondary btn-pill btn-sm">Belum Verifikasi</span>
+                                            <?php endif ?>
                                             <!-- </a> -->
                                         </td>
                                         <td><?= $s->sekolah_asal ?></td>
                                         <td>
-                                            <a href="<?= base_url('admin/siswa/print/' . $s->id) ?>" class="btn btn-success btn-sm"><i class="fa fa-print"></i></a>
+                                            <a href="<?= base_url() ?>cetak/bukti/<?= $s->kode_pendaftaran ?>" target='_blank' class="btn btn-success btn-sm"><i class="fa fa-print"></i></a>
                                             <a href="<?= base_url('admin/siswa/edit/' . $s->id . '?page=pribadi') ?>" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
                                             <a href="<?= base_url('admin/siswa/delete/' . $s->id) ?>" class="btn btn-danger btn-sm tombol-hapus"><i class="fa fa-trash"></i></a>
                                         </td>
