@@ -62,7 +62,7 @@
             <div class="modal-body">
                 <div class="mb-3">
                     <label class="form-label">Gelombang</label>
-                    <input type="number" class="form-control" name="gelombang" required>
+                    <input type="text" class="form-control" name="gelombang" required>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Tgl di Buka</label>

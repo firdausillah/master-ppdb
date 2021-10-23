@@ -54,15 +54,15 @@
                                 </td>
                             </tr>
                             <tr class="text-center">
-                                <td colspan="8">Info Pendaftaran</td>
+                                <td colspan="8"><strong>Pendaftaran</strong></td>
                             </tr>
                             <tr class="text-center">
-                                <td colspan="3" style="width: 20%;">Kode Pendaftaran</td>
-                                <td colspan="2" style="width: 20%;">Tanggal Pendaftaran</td>
-                                <td colspan="3" style="width: 20%;">Jurusan</td>
+                                <td colspan="3" style="width: 20%;"><strong>Kode Pendaftaran</strong></td>
+                                <td colspan="2" style="width: 20%;"><strong>Tanggal Pendaftaran</strong></td>
+                                <td colspan="3" style="width: 20%;"><strong>Jurusan</strong></td>
                             </tr>
                             <tr class="text-center">
-                                <td colspan="3" style="width: 20%;"><?= $siswa->kode_pendaftaran ?></td>
+                                <td colspan="3" style="width: 20%;"><strong><?= $siswa->kode_pendaftaran ?></strong></td>
                                 <td colspan="2" style="width: 20%;"><?= $siswa->tgl_daftar ?></td>
                                 <td colspan="3" style="width: 20%;"><?= $siswa->jurusan ?></td>
                             </tr>
@@ -111,7 +111,7 @@
                                 <td colspan="2" style="width: 30%;"><?= $siswa->nohp ?></td>
                             </tr>
                             <tr>
-                                <td colspan="8" class="text-center">Data Orang tua</td>
+                                <td colspan="8" class="text-center"><strong>Data Orang tua</strong></td>
                             </tr>
                             <tr>
                                 <td colspan="3">Nama Ayah Kandung</td>
@@ -189,7 +189,7 @@
                     <table class="table table-bordered table-sm">
                         <tr>
                             <td style="width: 20%;">Kode Pembayaran</td>
-                            <td><?= $siswa->kode_pendaftaran ?></td>
+                            <td><strong><?= $siswa->kode_pendaftaran ?></strong></td>
                             <td style="width: 20%;">Tanggal</td>
                             <td style="width: 30%;"></td>
                         </tr>
@@ -199,7 +199,7 @@
                         </tr>
                         <tr>
                             <td style="height: 50px;">Terbilang</td>
-                            <td colspan="3"></td>
+                            <td colspan="3"><strong>Lima Puluh Ribu Rupiah</strong></td>
                         </tr>
                         <tr>
                             <td>Untuk Pembayaran</td>
@@ -212,7 +212,7 @@
                 <div class="col-md-10">
                     <table class="table table-bordered table-sm">
                         <tr>
-                            <td style="width: 40%; height: 100px;" class="text-center">Terbilang dalam nominal</td>
+                            <td style="width: 40%; height: 100px;" class="text-center">Terbilang dalam nominal <br><br><br> <strong>Rp.50.000,-</strong></td>
                             <td style="width: 30%; height: 100px;" class="text-center">Tanda Tangan Penerima</td>
                             <td style="width: 30%; height: 100px;" class="text-center">Tanda Tangan Penyetor</td>
                         </tr>

@@ -13,7 +13,7 @@
                 <div class="card-body">
                     <div class="mb-3">
                         <label class="form-label">Gelombang</label>
-                        <input type="number" class="form-control" name="gelombang" value="<?= $gelombang->gelombang ?>" required>
+                        <input type="text" class="form-control" name="gelombang" value="<?= $gelombang->gelombang ?>" required>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Tgl di Buka</label>
