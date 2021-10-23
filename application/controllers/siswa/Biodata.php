@@ -172,8 +172,8 @@ class Biodata extends CI_Controller
                 'upload_path' => './uploads/img/siswa',
                 'allowed_types' => 'gif|jpg|png',
                 'file_name' => $kode,
-                // 'max_size' => '5000',
-                'overwrite' => (empty($foto) ? FALSE : TRUE)
+                'overwrite' => (empty($foto) ? FALSE : TRUE),
+                'max_size' => '2028',
             ];
             // if (!empty($foto)) $cfg['file_name'] = $kode;
             // print_r($cfg); exit();
