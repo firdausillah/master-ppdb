@@ -212,8 +212,8 @@
                                                     </div>
                                                     <div class="row">
                                                         <div class="mb-3 col-md-6 text-left">
-                                                            <label class="form-label" for="id_pembawa">Marketing</label>
-                                                            <select class="form-control" name="id_pembawa" id="id_pembawa">
+                                                            <label class="form-label" for="id_pembawa">Marketing <span class="text-danger">*</span></label>
+                                                            <select class="form-control" name="id_pembawa" required id="id_pembawa">
                                                                 <option value="">----Pilih Di Sini----</option>
                                                                 <?php foreach ($pembawa as $key => $p) : ?>
                                                                     <option value="<?= $p->id ?>" <?= $siswa->id_pembawa == $p->id ? 'selected' : '' ?>><?= $p->nama_lengkap ?></option>

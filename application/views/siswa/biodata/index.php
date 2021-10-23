@@ -59,9 +59,9 @@
                                             <input type="text" class="form-control" name="nama" id="nama" value="<?= $siswa->nama ?>" required placeholder="">
                                         </div>
                                         <div class="mb-3 col-md-6">
-                                            <label class="form-label" for="jk">Jenis Kelamin</label>
+                                            <label class="form-label" for="jk">Jenis Kelamin <span class="text-danger">*</span></label>
                                             <!-- <input type="text" class="form-control" name="jk" id="jk" value="<?= $siswa->jk ?>" placeholder=""> -->
-                                            <select class="form-control" name="jk" id="jk">
+                                            <select class="form-control" name="jk" id="jk" required>
                                                 <option value="">----Pilih Di Sini----</option>
                                                 <option <?= $siswa->jk == 'Laki-laki' ? 'selected' : '' ?> value="Laki-laki">Laki-laki</option>
                                                 <option <?= $siswa->jk == 'Perempuan' ? 'selected' : '' ?> value="Perempuan">Perempuan</option>
@@ -84,14 +84,14 @@
                                             <input type="number" class="form-control" name="no_kk" id="no_kk" value="<?= $siswa->no_kk ?>" required placeholder="">
                                         </div>
                                         <div class="mb-3 col-md-6">
-                                            <label class="form-label" for="tempatlahir_siswa">Tempat lahir</label>
-                                            <input type="text" class="form-control" name="tempatlahir_siswa" id="tempatlahir_siswa" value="<?= $siswa->tempatlahir_siswa ?>" placeholder="">
+                                            <label class="form-label" for="tempatlahir_siswa">Tempat lahir <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" name="tempatlahir_siswa" required id="tempatlahir_siswa" value="<?= $siswa->tempatlahir_siswa ?>" placeholder="">
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="mb-3 col-md-6">
-                                            <label class="form-label" for="tgllahir_siswa">Tanggal Lahir</label>
-                                            <input type="date" class="form-control" name="tgllahir_siswa" id="tgllahir_siswa" value="<?= $siswa->tgllahir_siswa ?>" placeholder="">
+                                            <label class="form-label" for="tgllahir_siswa">Tanggal Lahir <span class="text-danger">*</span></label>
+                                            <input type="date" class="form-control" required name="tgllahir_siswa" id="tgllahir_siswa" value="<?= $siswa->tgllahir_siswa ?>" placeholder="">
                                         </div>
                                         <div class="mb-3 col-md-6">
                                             <label class="form-label" for="noakte_lahir">Nomor Akte Kelahiran</label>
@@ -139,32 +139,32 @@
                                     </div>
                                     <div class="row">
                                         <div class="mb-3 col-md-6">
-                                            <label class="form-label" for="rt">RT</label>
-                                            <input type="text" class="form-control" name="rt" id="rt" value="<?= $siswa->rt ?>" placeholder="">
+                                            <label class="form-label" for="rt">RT <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" name="rt" id="rt" required value="<?= $siswa->rt ?>" placeholder="">
                                         </div>
                                         <div class="mb-3 col-md-6">
-                                            <label class="form-label" for="rw">RW</label>
-                                            <input type="text" class="form-control" name="rw" id="rw" value="<?= $siswa->rw ?>" placeholder="">
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="mb-3 col-md-6">
-                                            <label class="form-label" for="dusun">Dusun</label>
-                                            <input type="text" class="form-control" name="dusun" id="dusun" value="<?= $siswa->dusun ?>" placeholder="">
-                                        </div>
-                                        <div class="mb-3 col-md-6">
-                                            <label class="form-label" for="desa">Desa</label>
-                                            <input type="text" class="form-control" name="desa" id="desa" value="<?= $siswa->desa ?>" placeholder="">
+                                            <label class="form-label" for="rw">RW <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" name="rw" id="rw" required value="<?= $siswa->rw ?>" placeholder="">
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="mb-3 col-md-6">
-                                            <label class="form-label" for="kec">Kecamatan</label>
-                                            <input type="text" class="form-control" name="kec" id="kec" value="<?= $siswa->kec ?>" placeholder="">
+                                            <label class="form-label" for="dusun">Dusun <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" name="dusun" id="dusun" required value="<?= $siswa->dusun ?>" placeholder="">
                                         </div>
                                         <div class="mb-3 col-md-6">
-                                            <label class="form-label" for="kab">Kabupaten</label>
-                                            <input type="text" class="form-control" name="kab" id="kab" value="<?= $siswa->kab ?>" placeholder="">
+                                            <label class="form-label" for="desa">Desa <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" name="desa" id="desa" required value="<?= $siswa->desa ?>" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="mb-3 col-md-6">
+                                            <label class="form-label" for="kec">Kecamatan <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" name="kec" id="kec" required value="<?= $siswa->kec ?>" placeholder="">
+                                        </div>
+                                        <div class="mb-3 col-md-6">
+                                            <label class="form-label" for="kab">Kabupaten <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" name="kab" id="kab" required value="<?= $siswa->kab ?>" placeholder="">
                                         </div>
                                         <!-- <div class="mb-3 col-md-6">
                                             <label class="form-label" for="kodepos">Kodepos</label>
@@ -405,8 +405,8 @@
                                     </div>
                                     <div class="row">
                                         <div class="mb-3 col-md-6">
-                                            <label class="form-label" for="nohp_wali">Nomor HP Wali</label>
-                                            <input type="number" class="form-control" name="nohp_wali" id="nohp_wali" value="<?= $siswa->nohp_wali ?>" placeholder="">
+                                            <label class="form-label" for="nohp_wali">Nomor HP Wali <span class="text-danger">*</span></label>
+                                            <input type="number" class="form-control" name="nohp_wali" required id="nohp_wali" value="<?= $siswa->nohp_wali ?>" placeholder="">
                                         </div>
                                     </div>
                                     <div class="row">
