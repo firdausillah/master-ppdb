@@ -223,8 +223,14 @@
 						<input type="number" name="nohp" class="form-control" placeholder="Nomor Telepon" required>
 					</div>
 					<div class="mb-3">
-						<label class="form-label">Asal Sekolah</label>
-						<input type="text" name="sekolah_asal" class="form-control" placeholder="Asal Sekolah" required>
+						<label class="form-label">Sekolah Asal</label>
+						<!-- <input type="text" name="sekolah_asal" class="form-control" placeholder="Asal Sekolah" required> -->
+						<select class="form-control" name="sekolah_asal" id="">
+							<option value="">Pilih Sekolah Asal</option>
+							<?php foreach ($asalsekolahs as $key => $asalsekolah) : ?>
+							<option value="<?= $asalsekolah->id ?>"><?= $asalsekolah->nama_asal_sekolah ?></option>
+							<?php endforeach?>
+						</select>
 					</div>
 					<div class="mb-3">
 						<label class="form-label">Jurusan</label>
