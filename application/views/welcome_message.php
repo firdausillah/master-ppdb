@@ -71,7 +71,7 @@
 									<tbody>
 										<?php foreach ($gelombangs as $key => $gelombang) : ?>
 											<tr>
-												<td>Gelombang ke-<?= $gelombang->gelombang ?></td>
+												<td>Gelombang <?= $gelombang->gelombang ?></td>
 												<td class="d-none d-xl-table-cell"><?= $gelombang->tgl_buka ?></td>
 												<td class="d-none d-xl-table-cell"><?= $gelombang->tgl_tutup ?></td>
 												<td class="d-none d-xl-table-cell"><?= $gelombang->status == 1 ? '<span class="badge bg-success"> Dibuka </span>' : '<span class="badge bg-danger"> Ditutup </span>' ?></td>
