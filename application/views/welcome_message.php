@@ -56,7 +56,7 @@
 							<div class="card flex-fill">
 								<div class="card-header">
 
-									<h5 class="card-title mb-0">Gelombang tersedia</h5>
+									<h5 class="card-title mb-0">Gelombang Tersedia</h5>
 								</div>
 								<table class="table table-striped my-0">
 									<thead>

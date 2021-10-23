@@ -177,7 +177,7 @@
                 <div class="col-4">
                     <span>Banyuwangi, <?= date('d F Y') ?></span><br>
                     <span>Pendaftar</span><br>
-                    <p class="pt-5 mt-2"><?= $siswa->nama ?></p>
+                    <p class="pt-5 mt-2"><strong><?= $siswa->nama ?></strong></p>
                 </div>
             </div>
             <hr>
