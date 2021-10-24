@@ -153,7 +153,7 @@
 						<div class="col-sm-8">
 							<div class="card">
 								<div class="card-body">
-									<img src="http://smkn1-salam.sch.id/media_library/posts/post-image-1591974469289.jpg" class="img-fluid" alt="">
+									<img src="<?= base_url('assets/img/alur.jpg') ?>" class="img-fluid" alt="">
 								</div>
 							</div>
 						</div>
