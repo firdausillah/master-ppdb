@@ -9,9 +9,9 @@
 	<meta name="author" content="AdminKit">
 	<meta name="keywords" content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
 
-	<link rel="shortcut icon" href="<?= base_url() ?>assets/img/icons/icon-48x48.png" />
+	<link rel="shortcut icon" href="<?= base_url() ?>assets/img/logo.png" />
 
-	<title>PPDB </title>
+	<title>PPDB <?= $profile->nama_sekolah ?></title>
 
 	<link href="<?= base_url() ?>assets/css/app.css" rel="stylesheet">
 	<link href="<?= base_url() ?>assets/css/style.css" rel="stylesheet">
@@ -228,8 +228,8 @@
 						<select class="form-control" name="sekolah_asal" id="">
 							<option value="">Pilih Sekolah Asal</option>
 							<?php foreach ($asalsekolahs as $key => $asalsekolah) : ?>
-							<option value="<?= $asalsekolah->id ?>"><?= $asalsekolah->nama_asal_sekolah ?></option>
-							<?php endforeach?>
+								<option value="<?= $asalsekolah->id ?>"><?= $asalsekolah->nama_asal_sekolah ?></option>
+							<?php endforeach ?>
 						</select>
 					</div>
 					<div class="mb-3">
