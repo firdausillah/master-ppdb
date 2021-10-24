@@ -15,14 +15,14 @@
                 </a>
             </li>
 
-            <li class="sidebar-item <?= $url == 'jurusan' || $url == 'gelombang' || $url == 'syarat' || $url == 'marketing' || $url == 'tempattinggal' || $url == 'transportasi' || $url == 'pendidikan' || $url == 'pekerjaan' || $url == 'penghasilan' ? 'active' : '' ?>">
+            <li class="sidebar-item <?= $url == 'jurusan' || $url == 'gelombang' || $url == 'syarat' || $url == 'marketing' || $url == 'tempattinggal' || $url == 'transportasi' || $url == 'pendidikan' || $url == 'pekerjaan' || $url == 'penghasilan' || $url == 'asalsekolah' ? 'active' : '' ?>">
                 <a data-target="#forms" data-toggle="collapse" class="sidebar-link">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle align-middle">
                         <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                         <polyline points="22 4 12 14.01 9 11.01"></polyline>
                     </svg> <span class="align-middle">Data Master</span>
                 </a>
-                <ul id="forms" class="sidebar-dropdown list-unstyled collapse <?= $url == 'jurusan' || $url == 'gelombang' || $url == 'syarat' || $url == 'marketing' || $url == 'tempattinggal' || $url == 'transportasi' || $url == 'pendidikan' || $url == 'pekerjaan' || $url == 'penghasilan' ? 'show' : '' ?>" data-parent="#sidebar">
+                <ul id="forms" class="sidebar-dropdown list-unstyled collapse <?= $url == 'jurusan' || $url == 'gelombang' || $url == 'syarat' || $url == 'marketing' || $url == 'tempattinggal' || $url == 'transportasi' || $url == 'pendidikan' || $url == 'pekerjaan' || $url == 'penghasilan' || $url == 'asalsekolah' ? 'show' : '' ?>" data-parent="#sidebar">
                     <li class="sidebar-item <?= $url == 'jurusan' ? 'active' : '' ?>"><a class="sidebar-link" href="<?= base_url() ?>admin/jurusan">Jurusan</a></li>
                     <li class="sidebar-item <?= $url == 'gelombang' ? 'active' : '' ?>"><a class="sidebar-link" href="<?= base_url() ?>admin/gelombang">Gelombang Pendaftaran</a></li>
                     <li class="sidebar-item <?= $url == 'syarat' ? 'active' : '' ?>"><a class="sidebar-link" href="<?= base_url() ?>admin/syarat">Syarat Pendaftaran</a></li>
@@ -32,14 +32,15 @@
                     <li class="sidebar-item <?= $url == 'pendidikan' ? 'active' : '' ?>"><a class="sidebar-link" href="<?= base_url() ?>admin/pendidikan">Pendidikan</a></li>
                     <li class="sidebar-item <?= $url == 'pekerjaan' ? 'active' : '' ?>"><a class="sidebar-link" href="<?= base_url() ?>admin/pekerjaan">Pekerjaan</a></li>
                     <li class="sidebar-item <?= $url == 'penghasilan' ? 'active' : '' ?>"><a class="sidebar-link" href="<?= base_url() ?>admin/penghasilan">Penghasilan Orang Tua</a></li>
+                    <li class="sidebar-item <?= $url == 'asalsekolah' ? 'active' : '' ?>"><a class="sidebar-link" href="<?= base_url() ?>admin/asalsekolah">Asal Sekolah</a></li>
                 </ul>
             </li>
 
-            <li class="sidebar-item <?= $url == 'siswa' ? 'active' : '' ?>">
+            <!-- <li class="sidebar-item <?= $url == 'siswa' ? 'active' : '' ?>">
                 <a class="sidebar-link" href="<?= base_url() ?>admin/siswa">
                     <i class="align-middle" data-feather="users"></i> <span class="align-middle">Siswa</span>
                 </a>
-            </li>
+            </li> -->
             <li class="sidebar-item <?= $this->uri->segment(3) == 'sudahverifikasi' || $this->uri->segment(3) == 'belumverifikasi' ? 'active' : '' ?>">
                 <a data-target="#siswa" data-toggle="collapse" class="sidebar-link">
                     <i class="align-middle" data-feather="users"></i> <span class="align-middle">Siswa</span>
