@@ -18,11 +18,37 @@
 		return $this->db->get();
 	}
 
+	function siswaJurusan(){
+		$this->db->select('*');
+		$this->db->from('tb_siswa');
+		$this->db->join('tb_jurusan', 'tb_jurusan.id = tb_siswa.id_jurusan', 'right');
+		return $this->db->get();
+	}
+
 	function joinPembawa(){
 		// $this->db->select('tb_siswa.id as id ', 'kode_pendaftaran', 'nama', 'status', 'sekolah_asal', 'nama_lengkap as pembawa');
 		$this->db->select('tb_siswa.id as id, kode_pendaftaran, nama, status, sekolah_asal, nama_lengkap as pembawa');
 		$this->db->from('tb_siswa');
 		$this->db->join('tb_pembawa', 'tb_pembawa.id = tb_siswa.id_pembawa', 'left');
+		return $this->db->get();
+	}
+
+	function joinPembawaSudah(){
+		// $this->db->select('tb_siswa.id as id ', 'kode_pendaftaran', 'nama', 'status', 'sekolah_asal', 'nama_lengkap as pembawa');
+		$this->db->select('tb_siswa.id as id, kode_pendaftaran, nama, status, sekolah_asal, nama_lengkap as pembawa');
+		$this->db->from('tb_siswa');
+		$this->db->join('tb_pembawa', 'tb_pembawa.id = tb_siswa.id_pembawa', 'left');
+		$this->db->where(['status' => 'Sudah Verifikasi']);
+		return $this->db->get();
+	}
+
+	function joinPembawaBelum(){
+		// $this->db->select('tb_siswa.id as id ', 'kode_pendaftaran', 'nama', 'status', 'sekolah_asal', 'nama_lengkap as pembawa');
+		$this->db->select('tb_siswa.id as id, kode_pendaftaran, nama, status, sekolah_asal, nama_lengkap as pembawa');
+		$this->db->from('tb_siswa');
+		$this->db->join('tb_pembawa', 'tb_pembawa.id = tb_siswa.id_pembawa', 'left');
+		$this->db->where(['status' => 'Belum Verifikasi'] );
+		$this->db->or_where(['status' => ''] );
 		return $this->db->get();
 	}
 
@@ -36,6 +62,11 @@
 
  	function findBy($id){
  		$this->db->where(['id' => $id]);
+ 		return $this->db->get('tb_siswa');
+ 	}
+
+ 	function findByJurusan($id){
+ 		$this->db->where(['id_jurusan' => $id]);
  		return $this->db->get('tb_siswa');
  	}
 

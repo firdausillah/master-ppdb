@@ -1,12 +1,12 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class AsalSekolah extends CI_Controller
+class Gelombang extends CI_Controller
 {
     function __construct()
     {
         parent::__construct();
-        $this->load->model('AsalSekolahModel');
+        $this->load->model('GelombangModel');
 
         if ($this->session->userdata('role') != 'admin') {
             redirect(base_url("auth/login"));
@@ -16,9 +16,9 @@ class AsalSekolah extends CI_Controller
     public function index()
     {
         $data = [
-            'title' => 'Asal Sekolah',
-            'asal_sekolah' => $this->AsalSekolahModel->get()->result(),
-            'content' => 'admin/asalsekolah/table'
+            'title' => 'Gelombang',
+            'gelombang' => $this->GelombangModel->get()->result(),
+            'content' => 'admin/gelombang/table'
         ];
 
         $this->load->view('layout_admin/base', $data);
@@ -26,23 +26,26 @@ class AsalSekolah extends CI_Controller
 
     public function save(){
         $data = [
-            'nama_asal_sekolah' => $this->input->post('nama_asal_sekolah')
+            'gelombang' => $this->input->post('gelombang'),
+            'tgl_buka'  => $this->input->post('tgl_buka'),
+            'tgl_tutup' => $this->input->post('tgl_tutup'),
+            'status'    => $this->input->post('status')
         ];
         
-        if ($this->AsalSekolahModel->add($data)) {
+        if ($this->GelombangModel->add($data)) {
             $this->session->set_flashdata('flash', 'Data berhasil dimasukan');
         } else {
             $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
         }
 
-        redirect(base_url('admin/Asalsekolah'));
+        redirect(base_url('admin/gelombang'));
     }
 
     public function edit($id){
         $data = [
-            'title' => 'Edit AsalSekolah',
-            'asal_sekolah' => $this->AsalSekolahModel->findBy($id)->row(),
-            'content' => 'admin/asalsekolah/edit'
+            'title' => 'Edit Gelombang',
+            'gelombang' => $this->GelombangModel->findBy($id)->row(),
+            'content' => 'admin/gelombang/edit'
         ];
 
         $this->load->view('layout_admin/base', $data);
@@ -50,24 +53,27 @@ class AsalSekolah extends CI_Controller
 
     public function update($id){
         $data = [
-            'nama_asal_sekolah' => $this->input->post('nama_asal_sekolah')
+            'gelombang' => $this->input->post('gelombang'),
+            'tgl_buka'  => $this->input->post('tgl_buka'),
+            'tgl_tutup' => $this->input->post('tgl_tutup'),
+            'status'    => $this->input->post('status')
         ];
         
-        if ($this->AsalSekolahModel->update(['id' => $id], $data)) {
+        if ($this->GelombangModel->update(['id' => $id], $data)) {
             $this->session->set_flashdata('flash', 'Data berhasil diupdate');
         } else {
             $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
         }
 
-        redirect(base_url('admin/Asalsekolah'));
+        redirect(base_url('admin/gelombang'));
     }
 
     public function delete($id){
-        if ($this->AsalSekolahModel->delete(['id' => $id])) {
+        if ($this->GelombangModel->delete(['id' => $id])) {
             $this->session->set_flashdata('flash', 'Data berhasil dihapus');
         } else {
             $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
         }
-        redirect('admin/Asalsekolah');
+        redirect('admin/gelombang');
     }
 }

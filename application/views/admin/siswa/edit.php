@@ -211,17 +211,6 @@
                                                         </div>
                                                     </div>
                                                     <div class="row">
-                                                        <div class="mb-3 col-md-6 text-left">
-                                                            <label class="form-label" for="id_pembawa">Marketing <span class="text-danger">*</span></label>
-                                                            <select class="form-control" name="id_pembawa" required id="id_pembawa">
-                                                                <option value="">----Pilih Di Sini----</option>
-                                                                <?php foreach ($pembawa as $key => $p) : ?>
-                                                                    <option value="<?= $p->id ?>" <?= $siswa->id_pembawa == $p->id ? 'selected' : '' ?>><?= $p->nama_lengkap ?></option>
-                                                                <?php endforeach ?>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
                                                         <div class="mb-3 col-md-12 text-right">
                                                             <button type="submit" class="btn btn-primary">Simpan</button>
                                                         </div>
@@ -445,6 +434,15 @@
                                                             <option value="">----Pilih Di Sini----</option>
                                                             <option value="Sudah Verifikasi" <?= $siswa->status == "Sudah Verifikasi" ? 'selected' : '' ?>>Sudah Verifikasi</option>
                                                             <option value="Belum Verifikasi" <?= $siswa->status == "Belum Verifikasi" ? 'selected' : '' ?>>Belum Verifikasi</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="mb-3 col-md-6 text-left">
+                                                        <label class="form-label" for="id_pembawa">Marketing <span class="text-danger">*</span></label>
+                                                        <select class="form-control" name="id_pembawa" required id="id_pembawa">
+                                                            <option value="">----Pilih Di Sini----</option>
+                                                            <?php foreach ($pembawa as $key => $p) : ?>
+                                                                <option value="<?= $p->id ?>" <?= $siswa->id_pembawa == $p->id ? 'selected' : '' ?>><?= $p->nama_lengkap ?></option>
+                                                            <?php endforeach ?>
                                                         </select>
                                                     </div>
                                                     <div class="row">

@@ -24,7 +24,6 @@ class Siswa extends CI_Controller
 
     public function index()
     {
-        // print_r($this->SiswaModel->joinPembawa()->result()); exit();
         $data = [
             'title' => 'Data Siswa',
             'siswa' => $this->SiswaModel->joinPembawa()->result(),
@@ -33,6 +32,29 @@ class Siswa extends CI_Controller
 
         $this->load->view('layout_admin/base', $data);
     }
+
+    public function sudahverifikasi()
+    {
+        $data = [
+            'title' => 'Data Siswa',
+            'siswa' => $this->SiswaModel->joinPembawaSudah()->result(),
+            'content' => 'admin/siswa/table'
+        ];
+
+        $this->load->view('layout_admin/base', $data);
+    }
+
+    public function belumverifikasi()
+    {
+        $data = [
+            'title' => 'Data Siswa',
+            'siswa' => $this->SiswaModel->joinPembawaBelum()->result(),
+            'content' => 'admin/siswa/table'
+        ];
+
+        $this->load->view('layout_admin/base', $data);
+    }
+
     public function save()
     {
         $data = [
@@ -136,8 +158,7 @@ class Siswa extends CI_Controller
             'anak_berapa'      => $this->input->post('anak_berapa'),
             'punya_kip'  => $this->input->post('punya_kip'),
             'sekolah_asal'    => $this->input->post('sekolah_asal'),
-            'id_jurusan'        => $this->input->post('id_jurusan'),
-            'id_pembawa'        => $this->input->post('id_pembawa')
+            'id_jurusan'        => $this->input->post('id_jurusan')
         ];
 
         if ($this->SiswaModel->update(['id' => $id], $data)) {
@@ -249,7 +270,9 @@ class Siswa extends CI_Controller
             }
         }
 
-        $ver = ['status' => $this->input->post('verifikasi')];
+        $ver = ['status' => $this->input->post('verifikasi'),
+            'id_pembawa'        => $this->input->post('id_pembawa')];
+        
         // echo "<pre>";
         // print_r($data); 
         // echo "</pre>";
