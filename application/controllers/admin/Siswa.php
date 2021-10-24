@@ -16,6 +16,7 @@ class Siswa extends CI_Controller
         $this->load->model('TransportasiModel');
         $this->load->model('PersyaratanModel');
         $this->load->model('Persyaratan_siswaModel');
+        $this->load->model('AsalSekolahModel');
 
         if ($this->session->userdata('role') != 'admin') {
             redirect(base_url("auth/login"));
@@ -24,6 +25,7 @@ class Siswa extends CI_Controller
 
     public function index()
     {
+        // print_r($this->SiswaModel->joinPembawa()->result()); exit();
         $data = [
             'title' => 'Data Siswa',
             'siswa' => $this->SiswaModel->joinPembawa()->result(),
@@ -82,6 +84,7 @@ class Siswa extends CI_Controller
         $tempattinggal = $this->TempattinggalModel->get()->result();
         $transportasi = $this->TransportasiModel->get()->result();
         $persyaratan = $this->PersyaratanModel->get()->result();
+        $sekolah_asal = $this->AsalSekolahModel->get()->result();
         $persyaratan_siswa = $this->Persyaratan_siswaModel->leftJoinPersyaratan($id)->result();
 
         // if (isset($persyaratan_siswa[1]->id_siswa)) {
@@ -105,6 +108,7 @@ class Siswa extends CI_Controller
             'tempattinggal' => $tempattinggal,
             'transportasi' => $transportasi,
             'persyaratan' => $persyaratan,
+            'sekolah_asal' => $sekolah_asal,
             'persyaratan_siswa' => $persyaratan_siswa
         ];
 

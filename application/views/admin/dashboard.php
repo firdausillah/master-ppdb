@@ -14,7 +14,7 @@
                                         <div class="card">
                                             <div class="card-body">
                                                 <h5 class="card-title mb-4">Jumlah Pendaftar</h5>
-                                                <h1 class="mt-1 mb-3">2.382</h1>
+                                                <h1 class="mt-1 mb-3"><?= count($siswa) ?></h1>
                                                 <!-- <div class="mb-1">
                                                     <span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i> -3.65% </span>
                                                     <span class="text-muted">Since last week</span>
@@ -26,7 +26,7 @@
                                         <div class="card">
                                             <div class="card-body">
                                                 <h5 class="card-title mb-4">Pendaftar Sudah Diverifikasi</h5>
-                                                <h1 class="mt-1 mb-3 text-success">2.382</h1>
+                                                <h1 class="mt-1 mb-3 text-success"><?= $verifikasi ?></h1>
                                                 <!-- <div class="mb-1">
                                                     <span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i> -3.65% </span>
                                                     <span class="text-muted">Since last week</span>
@@ -38,7 +38,7 @@
                                         <div class="card">
                                             <div class="card-body">
                                                 <h5 class="card-title mb-4">Pendaftar Belum Diverifikasi</h5>
-                                                <h1 class="mt-1 mb-3 text-danger">2.382</h1>
+                                                <h1 class="mt-1 mb-3 text-danger"><?= $belum_verifikasi ?></h1>
                                                 <!-- <div class="mb-1">
                                                     <span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i> -3.65% </span>
                                                     <span class="text-muted">Since last week</span>

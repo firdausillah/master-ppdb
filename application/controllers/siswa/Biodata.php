@@ -22,6 +22,7 @@ class Biodata extends CI_Controller
         $this->load->model('TempattinggalModel');
         $this->load->model('TransportasiModel');
         $this->load->model('PersyaratanModel');
+        $this->load->model('AsalSekolahModel');
         $this->load->model('Persyaratan_siswaModel');
     }
 
@@ -37,6 +38,7 @@ class Biodata extends CI_Controller
         $tempattinggal = $this->TempattinggalModel->get()->result();
         $transportasi = $this->TransportasiModel->get()->result();
         $persyaratan = $this->PersyaratanModel->get()->result();
+        $sekolah_asal = $this->AsalSekolahModel->get()->result();
         $persyaratan_siswa = $this->Persyaratan_siswaModel->leftJoinPersyaratan($this->session->userdata('id'))->result();
         
         $data = [
@@ -51,6 +53,7 @@ class Biodata extends CI_Controller
             'tempattinggal' => $tempattinggal,
             'transportasi' => $transportasi,
             'persyaratan' => $persyaratan,
+            'sekolah_asal' => $sekolah_asal,
             'persyaratan_siswa' => $persyaratan_siswa
         ];
 

@@ -208,7 +208,12 @@
                                     <div class="row">
                                         <div class="mb-3 col-md-6">
                                             <label class="form-label" for="sekolah_asal">Sekolah Asal <span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" name="sekolah_asal" id="sekolah_asal" value="<?= $siswa->sekolah_asal ?>" required placeholder="">
+                                            <select class="form-control" name="sekolah_asal" required id="sekolah_asal">
+                                                <option value="">----Pilih Di Sini----</option>
+                                                <?php foreach ($sekolah_asal as $key => $p) : ?>
+                                                    <option value="<?= $p->id ?>" <?= $siswa->sekolah_asal == $p->id ? 'selected' : '' ?>><?= $p->nama_asal_sekolah ?></option>
+                                                <?php endforeach ?>
+                                            </select>
                                         </div>
                                         <div class="mb-3 col-md-6">
                                             <label class="form-label" for="id_jurusan">Jurusan <span class="text-danger">*</span></label>

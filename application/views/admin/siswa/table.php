@@ -40,7 +40,7 @@
                                             <?php endif ?>
                                             <!-- </a> -->
                                         </td>
-                                        <td><?= $s->sekolah_asal ?></td>
+                                        <td><?= $s->nama_asal_sekolah ?></td>
                                         <td>
                                             <a href="<?= base_url() ?>cetak/bukti/<?= $s->kode_pendaftaran ?>" target='_blank' class="btn btn-success btn-sm"><i class="fa fa-print"></i></a>
                                             <a href="<?= base_url('admin/siswa/edit/' . $s->id . '?page=pribadi') ?>" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>

@@ -106,7 +106,7 @@
                             </tr>
                             <tr class="">
                                 <td colspan="2" style="width: 20%;">Sekolah Asal</td>
-                                <td colspan="2" style="width: 30%;"><?= $siswa->sekolah_asal ?></td>
+                                <td colspan="2" style="width: 30%;"><?= $siswa->nama_asal_sekolah ?></td>
                                 <td colspan="2" style="width: 20%;">No. HP</td>
                                 <td colspan="2" style="width: 30%;"><?= $siswa->nohp ?></td>
                             </tr>
