@@ -225,7 +225,7 @@
 					<div class="mb-3">
 						<label class="form-label">Sekolah Asal</label>
 						<!-- <input type="text" name="sekolah_asal" class="form-control" placeholder="Asal Sekolah" required> -->
-						<select class="form-control" name="sekolah_asal" id="">
+						<select class="form-control" name="sekolah_asal" id="" required>
 							<option value="">Pilih Sekolah Asal</option>
 							<?php foreach ($asalsekolahs as $key => $asalsekolah) : ?>
 								<option value="<?= $asalsekolah->id ?>"><?= $asalsekolah->nama_asal_sekolah ?></option>
