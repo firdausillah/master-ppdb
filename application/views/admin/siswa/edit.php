@@ -434,6 +434,14 @@
                                                         </div>
                                                     <?php endforeach ?>
                                                     <div class="mb-3 col-md-6">
+                                                        <label class="form-label" for="daftar_ulang">Daftar Ulang</label>
+                                                        <input type="number" name="daftar_ulang" id="daftar_ulang" value="<?= $siswa->daftar_ulang ?>" class="form-control" placeholder="contoh: 50000">
+                                                    </div>
+                                                    <div class="mb-3 col-md-6">
+                                                        <label class="form-label" for="tgl_daftar_ulang">Tanggal Daftar Ulang</label>
+                                                        <input type="date" name="tgl_daftar_ulang" id="tgl_daftar_ulang" value="<?= $siswa->tgl_daftar_ulang ?>" class="form-control">
+                                                    </div>
+                                                    <div class="mb-3 col-md-6">
                                                         <label class="form-label" for="verifikasi">Status Verifikasi</label>
                                                         <select class="form-control" name="verifikasi">
                                                             <option value="">----Pilih Di Sini----</option>

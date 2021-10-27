@@ -274,8 +274,12 @@ class Siswa extends CI_Controller
             }
         }
 
-        $ver = ['status' => $this->input->post('verifikasi'),
-            'id_pembawa'        => $this->input->post('id_pembawa')];
+        $ver = [
+            'status'    => $this->input->post('verifikasi'),
+            'id_pembawa'    => $this->input->post('id_pembawa'),
+            'daftar_ulang'  => $this->input->post('daftar_ulang'),
+            'tgl_daftar_ulang'  => $this->input->post('tgl_daftar_ulang'),
+        ];
         
         // echo "<pre>";
         // print_r($data); 
