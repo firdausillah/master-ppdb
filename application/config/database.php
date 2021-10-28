@@ -75,6 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
+	// 'hostname' => 'localhost',
+	// 'username' => 'root',
+	// 'password' => '',
+	// 'database' => 'ppdb-grisa',
 	'hostname' => 'smkpgripesanggaran.sch.id',
 	'username' => 'u9079729_ppdb',
 	'password' => 'smkpgripesanggaran123',

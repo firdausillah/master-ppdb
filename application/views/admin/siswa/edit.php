@@ -41,11 +41,11 @@
                                                     <div class="row">
                                                         <div class="mb-3 col-md-6">
                                                             <label class="form-label" for="kode_pendaftaran">Kode Pendaftaran <span class="text-danger">*</span></label>
-                                                            <input type="text" class="form-control" disabled name="kode_pendaftaran" id="kode_pendaftaran" value="<?= $siswa->kode_pendaftaran ?>" required placeholder="" readonly>
+                                                            <input type="text" class="form-control" disabled  id="kode_pendaftaran" value="<?= $siswa->kode_pendaftaran ?>" required placeholder="" readonly>
                                                         </div>
                                                         <div class="mb-3 col-md-6">
                                                             <label class="form-label" for="password">Password <span class="text-danger">*</span></label>
-                                                            <input type="text" class="form-control" disabled name="password" id="password" value="<?= $siswa->password ?>" required placeholder="">
+                                                            <input type="text" class="form-control" name="password" id="password" value="<?= $siswa->password ?>" required placeholder="">
                                                         </div>
                                                     </div>
                                                     <div class="row">
