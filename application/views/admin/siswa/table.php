@@ -41,8 +41,8 @@
                                             <?php endif ?>
                                             <!-- </a> -->
                                         </td>
-                                        <td><?= $s->daftar_ulang ?></td>
-                                        <td>Rp<?= number_format($s->daftar_ulang, 2, ',', '.') ?></td>
+                                        <td>Rp<?= $s->daftar_ulang ?? number_format($s->daftar_ulang, 2, ',', '.') ?></td>
+                                        <td><?= $s->nama_asal_sekolah ?></td>
                                         <td>
                                             <a href="<?= base_url() ?>cetak/bukti/<?= $s->kode_pendaftaran ?>" target='_blank' class="btn btn-success btn-sm"><i class="fa fa-print"></i></a>
                                             <a href="<?= base_url('admin/siswa/edit/' . $s->id . '?page=pribadi') ?>" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
