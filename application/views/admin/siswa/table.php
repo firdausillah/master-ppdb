@@ -19,6 +19,7 @@
                                     <th class="text-midle">Nama Pendaftar</th>
                                     <th class="d-none d-xl-table-cell">Pembawa</th>
                                     <th class="text-midle">Status</th>
+                                    <th class="text-midle">Daftar Ulang</th>
                                     <th class="text-midle">Asal Sekolah</th>
                                     <th class="text-midle">Action</th>
                                 </tr>
@@ -40,7 +41,8 @@
                                             <?php endif ?>
                                             <!-- </a> -->
                                         </td>
-                                        <td><?= $s->nama_asal_sekolah ?></td>
+                                        <td><?= $s->daftar_ulang ?></td>
+                                        <td>Rp<?= number_format($s->daftar_ulang, 2, ',', '.') ?></td>
                                         <td>
                                             <a href="<?= base_url() ?>cetak/bukti/<?= $s->kode_pendaftaran ?>" target='_blank' class="btn btn-success btn-sm"><i class="fa fa-print"></i></a>
                                             <a href="<?= base_url('admin/siswa/edit/' . $s->id . '?page=pribadi') ?>" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
