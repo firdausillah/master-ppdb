@@ -24,6 +24,7 @@ class Biodata extends CI_Controller
         $this->load->model('PersyaratanModel');
         $this->load->model('AsalSekolahModel');
         $this->load->model('Persyaratan_siswaModel');
+        $this->load->model('LogUserModel');
     }
 
     public function index()
@@ -98,8 +99,31 @@ class Biodata extends CI_Controller
         // exit();
         
         if ($this->SiswaModel->update(['id' => $this->session->userdata('id')], $data)) {
+            // start log user
+			$log = [
+				'username' => $this->session->userdata('nama'),
+				'role' => $this->session->userdata('role'),
+				'aktifitas' => 'update biodata',
+				'status' => 'berhasil',
+				'keterangan' => ''
+			];
+			$this->LogUserModel->add($log);
+			// end log user
+            
             $this->session->set_flashdata('flash', 'Data berhasil disimpan');
         } else {
+            // start log user
+			$log = [
+				'username' => $this->session->userdata('nama'),
+				'role' => $this->session->userdata('role'),
+				'aktifitas' => 'update biodata',
+				'status' => 'berhasil',
+				'keterangan' => ''
+			];
+			$this->LogUserModel->add($log);
+			// end log user
+            
+
             $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
         }
         redirect('siswa/biodata?page=pribadi');
@@ -118,8 +142,31 @@ class Biodata extends CI_Controller
         ];
         
         if ($this->SiswaModel->update(['id' => $this->session->userdata('id')], $data)) {
+            // start log user
+			$log = [
+				'username' => $this->session->userdata('nama'),
+				'role' => $this->session->userdata('role'),
+				'aktifitas' => 'update biodata ayah',
+				'status' => 'berhasil',
+				'keterangan' => ''
+			];
+			$this->LogUserModel->add($log);
+			// end log user
+            
             $this->session->set_flashdata('flash', 'Data berhasil disimpan');
         } else {
+            // start log user
+			$log = [
+				'username' => $this->session->userdata('nama'),
+				'role' => $this->session->userdata('role'),
+				'aktifitas' => 'update biodata ayah',
+				'status' => 'gagal',
+				'keterangan' => 'Terjadi suatu kesalahan'
+			];
+			$this->LogUserModel->add($log);
+			// end log user
+            
+
             $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
         }
         redirect('siswa/biodata?page=ayah');
@@ -138,8 +185,31 @@ class Biodata extends CI_Controller
         ];
         
         if ($this->SiswaModel->update(['id' => $this->session->userdata('id')], $data)) {
+            // start log user
+			$log = [
+				'username' => $this->session->userdata('nama'),
+				'role' => $this->session->userdata('role'),
+				'aktifitas' => 'update biodata ibu',
+				'status' => 'berhasil',
+				'keterangan' => ''
+			];
+			$this->LogUserModel->add($log);
+			// end log user
+            
             $this->session->set_flashdata('flash', 'Data berhasil disimpan');
         } else {
+            // start log user
+			$log = [
+				'username' => $this->session->userdata('nama'),
+				'role' => $this->session->userdata('role'),
+				'aktifitas' => 'update biodata ibu',
+				'status' => 'gagal',
+				'keterangan' => 'Terjadi suatu kesalahan'
+			];
+			$this->LogUserModel->add($log);
+			// end log user
+            
+
             $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
         }
         redirect('siswa/biodata?page=ibu');
@@ -158,8 +228,31 @@ class Biodata extends CI_Controller
         ];
         
         if ($this->SiswaModel->update(['id' => $this->session->userdata('id')], $data)) {
+            // start log user
+			$log = [
+				'username' => $this->session->userdata('nama'),
+				'role' => $this->session->userdata('role'),
+				'aktifitas' => 'update biodata wali',
+				'status' => 'berhasil',
+				'keterangan' => ''
+			];
+			$this->LogUserModel->add($log);
+			// end log user
+            
             $this->session->set_flashdata('flash', 'Data berhasil disimpan');
         } else {
+            // start log user
+			$log = [
+				'username' => $this->session->userdata('nama'),
+				'role' => $this->session->userdata('role'),
+				'aktifitas' => 'update biodata wali',
+				'status' => 'gagal',
+				'keterangan' => 'Terjadi suatu kesalahan'
+			];
+			$this->LogUserModel->add($log);
+			// end log user
+            
+
             $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
         }
         redirect('siswa/biodata?page=wali');
@@ -195,6 +288,16 @@ class Biodata extends CI_Controller
 
             if (!$this->SiswaModel->update(['id' => $id], ['foto' => $foto])) exit("Update Data Error.");
         }
+        // start log user
+        $log = [
+            'username' => $this->session->userdata('nama'),
+            'role' => $this->session->userdata('role'),
+            'aktifitas' => 'update foto',
+            'status' => 'berhasil',
+            'keterangan' => ''
+        ];
+        $this->LogUserModel->add($log);
+		// end log user
         redirect('siswa/biodata?page=foto');
     }
 }

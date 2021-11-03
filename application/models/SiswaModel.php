@@ -150,6 +150,12 @@
  		return $this->db->get('tb_siswa');
  	}
 
+ 	function findSiswaBy($id){
+		$this->db->select('nama');
+ 		$this->db->where(['id' => $id]);
+ 		return $this->db->get('tb_siswa');
+ 	}
+
  	function findByJurusan($id){
  		$this->db->where(['id_jurusan' => $id]);
  		return $this->db->get('tb_siswa');

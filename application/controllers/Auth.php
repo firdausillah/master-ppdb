@@ -10,6 +10,7 @@ class Auth extends CI_Controller
 		$this->load->model('GelombangModel', 'mGelombang');
 		$this->load->model('AuthModel', 'mAuth');
 		$this->load->model('SiswaModel', 'mSiswa');
+		$this->load->model('LogUserModel');
 	}
 
 	public function login()
@@ -42,9 +43,33 @@ class Auth extends CI_Controller
 
 			$this->session->set_userdata($data_session);
 			$this->session->set_flashdata('flash', 'Anda berhasil Login');
+
+			// start log user
+			$log = [
+				'username' => $username = $this->input->post('username'),
+				'role' => 'admin',
+				'aktifitas' => 'login',
+				'status' => 'berhasil',
+				'keterangan' => ''
+			];
+			$this->LogUserModel->add($log);
+			// end log user
+
 			redirect('admin/dashboard');
 		} else {
 			$this->session->set_flashdata('error', 'Username atau Password salah!');
+
+			// start log user
+			$log = [
+				'username' => $username = $this->input->post('username'),
+				'role' => 'admin',
+				'aktifitas' => 'login',
+				'status' => 'gagal',
+				'keterangan' => 'Username atau Password salah!'
+			];
+			$this->LogUserModel->add($log);
+			// end log user
+
 			redirect('auth/login');
 		}
 	}
@@ -76,16 +101,52 @@ class Auth extends CI_Controller
 
 			$this->session->set_userdata($data_session);
 			$this->session->set_flashdata('flash', 'Anda berhasil Login');
+			
+			// start log user
+			$log = [
+				'username' => $this->input->post('nohp'),
+				'role' => 'siswa',
+				'aktifitas' => 'login',
+				'status' => 'berhasil',
+				'keterangan' => ''
+			];
+			$this->LogUserModel->add($log);
+			// end log user
+
 			redirect('siswa/dashboard');
 		} else {
 			$this->session->set_flashdata('error', 'Nomor Telepon atau Password salah!');
+			
+			// start log user
+			$log = [
+				'username' => $this->input->post('nohp'),
+				'role' => 'siswa',
+				'aktifitas' => 'login',
+				'status' => 'gagal',
+				'keterangan' => 'Nomor Telepon atau Password salah '
+			];
+			$this->LogUserModel->add($log);
+			// end log user
+
 			redirect('home');
 		}
 	}
 
 	public function logout()
 	{
+		
 		if ($this->session->userdata() !== null) {
+			// start log user
+			$log = [
+				'username' => $this->session->userdata('nama'),
+				'role' => $this->session->userdata('role'),
+				'aktifitas' => 'logout',
+				'status' => 'berhasil',
+				'keterangan' => ''
+			];
+			$this->LogUserModel->add($log);
+			// end log user
+
 			$this->session->sess_destroy();
 		}
 		$this->session->set_flashdata('success', 'Berhasil Logout');

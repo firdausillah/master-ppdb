@@ -17,15 +17,19 @@ class Siswa extends CI_Controller
         $this->load->model('PersyaratanModel');
         $this->load->model('Persyaratan_siswaModel');
         $this->load->model('AsalSekolahModel');
+        $this->load->model('LogUserModel');
 
         if ($this->session->userdata('role') != 'admin') {
             redirect(base_url("auth/login"));
         }
-    }
 
+    }
+    
+    
     public function index()
     {
-        // print_r($this->SiswaModel->joinPembawa()->result()); exit();
+        // $nama_siswa = $this->SiswaModel->findSiswaBy(22)->row();
+        // print_r($nama_siswa); exit();
         $data = [
             'title' => 'Data Siswa',
             'siswa' => $this->SiswaModel->joinPembawa()->result(),
@@ -65,9 +69,30 @@ class Siswa extends CI_Controller
         ];
 
         if ($this->SiswaModel->add($data)) {
+            // start log user
+			$log = [
+				'username' => $this->session->userdata('username'),
+				'role' => $this->session->userdata('role'),
+				'aktifitas' => 'tambah data siswa',
+				'status' => 'berhasil',
+				'keterangan' => ''
+			];
+			$this->LogUserModel->add($log);
+			// end log user
+
             $this->session->set_flashdata('flash', 'Data berhasil dimasukan');
         } else {
             $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
+            // start log user
+            $log = [
+                'username' => $this->session->userdata('username'),
+                'role' => $this->session->userdata('role'),
+                'aktifitas' => 'tambah data siswa',
+                'status' => 'gagal',
+                'keterangan' => ''
+            ];
+            $this->LogUserModel->add($log);
+			// end log user
         }
 
         redirect(base_url('admin/siswa'));
@@ -132,7 +157,7 @@ class Siswa extends CI_Controller
 
     public function savePribadi($id)
     {
-
+        $nama_siswa = $this->SiswaModel->findSiswaBy($id)->row();
         $data = [
             // 'kode_pendaftaran'    => $this->input->post('kode_pendaftaran'),
             'password'    => $this->input->post('password'),
@@ -166,8 +191,30 @@ class Siswa extends CI_Controller
         ];
 
         if ($this->SiswaModel->update(['id' => $id], $data)) {
+            // start log user
+			$log = [
+				'username' => $this->session->userdata('username'),
+				'role' => $this->session->userdata('role'),
+				'aktifitas' => 'update biodata '. $nama_siswa,
+				'status' => 'berhasil',
+				'keterangan' => ''
+			];
+			$this->LogUserModel->add($log);
+			// end log user
+
             $this->session->set_flashdata('flash', 'Data berhasil disimpan');
         } else {
+            // start log user
+            $log = [
+                'username' => $this->session->userdata('username'),
+                'role' => $this->session->userdata('role'),
+                'aktifitas' => 'update biodata ' . $nama_siswa,
+                'status' => 'gagal',
+                'keterangan' => 'Terjadi suatu kesalahan'
+            ];
+            $this->LogUserModel->add($log);
+			// end log user
+
             $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
         }
         redirect('admin/siswa/edit/'.$id.'?page=pribadi');
@@ -175,7 +222,7 @@ class Siswa extends CI_Controller
 
     public function saveAyah($id)
     {
-
+        $nama_siswa = $this->SiswaModel->findSiswaBy($id)->row();
         $data = [
             'nama_ayah' => $this->input->post('nama_ayah'),
             'nohp_ayah' => $this->input->post('nohp_ayah'),
@@ -187,8 +234,29 @@ class Siswa extends CI_Controller
         ];
 
         if ($this->SiswaModel->update(['id' => $id], $data)) {
+            // start log user
+			$log = [
+				'username' => $this->session->userdata('username'),
+				'role' => $this->session->userdata('role'),
+				'aktifitas' => 'update biodata ayah '.$nama_siswa->nama,
+				'status' => 'berhasil',
+				'keterangan' => ''
+			];
+			$this->LogUserModel->add($log);
+			// end log user
+
             $this->session->set_flashdata('flash', 'Data berhasil disimpan');
         } else {
+            // start log user
+            $log = [
+                'username' => $this->session->userdata('username'),
+                'role' => $this->session->userdata('role'),
+                'aktifitas' => 'update biodata ayah '.$nama_siswa->nama,
+                'status' => 'gagal',
+                'keterangan' => 'Terjadi suatu kesalahan'
+            ];
+            $this->LogUserModel->add($log);
+			// end log user
             $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
         }
         redirect('admin/siswa/edit/'.$id.'?page=ayah');
@@ -196,7 +264,7 @@ class Siswa extends CI_Controller
 
     public function saveIbu($id)
     {
-
+        $nama_siswa = $this->SiswaModel->findSiswaBy($id)->row();
         $data = [
             'nama_ibu' => $this->input->post('nama_ibu'),
             'nohp_ibu' => $this->input->post('nohp_ibu'),
@@ -208,8 +276,30 @@ class Siswa extends CI_Controller
         ];
 
         if ($this->SiswaModel->update(['id' => $id], $data)) {
+            // start log user
+			$log = [
+				'username' => $this->session->userdata('username'),
+				'role' => $this->session->userdata('role'),
+				'aktifitas' => 'update biodata ibu '. $nama_siswa,
+				'status' => 'berhasil',
+				'keterangan' => ''
+			];
+			$this->LogUserModel->add($log);
+			// end log user
+            
             $this->session->set_flashdata('flash', 'Data berhasil disimpan');
         } else {
+            // start log user
+			$log = [
+				'username' => $this->session->userdata('username'),
+				'role' => $this->session->userdata('role'),
+				'aktifitas' => 'update biodata ibu '. $nama_siswa,
+				'status' => 'gagal',
+				'keterangan' => 'Terjadi suatu kesalahan'
+			];
+			$this->LogUserModel->add($log);
+			// end log user
+            
             $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
         }
         redirect('admin/siswa/edit/'.$id.'?page=ibu');
@@ -217,7 +307,7 @@ class Siswa extends CI_Controller
 
     public function saveWali($id)
     {
-
+        $nama_siswa = $this->SiswaModel->findSiswaBy($id)->row();
         $data = [
             'nama_wali' => $this->input->post('nama_wali'),
             'nohp_wali' => $this->input->post('nohp_wali'),
@@ -229,14 +319,37 @@ class Siswa extends CI_Controller
         ];
 
         if ($this->SiswaModel->update(['id' => $id], $data)) {
+
+            // start log user
+			$log = [
+				'username' => $this->session->userdata('username'),
+				'role' => $this->session->userdata('role'),
+				'aktifitas' => 'update biodata wali '.$nama_siswa->nama,
+				'status' => 'berhasil',
+				'keterangan' => ''
+			];
+			$this->LogUserModel->add($log);
+			// end log user
+
             $this->session->set_flashdata('flash', 'Data berhasil disimpan');
         } else {
+            // start log user
+			$log = [
+				'username' => $this->session->userdata('username'),
+				'role' => $this->session->userdata('role'),
+				'aktifitas' => 'update biodata wali '.$nama_siswa->nama,
+				'status' => 'gagal',
+				'keterangan' => 'Terjadi suatu kesalahan'
+			];
+			$this->LogUserModel->add($log);
+			// end log user
             $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
         }
         redirect('admin/siswa/edit/'.$id.'?page=wali');
     }
 
     public function savePersyaratan($id){
+        $nama_siswa = $this->SiswaModel->findSiswaBy($id)->row();
         $persyaratan_siswa = $this->Persyaratan_siswaModel->leftJoinPersyaratan($id)->result();
         $persyaratan = $this->PersyaratanModel->get()->result();
 
@@ -287,6 +400,16 @@ class Siswa extends CI_Controller
         // exit();
         
         $this->SiswaModel->update(['id' => $id], $ver);
+        // start log user
+        $log = [
+                'username' => $this->session->userdata('username'),
+                'role' => $this->session->userdata('role'),
+                'aktifitas' => 'update data verifikasi '.$nama_siswa->nama,
+                'status' => 'berhasil',
+                'keterangan' => ''
+            ];
+        $this->LogUserModel->add($log);
+			// end log user
 
         $this->session->set_flashdata('flash', 'Data berhasil disimpan');
         redirect('admin/siswa/edit/' . $id . '?page=persyaratan');
@@ -295,8 +418,29 @@ class Siswa extends CI_Controller
     public function delete($id)
     {
         if ($this->SiswaModel->delete(['id' => $id])) {
+            // start log user
+			$log = [
+				'username' => $this->session->userdata('username'),
+				'role' => $this->session->userdata('role'),
+				'aktifitas' => 'hapus data siswa',
+				'status' => 'berhasil',
+				'keterangan' => ''
+			];
+			$this->LogUserModel->add($log);
+			// end log user
+
             $this->session->set_flashdata('flash', 'Data berhasil dihapus');
         } else {
+            // start log user
+            $log = [
+                'username' => $this->session->userdata('username'),
+                'role' => $this->session->userdata('role'),
+                'aktifitas' => 'hapus data siswa',
+                'status' => 'gagal',
+                'keterangan' => 'Terjadi suatu kesalahan'
+            ];
+            $this->LogUserModel->add($log);
+			// end log user
             $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
         }
         redirect('admin/siswa');
