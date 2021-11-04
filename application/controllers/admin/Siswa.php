@@ -195,7 +195,7 @@ class Siswa extends CI_Controller
 			$log = [
 				'username' => $this->session->userdata('username'),
 				'role' => $this->session->userdata('role'),
-				'aktifitas' => 'update biodata '. $nama_siswa,
+				'aktifitas' => 'update biodata '. $nama_siswa->nama,
 				'status' => 'berhasil',
 				'keterangan' => ''
 			];
@@ -208,7 +208,7 @@ class Siswa extends CI_Controller
             $log = [
                 'username' => $this->session->userdata('username'),
                 'role' => $this->session->userdata('role'),
-                'aktifitas' => 'update biodata ' . $nama_siswa,
+                'aktifitas' => 'update biodata ' . $nama_siswa->nama,
                 'status' => 'gagal',
                 'keterangan' => 'Terjadi suatu kesalahan'
             ];
