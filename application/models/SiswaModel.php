@@ -158,6 +158,7 @@
 
  	function findByJurusan($id){
  		$this->db->where(['id_jurusan' => $id]);
+ 		$this->db->where(['status' => 'Sudah Verifikasi']);
  		return $this->db->get('tb_siswa');
  	}
 
