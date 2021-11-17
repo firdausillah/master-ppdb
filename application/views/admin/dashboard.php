@@ -125,7 +125,7 @@
                                                             <?php endforeach ?>
                                                         </tbody>
                                                         <tfoot>
-                                                            <tr class="bg-secondary text-white">
+                                                            <tr class="bg-light">
                                                                 <td colspan="4" class="text-center">TOTAL</td>
                                                                 <td><?= $verifikasi ?></td>
                                                             </tr>
