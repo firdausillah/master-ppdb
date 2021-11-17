@@ -19,14 +19,25 @@ class Dashboard extends CI_Controller
     {
         $jurusan = $this->JurusanModel->get()->result();
 
-        foreach ($jurusan as $keyJur => $jur) {
-            $a = $this->SiswaModel->findByJurusan($jur->id)->result();
+        foreach ($jurusan as $jur) :
+            $query = $this->db->query("SELECT * FROM tb_jurusan WHERE id = " . $jur->id)->result();
 
-            $b[] = (object)['jurusan' => $jur->jurusan, 'siswa' => count($a)];
-        }
+            foreach ($query as $key) {
+                 $lk = $this->db->query("SELECT jk from tb_siswa where tb_siswa.id_jurusan = " . $jur->id." AND jk = 'Laki-laki' AND tb_siswa.status = 'Sudah Verifikasi'" )->result();
+            }
+
+            foreach ($query as $key) {
+                 $pr = $this->db->query("SELECT jk from tb_siswa where tb_siswa.id_jurusan = " . $jur->id." AND jk = 'Perempuan' AND tb_siswa.status = 'Sudah Verifikasi'" )->result();
+            }
+
+            $r[] = ['jurusan' => $jur->jurusan, 'lk' => count($lk), 'pr' => count($pr), 'jumlah' => count($lk)+count($pr)];
+        endforeach;
+        // print_r($r);
 
         // exit();
-        $perjurusan = $b;
+
+        // exit();
+        $perjurusan = $r;
         $siswa = $this->SiswaModel->get()->result();
         $verifikasi = $this->SiswaModel->joinPembawaSudah()->result();
         $belum_verifikasi = $this->SiswaModel->joinPembawaBelum()->result();

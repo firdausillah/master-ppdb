@@ -108,19 +108,29 @@
                                                             <tr>
                                                                 <td>No</td>
                                                                 <td>Jurusan</td>
+                                                                <td>Jumlah Laki-Laki</td>
+                                                                <td>Jumlah Perempuan</td>
                                                                 <td>Jumlah</td>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
-                                                            <?php foreach ($perjurusan as $no => $jur) :?>
-                                                            <tr>
-                                                                <td><?= $no+1 ?></td>
-                                                                <td><?= $jur->jurusan ?></td>
-                                                                <td><?= $jur->siswa ?></td>
-                                                            </tr>
+                                                            <?php foreach ($perjurusan as $no => $jur) : ?>
+                                                                <tr>
+                                                                    <td><?= $no + 1 ?></td>
+                                                                    <td><?= $jur['jurusan'] ?></td>
+                                                                    <td><?= $jur['lk'] ?></td>
+                                                                    <td><?= $jur['pr'] ?></td>
+                                                                    <td><?= $jur['jumlah'] ?></td>
+                                                                </tr>
                                                             <?php endforeach ?>
                                                         </tbody>
-                                                        </table>
+                                                        <tfoot>
+                                                            <tr class="bg-secondary text-white">
+                                                                <td colspan="4" class="text-center">TOTAL</td>
+                                                                <td><?= $verifikasi ?></td>
+                                                            </tr>
+                                                        </tfoot>
+                                                    </table>
                                                 </div>
                                             </div>
                                         </div>
