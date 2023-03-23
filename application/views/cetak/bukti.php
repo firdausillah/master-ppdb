@@ -13,6 +13,12 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
     <title>Cetak Bukti Pendaftaran <?= $siswa->nama ?></title>
+
+    <style>
+        span {
+            font-size: 1rem;
+        }
+    </style>
 </head>
 
 <body>
@@ -177,7 +183,7 @@
                     </table>
                 </div>
             </div> -->
-            <div class="row d-flex justify-content-end mt-3">
+            <div class="row d-flex justify-content-end">
                 <div class="col-4">
                     <span>Banyuwangi, <?= date('d F Y') ?></span><br>
                     <span>Pendaftar</span><br>
