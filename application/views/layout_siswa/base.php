@@ -14,6 +14,7 @@
     <title>Siswa | <?= $title ? $title : 'Judul Page' ?></title>
 
     <link href="<?= base_url() ?>assets/css/app.css" rel="stylesheet">
+    <link href="<?= base_url() ?>assets/css/app2.css" rel="stylesheet">
     <link href="<?= base_url() ?>assets/css/dataTables.min.css" rel="stylesheet">
 </head>
 
@@ -47,6 +48,7 @@
     <script src="<?= base_url() ?>assets/js/jquery.min.js"></script>
     <script src="<?= base_url() ?>assets/js/dataTables.min.js"></script>
     <script src="<?= base_url() ?>assets/js/app.js"></script>
+    <script src="<?= base_url() ?>assets/js/app2.js"></script>
     <script src="<?= base_url() ?>assets/js/sweetalert2.all.min.js"></script>
     <script src="<?= base_url() ?>assets/js/myScript.js"></script>
 
