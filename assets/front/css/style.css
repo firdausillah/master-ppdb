@@ -656,53 +656,53 @@ section {
 /*--------------------------------------------------------------
 # Why Us
 --------------------------------------------------------------*/
-.why-us .content {
-  padding: 60px 100px 0 100px;
+.daftar .content {
+  /* padding: 60px 100px 0 100px; */
 }
 
-.why-us .content h3 {
+.daftar .content h3 {
   font-weight: 400;
   font-size: 34px;
   color: #37517e;
 }
 
-.why-us .content h4 {
+.daftar .content h4 {
   font-size: 20px;
   font-weight: 700;
   margin-top: 5px;
 }
 
-.why-us .content p {
+.daftar .content p {
   font-size: 15px;
   color: #848484;
 }
 
-.why-us .img {
+.daftar .img {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
 }
 
-.why-us .accordion-list {
-  padding: 0 100px 60px 100px;
+.daftar .accordion-list {
+  /* padding: 0 100px 60px 100px; */
 }
 
-.why-us .accordion-list ul {
+.daftar .accordion-list ul {
   padding: 0;
   list-style: none;
 }
 
-.why-us .accordion-list li+li {
+.daftar .accordion-list li+li {
   margin-top: 15px;
 }
 
-.why-us .accordion-list li {
+.daftar .accordion-list li {
   padding: 20px;
   background: #fff;
   border-radius: 4px;
 }
 
-.why-us .accordion-list a {
+.daftar .accordion-list a {
   display: block;
   position: relative;
   font-family: "Poppins", sans-serif;
@@ -714,70 +714,70 @@ section {
   cursor: pointer;
 }
 
-.why-us .accordion-list span {
+.daftar .accordion-list span {
   color: #47b2e4;
   font-weight: 600;
   font-size: 18px;
   padding-right: 10px;
 }
 
-.why-us .accordion-list i {
+.daftar .accordion-list i {
   font-size: 24px;
   position: absolute;
   right: 0;
   top: 0;
 }
 
-.why-us .accordion-list p {
+.daftar .accordion-list p {
   margin-bottom: 0;
   padding: 10px 0 0 0;
 }
 
-.why-us .accordion-list .icon-show {
+.daftar .accordion-list .icon-show {
   display: none;
 }
 
-.why-us .accordion-list a.collapsed {
+.daftar .accordion-list a.collapsed {
   color: #343a40;
 }
 
-.why-us .accordion-list a.collapsed:hover {
+.daftar .accordion-list a.collapsed:hover {
   color: #47b2e4;
 }
 
-.why-us .accordion-list a.collapsed .icon-show {
+.daftar .accordion-list a.collapsed .icon-show {
   display: inline-block;
 }
 
-.why-us .accordion-list a.collapsed .icon-close {
+.daftar .accordion-list a.collapsed .icon-close {
   display: none;
 }
 
 @media (max-width: 1024px) {
 
-  .why-us .content,
-  .why-us .accordion-list {
+  .daftar .content,
+  .daftar .accordion-list {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media (max-width: 992px) {
-  .why-us .img {
+  .daftar .img {
     min-height: 400px;
   }
 
-  .why-us .content {
+  .daftar .content {
     padding-top: 30px;
   }
 
-  .why-us .accordion-list {
+  .daftar .accordion-list {
     padding-bottom: 30px;
   }
 }
 
 @media (max-width: 575px) {
-  .why-us .img {
+  .daftar .img {
     min-height: 200px;
   }
 }
@@ -1829,4 +1829,120 @@ section {
   #footer .credits {
     padding-top: 4px;
   }
+}
+
+.bg-blue-primary {
+  background: #47b2e4;
+  /* color: #fff; */
+}
+
+.bg-blue-secondary {
+  background: #fff;
+  color: #47b2e4;
+  border: 1px solid #47b2e4;
+}
+
+/* login siswa */
+.daftar .php-email-form {
+  width: 100%;
+  border-top: 3px solid #47b2e4;
+  border-bottom: 3px solid #47b2e4;
+  padding: 30px;
+  background: #fff;
+  box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
+}
+
+.daftar .php-email-form .form-group {
+  padding-bottom: 8px;
+}
+
+.daftar .php-email-form .validate {
+  display: none;
+  color: red;
+  margin: 0 0 15px 0;
+  font-weight: 400;
+  font-size: 13px;
+}
+
+.daftar .php-email-form .error-message {
+  display: none;
+  color: #fff;
+  background: #ed3c0d;
+  text-align: left;
+  padding: 15px;
+  font-weight: 600;
+}
+
+.daftar .php-email-form .error-message br+br {
+  margin-top: 25px;
+}
+
+.daftar .php-email-form .sent-message {
+  display: none;
+  color: #fff;
+  background: #18d26e;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600;
+}
+
+.daftar .php-email-form .loading {
+  display: none;
+  background: #fff;
+  text-align: center;
+  padding: 15px;
+}
+
+.daftar .php-email-form .loading:before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px -6px 0;
+  border: 3px solid #18d26e;
+  border-top-color: #eee;
+  animation: animate-loading 1s linear infinite;
+}
+
+.daftar .php-email-form .form-group {
+  margin-bottom: 20px;
+}
+
+.daftar .php-email-form label {
+  padding-bottom: 8px;
+}
+
+.daftar .php-email-form input,
+.daftar .php-email-form textarea {
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+.daftar .php-email-form input:focus,
+.daftar .php-email-form textarea:focus {
+  border-color: #47b2e4;
+}
+
+.daftar .php-email-form input {
+  height: 44px;
+}
+
+.daftar .php-email-form textarea {
+  padding: 10px 12px;
+}
+
+.daftar .php-email-form button[type=submit] {
+  background: #47b2e4;
+  border: 0;
+  padding: 12px 34px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 50px;
+}
+
+.daftar .php-email-form button[type=submit]:hover {
+  background: #209dd8;
 }

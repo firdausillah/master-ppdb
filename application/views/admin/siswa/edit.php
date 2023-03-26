@@ -15,22 +15,22 @@
                                         <!-- Nav tabs -->
                                         <ul class="nav nav-tabs" role="tablist">
                                             <li class="nav-item">
-                                                <a class="nav-link <?= $page == 'pribadi' ? 'active' : ''; ?>" data-toggle="tab" href="#pribadi">Data Pribadi</a>
+                                                <a class="nav-link <?= $page == 'pribadi' ? 'active' : ''; ?>" data-bs-toggle="tab" href="#pribadi">Data Pribadi</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link <?= $page == 'ayah' ? 'active' : ''; ?>" data-toggle="tab" href="#ayah">Data Ayah</a>
+                                                <a class="nav-link <?= $page == 'ayah' ? 'active' : ''; ?>" data-bs-toggle="tab" href="#ayah">Data Ayah</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link <?= $page == 'ibu' ? 'active' : ''; ?>" data-toggle="tab" href="#ibu">Data Ibu</a>
+                                                <a class="nav-link <?= $page == 'ibu' ? 'active' : ''; ?>" data-bs-toggle="tab" href="#ibu">Data Ibu</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link <?= $page == 'wali' ? 'active' : ''; ?>" data-toggle="tab" href="#wali">Data Wali</a>
+                                                <a class="nav-link <?= $page == 'wali' ? 'active' : ''; ?>" data-bs-toggle="tab" href="#wali">Data Wali</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link <?= $page == 'foto' ? 'active' : ''; ?>" data-toggle="tab" href="#foto">Foto</a>
+                                                <a class="nav-link <?= $page == 'foto' ? 'active' : ''; ?>" data-bs-toggle="tab" href="#foto">Foto</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link <?= $page == 'persyaratan' ? 'active' : ''; ?>" data-toggle="tab" href="#persyaratan">Data persyaratan</a>
+                                                <a class="nav-link <?= $page == 'persyaratan' ? 'active' : ''; ?>" data-bs-toggle="tab" href="#persyaratan">Data persyaratan</a>
                                             </li>
                                         </ul>
 

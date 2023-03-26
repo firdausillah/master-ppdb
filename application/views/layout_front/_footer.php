@@ -20,7 +20,7 @@
                 <div class="row">
 
                     <div class="col-lg-3 col-md-6 footer-contact">
-                        <h3>Arsha</h3>
+                        <h3>SMK PGRI PESANGGARAN</h3>
                         <p>
                             Jl. Lampon No. 50 <br>
                             Kec. Pesanggaran<br>

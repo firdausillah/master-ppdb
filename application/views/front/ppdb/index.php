@@ -4,7 +4,58 @@
       <?php $this->load->view('layout_front/_breadcrumbs'); ?>
       <!-- End Breadcrumbs -->
 
-      <section class="daftar">
+      <section id="daftar" class="daftar">
+          <div class="container" data-aos="fade-up">
+              <div class="content">
+                  <h3>Gelombang Pendaftaran</h3>
+                  <p>
+                      Silahkan Mendaftar Pada Gelombang yang <strong>Tersedia</strong>
+                  </p>
+              </div>
+              <div class="row">
+                  <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch  order-1 order-lg-1">
+                      <div class="accordion-list">
+                          <ul>
+                              <?php foreach ($gelombangs as $key => $gelombang) : ?>
+                                  <li class="shadow p-3 mb-5 bg-body rounded">
+                                      <a data-bs-toggle="collapse" class="<?= $gelombang->status == 1 ? ' collapse' : ' collapsed' ?>" data-bs-target="#accordion-list-<?= $gelombang->gelombang ?>">Gelombang <?= $gelombang->gelombang ?><i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                                      <div id="accordion-list-<?= $gelombang->gelombang ?>" class="collapse<?= $gelombang->status == 1 ? ' show' : '' ?>" data-bs-parent=".accordion-list">
+                                          <p>
+                                              Gelombang <?= $gelombang->gelombang ?> dibuka tanggal <strong><?= $gelombang->tgl_buka ?></strong> dan berakhir pada tanggal <strong><?= $gelombang->tgl_tutup ?></strong>. Keuntungan mendaftar pada periode ini <?= $gelombang->benefit ?>
+                                          </p>
+                                          <?php if ($gelombang->status == 1) : ?>
+                                              <a href="#" class="badge rounded-pill bg-blue-primary tombol-daftar" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-idgel="<?= $gelombang->id ?>">Daftar</a>
+                                          <?php else : ?>
+                                              <a href="#" aria-disabled="true" class="badge rounded-pill bg-blue-secondary disabled">Daftar</a>
+                                          <?php endif ?>
+                                          <!-- <a href="#" class="buy-btn">Get Started</a> -->
+                                      </div>
+                                  </li>
+                              <?php endforeach ?>
+                          </ul>
+                      </div>
+                  </div>
+                  <div class="col-lg-5 order-1 order-lg-2 img d-flex align-items-start order-1 order-lg-1" data-aos="zoom-in" data-aos-delay="150">
+                      <form action="<?= base_url('auth/login_siswa'); ?>" class="php-email-form" method="POST">
+                          <h3>Login Siswa</h3>
+                          <div class="mb-4">
+                              <label class="form-label">Nomor Telepon</label>
+                              <input class="form-control" type="number" name="nohp" placeholder="contoh. 086786576568">
+                          </div>
+                          <div class="mb-4">
+                              <label class="form-label">Password</label>
+                              <input class="form-control" type="password" name="password" placeholder="Masukan password">
+                          </div>
+                          <div class="text-center mt-4">
+                              <button type="submit" class="btn btn-md btn-primary">Login</button>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </section>
+
+      <!-- <section class="daftar">
           <div class="container">
 
               <div class="row">
@@ -71,7 +122,7 @@
               </div>
 
           </div>
-      </section>
+      </section> -->
 
       <svg xmlns="http://www.w3.org/2000/svg" class="d-none d-lg-block d-md-none" style="margin-top: -250px; margin-bottom: -100px;" viewBox="0 0 1440 320">
           <path fill="#f3f5fa" fill-opacity="1" d="M0,96L80,112C160,128,320,160,480,154.7C640,149,800,107,960,101.3C1120,96,1280,128,1360,144L1440,160L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
@@ -118,3 +169,83 @@
       </section>
 
   </main><!-- End #main -->
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Form Pendaftaran Siswa Baru</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <?= form_open_multipart('home/save'); ?>
+              <div class="modal-body">
+                  <div class="mb-3">
+                      <label class="form-label">Nama Lengkap</label>
+                      <input type="text" name="nama" class="form-control" placeholder="Nama Lengkap" required>
+                      <input type="hidden" id="id_gel" name="id_gel" required>
+                  </div>
+                  <div class="mb-3">
+                      <label class="form-label">Nomor Telepon</label>
+                      <input type="number" name="nohp" class="form-control" placeholder="Nomor Telepon" required>
+                  </div>
+                  <div class="mb-3">
+                      <label class="form-label">Sekolah Asal</label>
+                      <!-- <input type="text" name="sekolah_asal" class="form-control" placeholder="Asal Sekolah" required> -->
+                      <select class="form-control" name="sekolah_asal" id="" required>
+                          <option value="">Pilih Sekolah Asal</option>
+                          <?php foreach ($asalsekolahs as $key => $asalsekolah) : ?>
+                              <option value="<?= $asalsekolah->id ?>"><?= $asalsekolah->nama_asal_sekolah ?></option>
+                          <?php endforeach ?>
+                      </select>
+                  </div>
+                  <div class="mb-3">
+                      <label class="form-label">Jurusan</label>
+                      <select name="jurusan" id="jurusan" class="form-control" required>
+                          <option value="">Pilih Jurusan</option>
+                          <?php foreach ($jurusans as $key => $jurusan) : ?>
+                              <option value="<?= $jurusan->id ?>"><?= $jurusan->jurusan ?></option>
+                          <?php endforeach ?>
+                      </select>
+                  </div>
+                  <div class="mb-3">
+                      <label class="form-label">Password</label>
+                      <input type="password" name="password" class="form-control" placeholder="Password" required>
+                  </div>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-primary btn-sm">Daftar</button>
+              </div>
+              </form>
+          </div>
+      </div>
+  </div>
+
+  <?php if ($this->session->flashdata()) : ?>
+      <div id="myModal" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+              <!-- Modal content-->
+              <div class="modal-content">
+                  <div class="modal-body">
+                      <?php if ($this->session->flashdata('success')) : ?>
+                          <div class="text-center">
+                              <img src="https://cdn.dribbble.com/users/251873/screenshots/9289747/media/6ddd0b400fbab6d5fa72d73df503f330.gif" height="250px" alt="">
+                              <h3>Hai!, <?= $this->session->flashdata('success')['nama']; ?> </h3>
+                              <h3>"AKUN ANDA BERHASIL DIBUAT"</h3>
+                              <h5>silahkan login dengan menggunakan</h5>
+                              <p>USERNAME : <b><?= $this->session->flashdata('success')['nohp']; ?></b></p>
+                              <p>PASSWORD : <b><?= $this->session->flashdata('success')['password']; ?></b></p>
+                              <h5>*MOHON DIINGAT JIKA PERLU SCREENSHOT</h5>
+                          </div>
+                      <?php elseif ($this->session->flashdata('error')) : ?>
+                          <div class="text-center">
+                              <img src="https://cdn.dribbble.com/users/251873/screenshots/9288094/media/a1c2f89065f68e1b2b5dcb66bdb9beb1.gif" height="250px" alt="">
+                              <h3><?= $this->session->flashdata('error'); ?> </h3>
+                          </div>
+                      <?php endif ?>
+                  </div>
+              </div>
+          </div>
+      </div>
+  <?php endif ?>

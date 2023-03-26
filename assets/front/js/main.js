@@ -259,17 +259,14 @@
 
 // highlight navbar
 var path = location.pathname.split('/');
-var url = location.origin + '/' + path[1] + '/' + path[2];
-console.log(path)
-console.log(url)
+var url = path[2];
 $('nav.navbar ul li a').each(function () {
-  if ($(this).attr('href') != undefined) {
-    if ($(this).attr('href').indexOf(url) !== -1) {
+  if ($(this).attr('name') != undefined) {
+    if ($(this).attr('name') == url) {
       $(this).addClass('active');
-      // $(this).parent().addClass('active').parent('ul').addClass('show').parent('li').addClass('active');
     }
   }
 });
-if (path[2] != 'home'){
+if (url != 'home'){
   $('header#header').addClass('header-inner-pages');
 }

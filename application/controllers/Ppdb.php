@@ -62,6 +62,6 @@ class Ppdb extends CI_Controller {
 			$this->session->set_flashdata('error', 'Oops! Terjadi suatu kesalahan');
 		}
 
-		redirect(base_url('home'));
+		redirect(base_url('ppdb'));
 	}
 }

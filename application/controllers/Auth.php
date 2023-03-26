@@ -128,7 +128,7 @@ class Auth extends CI_Controller
 			$this->LogUserModel->add($log);
 			// end log user
 
-			redirect('home');
+			redirect('ppdb');
 		}
 	}
 
