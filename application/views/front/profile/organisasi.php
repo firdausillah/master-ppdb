@@ -32,7 +32,9 @@
                       </div>
 
                   </div> -->
-                  <div class='sk-instagram-feed' data-embed-id='127554'></div>
+                  <div class="col-lg-12 pt-4 pt-lg-0 content" data-aos="fade-left" data-aos-delay="100">
+                      <div class='sk-instagram-feed' data-embed-id='127554'></div>
+                  </div>
               </div>
 
           </div>
