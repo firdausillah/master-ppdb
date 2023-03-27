@@ -13,7 +13,6 @@ class Sarpras extends CI_Controller
         }
     }
 
-
     public function index()
     {
         $data = [
@@ -24,11 +23,11 @@ class Sarpras extends CI_Controller
 
         $this->load->view('layout_admin/base', $data);
     }
-
     public function save()
     {
         $data = [
-            'nama_lengkap' => $this->input->post('nama_lengkap'),
+            'sarpras' => $this->input->post('sarpras'),
+
         ];
 
         if ($this->SarprasModel->add($data)) {
@@ -37,15 +36,15 @@ class Sarpras extends CI_Controller
             $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
         }
 
-        redirect(base_url('admin/Sarpras'));
+        redirect(base_url('admin/sarpras'));
     }
 
     public function edit($id)
     {
         $data = [
-            'title' => 'Edit Sarpras',
-            'pembawa' => $this->SarprasModel->findBy(['id' => $id])->row(),
-            'content' => 'admin/Sarpras/edit'
+            'title' => 'Edit sarpras',
+            'sarpras' => $this->SarprasModel->findBy(['id' => $id])->row(),
+            'content' => 'admin/sarpras/edit'
         ];
 
         $this->load->view('layout_admin/base', $data);
@@ -54,7 +53,7 @@ class Sarpras extends CI_Controller
     public function update($id)
     {
         $data = [
-            'nama_lengkap' => $this->input->post('nama_lengkap'),
+            'sarpras' => $this->input->post('sarpras'),
 
         ];
 
@@ -64,7 +63,7 @@ class Sarpras extends CI_Controller
             $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
         }
 
-        redirect(base_url('admin/Sarpras'));
+        redirect(base_url('admin/sarpras'));
     }
 
     public function delete($id)
@@ -74,6 +73,6 @@ class Sarpras extends CI_Controller
         } else {
             $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
         }
-        redirect('admin/Sarpras');
+        redirect('admin/sarpras');
     }
 }
