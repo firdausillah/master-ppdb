@@ -25,8 +25,8 @@
                             Jl. Lampon No. 50 <br>
                             Kec. Pesanggaran<br>
                             Kab. Banyuwangi<br><br>
-                            <strong>Phone:</strong> +1 5589 55488 55<br>
-                            <strong>Email:</strong> info@example.com<br>
+                            <strong>Phone:</strong> (0333) 710853<br>
+                            <strong>Email:</strong> smkpgripesanggaran@gmail.com<br>
                         </p>
                     </div>
 
@@ -42,23 +42,25 @@
                     </div>
 
                     <div class="col-lg-3 col-md-6 footer-links">
-                        <h4>Our Services</h4>
+                        <h4>Jurusan</h4>
                         <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Teknik Sepeda Motor</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Teknik Alat Berat</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Agribisnis Pengolahan Hasil Pertanian</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Manajemen Perkantoran Lembaga Bisnis</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Akuntansi dan Keuangan Lembaga</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Perhotelan</a></li>
                         </ul>
                     </div>
 
                     <div class="col-lg-3 col-md-6 footer-links">
-                        <h4>Our Social Networks</h4>
+                        <h4>Media Sosial</h4>
                         <p>Anda tetap dapat terhubung dengan kami melalui akun sosial media kami :</p>
                         <div class="social-links mt-3">
                             <a href="https://wa.me/081230640576" target="_blank" class="whatsapp"><i class="bx bxl-whatsapp"></i></a>
                             <a href="https://www.facebook.com/smkpgri.pesanggaran?mibextid=ZbWKwL" target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a>
                             <a href="https://www.instagram.com/smkgrisa/" target="_blank" class="instagram"><i class="bx bxl-instagram"></i></a>
+                            <a href="https://www.youtube.com/@officialsmkpgripesanggaran3005" target="_blank" class="youtube"><i class="bx bxl-youtube"></i></a>
                         </div>
                     </div>
 
