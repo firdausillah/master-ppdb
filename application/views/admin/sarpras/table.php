@@ -63,6 +63,7 @@
                     <label class="col-form-label col-sm-2 text-sm-right">kode</label>
                     <div class="col-sm-10">
                         <input type="input" class="form-control" name="kode" required>
+                        <small>kode </small>
                     </div>
                 </div>
                 <div class="mb-3 row">

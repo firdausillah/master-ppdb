@@ -7,11 +7,13 @@
         <!-- End Prodi Section -->
 
         <!-- ======= About Us Section ======= -->
-        <?php // $this->load->view('front/landing_page/_about') ?>
+        <?php // $this->load->view('front/landing_page/_about') 
+        ?>
         <!-- End About Us Section -->
 
         <!-- ======= Why Us Section ======= -->
-        <?php // $this->load->view('front/landing_page/_why-us') ?>
+        <?php // $this->load->view('front/landing_page/_why-us') 
+        ?>
         <!-- End Why Us Section -->
 
         <!-- ======= Skills Section ======= -->
@@ -25,9 +27,15 @@
         <!-- End Services Section -->
 
         <!-- ======= Cta Section ======= -->
-        <?php // $this->load->view('front/landing_page/_cta') 
+        <?php $this->load->view('front/landing_page/_cta')
         ?>
         <!-- End Cta Section -->
+
+        <!-- ======= profil Section ======= -->
+        <?php $this->load->view('front/landing_page/_profil')
+        ?>
+        <!-- peta dan https://www.tutorialrepublic.com/snippets/preview.php?topic=bootstrap&file=testimonial-carousel-with-star-ratings -->
+        <!-- End profil Section -->
 
         <!-- ======= Portfolio Section ======= -->
         <?php // $this->load->view('front/landing_page/_portfolio') 
@@ -48,10 +56,5 @@
         <?php // $this->load->view('front/landing_page/_faq') 
         ?>
         <!-- End Frequently Asked Questions Section -->
-
-        <!-- ======= Contact Section ======= -->
-        <?php $this->load->view('front/landing_page/_contact') 
-        ?>
-        <!-- End Contact Section -->
 
     </main><!-- End #main -->

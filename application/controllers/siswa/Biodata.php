@@ -259,7 +259,7 @@ class Biodata extends CI_Controller
     }
 
     public function saveImg(){
-        // print_r($this->input->post('foto')); exit();
+        print_r(empty($_FILES['gambar']['name'])); exit();
         $kode = $this->input->post('kode');
         $foto = $this->input->post('foto');
         $id = $this->input->post('id');
@@ -271,8 +271,7 @@ class Biodata extends CI_Controller
                 'overwrite' => (empty($foto) ? FALSE : TRUE),
                 'max_size' => '2028',
             ];
-            // if (!empty($foto)) $cfg['file_name'] = $kode;
-            // print_r($cfg); exit();
+
             $this->load->library('upload', $cfg);
             
             if ($this->upload->do_upload('gambar')) $foto = $this->upload->data('file_name');
