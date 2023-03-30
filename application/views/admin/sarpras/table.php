@@ -22,19 +22,19 @@
                             <thead>
                                 <tr>
                                     <th style="width:2%;">No</th>
-                                    <th class="text-center">Kode</th>
-                                    <th class="text-center">Sarpras</th>
-                                    <th class="text-center">Foto</th>
-                                    <th class="text-center">Action</th>
+                                    <th>Kode</th>
+                                    <th>Sarpras</th>
+                                    <th>Foto</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php foreach ($sarpras as $c => $sar) : ?>
                                     <tr>
                                         <td><?= $c + 1; ?></td>
-                                        <td class="text-midle"><?= $sar->kode; ?></td>
-                                        <td class="text-midle"><?= $sar->nama; ?></td>
-                                        <td class="text-midle"><?= $sar->foto; ?></td>
+                                        <td><?= $sar->kode; ?></td>
+                                        <td><?= $sar->nama; ?></td>
+                                        <td><?= $sar->foto; ?></td>
                                         <td>
                                             <a href="<?= base_url('admin/sarpras/edit/' . $sar->id) ?>" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
                                             <a href="<?= base_url('admin/sarpras/delete/' . $sar->id) ?>" class="btn btn-danger btn-sm tombol-hapus"><i class="fa fa-trash"></i></a>
@@ -75,7 +75,8 @@
                 <div class="mb-3 row">
                     <label class="col-form-label col-sm-2 text-sm-right">foto</label>
                     <div class="col-sm-10">
-                        <input type="input" class="form-control" name="foto" required>
+                        <input type="file" class="form-control" name="foto" required>
+                        <small>ukuran foto 3x5cm</small>
                     </div>
                 </div>
                 <div class="mb-3 row">

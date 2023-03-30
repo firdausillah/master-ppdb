@@ -26,9 +26,13 @@ class Sarpras extends CI_Controller
     public function save()
     {
         $data = [
-            'sarpras' => $this->input->post('sarpras'),
+            'kode' => $this->input->post('kode'),
+            'nama' => $this->input->post('nama'),
+            'foto' => $this->input->post('foto'),
+            'keterangan' => $this->input->post('keterangan'),
 
         ];
+
 
         if ($this->SarprasModel->add($data)) {
             $this->session->set_flashdata('flash', 'Data berhasil dimasukan');
@@ -53,9 +57,13 @@ class Sarpras extends CI_Controller
     public function update($id)
     {
         $data = [
-            'sarpras' => $this->input->post('sarpras'),
+            'kode' => $this->input->post('kode'),
+            'nama' => $this->input->post('nama'),
+            'foto' => $this->input->post('foto'),
+            'keterangan' => $this->input->post('keterangan'),
 
         ];
+
 
         if ($this->SarprasModel->update(['id' => $id], $data)) {
             $this->session->set_flashdata('flash', 'Data berhasil diupdate');
