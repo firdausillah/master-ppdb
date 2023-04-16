@@ -35,4 +35,5 @@ application/config/database.php
 vendor/arsha/
 vendor/OwlCarousel2-2.3.4/
 file/
+uploads/
 menu.php
