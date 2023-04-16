@@ -16,10 +16,10 @@
         ?>
         <!-- End Why Us Section -->
 
-        <!-- ======= Skills Section ======= -->
-        <?php // $this->load->view('front/landing_page/_skills') 
+        <!-- ======= Sambutan Section ======= -->
+        <?php $this->load->view('front/landing_page/_sambutan') 
         ?>
-        <!-- End Skills Section -->
+        <!-- End Sambutan Section -->
 
         <!-- ======= Services Section ======= -->
         <?php // $this->load->view('front/landing_page/_services') 
@@ -27,7 +27,7 @@
         <!-- End Services Section -->
 
         <!-- ======= Cta Section ======= -->
-        <?php $this->load->view('front/landing_page/_cta')
+        <?php // $this->load->view('front/landing_page/_cta')
         ?>
         <!-- End Cta Section -->
 

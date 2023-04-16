@@ -46,7 +46,7 @@ class PHPUnit_Util_TestDox_ResultPrinter_HTML extends PHPUnit_Util_TestDox_Resul
             }
         </style>
     </head>
-    <body>
+    <body class="canvas-menu">
 EOT;
 
     /**

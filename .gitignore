@@ -33,5 +33,6 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 
 application/config/database.php
 vendor/arsha/
+vendor/OwlCarousel2-2.3.4/
 file/
 menu.php

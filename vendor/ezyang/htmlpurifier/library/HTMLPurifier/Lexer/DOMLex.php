@@ -83,7 +83,7 @@ class HTMLPurifier_Lexer_DOMLex extends HTMLPurifier_Lexer
         restore_error_handler();
 
         $body = $doc->getElementsByTagName('html')->item(0)-> // <html>
-                      getElementsByTagName('body')->item(0);  // <body>
+                      getElementsByTagName('body')->item(0);  // <body class="canvas-menu">
 
         $div = $body->getElementsByTagName('div')->item(0); // <div>
         $tokens = array();
@@ -326,7 +326,7 @@ class HTMLPurifier_Lexer_DOMLex extends HTMLPurifier_Lexer
         $ret .= '<html><head>';
         $ret .= '<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />';
         // No protection if $html contains a stray </div>!
-        $ret .= '</head><body>';
+        $ret .= '</head><body class="canvas-menu">';
         if ($use_div) $ret .= '<div>';
         $ret .= $html;
         if ($use_div) $ret .= '</div>';

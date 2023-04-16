@@ -50,7 +50,7 @@ EXTERNAL: CSSTidy
     }
 ?>
 </head>
-<body>
+<body class="canvas-menu">
   <div>
     <?php echo $html; ?>
   </div>

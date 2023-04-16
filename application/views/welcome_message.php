@@ -18,7 +18,7 @@
 	<link href="<?= base_url() ?>assets/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="canvas-menu">
 	<div class="wrapper">
 
 		<div class="main">

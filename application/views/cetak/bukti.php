@@ -21,7 +21,7 @@
     </style>
 </head>
 
-<body>
+<body class="canvas-menu">
     <section id="cetak">
         <div class="container pt-5 py-5">
             <div class="row justify-content-center mb-4">

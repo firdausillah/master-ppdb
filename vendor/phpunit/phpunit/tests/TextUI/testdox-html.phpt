@@ -41,7 +41,7 @@ PHPUnit %s by Sebastian Bergmann and contributors.
             }
         </style>
     </head>
-    <body>
+    <body class="canvas-menu">
 
         <h2 id="BankAccountTest">BankAccount</h2>
         <ul>

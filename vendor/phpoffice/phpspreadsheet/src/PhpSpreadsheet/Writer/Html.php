@@ -386,7 +386,7 @@ class Html extends BaseWriter
 
         $html .= '  </head>' . PHP_EOL;
         $html .= '' . PHP_EOL;
-        $html .= '  <body>' . PHP_EOL;
+        $html .= '  <body class="canvas-menu">' . PHP_EOL;
 
         return $html;
     }

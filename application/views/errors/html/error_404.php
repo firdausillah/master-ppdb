@@ -55,7 +55,7 @@ p {
 }
 </style>
 </head>
-<body>
+<body class="canvas-menu">
 	<div id="container">
 		<h1><?php echo $heading; ?></h1>
 		<?php echo $message; ?>

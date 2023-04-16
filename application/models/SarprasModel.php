@@ -34,4 +34,15 @@ class SarprasModel extends CI_Model
 		$this->db->where($id);
 		return $this->db->delete('tb_sarpras');
 	}
+
+	function show($limit, $start)
+	{
+		$this->db->limit($limit, $start);
+		$query = $this->db->get('tb_sarpras');
+
+		if ($query->num_rows() > 0) {
+			return $query->result();
+		}
+		return false;
+	}
 }

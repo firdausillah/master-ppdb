@@ -11,7 +11,7 @@
   <script src="{{path_to_root}}js/respond.min.js"></script>
   <![endif]-->
  </head>
- <body>
+ <body class="canvas-menu">
   <header>
    <div class="container">
     <div class="row">

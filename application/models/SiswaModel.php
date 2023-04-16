@@ -181,6 +181,17 @@
  		return $this->db->delete('tb_siswa');
  	}
 
+	public function got($limit, $start)
+	{
+		$this->db->limit($limit, $start);
+		$query = $this->db->get('tb_siswa');
+
+		if ($query->num_rows() > 0) {
+			return $query->result();
+		}
+		return false;
+	}
+
 
 	// additional
 	public function cekUrut()

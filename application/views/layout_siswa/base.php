@@ -18,7 +18,7 @@
     <link href="<?= base_url() ?>assets/css/dataTables.min.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="canvas-menu">
     <div class="wrapper">
         <?php $this->load->view('layout_siswa/sidebar') ?>
 

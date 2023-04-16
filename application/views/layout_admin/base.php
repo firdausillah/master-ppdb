@@ -11,14 +11,17 @@
 
     <link rel="shortcut icon" href="<?= base_url() ?>assets/img/icons/icon-48x48.png" />
 
-    <title>Admin | <?= $title ? $title : 'Judul Page' ?></title>
+    <title>Admin | <?= @$title ? $title : "Judul Page" ?></title>
 
     <!-- <link href="<?= base_url() ?>assets/css/app.css" rel="stylesheet"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="<?= base_url() ?>assets/css/app2.css" rel="stylesheet">
     <link href="<?= base_url() ?>assets/css/dataTables.min.css" rel="stylesheet">
+    <link href="<?= base_url() ?>assets/css/cropper.css" rel="stylesheet">
+    <link href="<?= base_url() ?>assets/css/mystyle.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="canvas-menu">
     <div class="wrapper">
         <?php $this->load->view('layout_admin/sidebar') ?>
 
@@ -45,12 +48,13 @@
         </div>
     </div>
 
-    <script src="<?= base_url() ?>assets/js/jquery.min.js"></script>
+    <script src="<?= base_url() ?>assets/js/jquery.js"></script>
     <script src="<?= base_url() ?>assets/js/dataTables.min.js"></script>
     <!-- <script src="<?= base_url() ?>assets/js/app.js"></script> -->
     <script src="<?= base_url() ?>assets/js/app2.js"></script>
     <script src="<?= base_url() ?>assets/js/sweetalert2.all.min.js"></script>
     <script src="<?= base_url() ?>assets/js/myScript.js"></script>
+    <?php @$cropper ? $this->load->view($cropper) : "" ?>
 </body>
 
 </html>

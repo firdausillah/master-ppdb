@@ -30,7 +30,7 @@
     <!--===============================================================================================-->
 </head>
 
-<body>
+<body class="canvas-menu">
 
     <div class="limiter">
         <div class="container-login100">

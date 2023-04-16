@@ -27,6 +27,8 @@
 
   <!-- Template Main CSS File -->
   <link href="<?= base_url() ?>assets/front/css/style.css" rel="stylesheet">
+  <link href="<?= base_url() ?>assets/front/css/owl.carousel.min.css" rel="stylesheet">
+  <link href="<?= base_url() ?>assets/front/css/owl.theme.default.min.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: Arsha
@@ -37,7 +39,7 @@
   ======================================================== -->
 </head>
 
-<body>
+<body class="canvas-menu">
 
   <?php $this->load->view('layout_front/_header') ?>
 
@@ -59,10 +61,32 @@
   <script src="<?= base_url() ?>assets/front/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="<?= base_url() ?>assets/front/vendor/waypoints/noframework.waypoints.js"></script>
   <script src='https://widgets.sociablekit.com/instagram-feed/widget.js' async defer></script>
+  <script src="<?= base_url() ?>assets/front/js/owl.carousel.min.js"></script>
   <!-- <script src="<?= base_url() ?>assets/front/vendor/php-email-form/validate.js"></script> -->
 
   <!-- Template Main JS File -->
   <script src="<?= base_url() ?>assets/front/js/main.js"></script>
+
+  <script>
+    $(document).ready(function() {
+      $('.owl-carousel').owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: true,
+        responsive: {
+          0: {
+            items: 1
+          },
+          600: {
+            items: 1
+          },
+          1000: {
+            items: 1
+          }
+        }
+      })
+    });
+  </script>
 
 </body>
 
