@@ -20,7 +20,7 @@
 
                     <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
                         <row class="php-email-form d-flex align-items-center">
-                            <div class="owl-carousel owl-theme">
+                            <div class="owl-carousel owl-1 owl-theme">
                                 <?php for ($i = 0; $i < 4; $i++) : ?>
                                     <div class="item" style="padding: 20px;border-radius: 10px;">
                                         <figure class="text-center">

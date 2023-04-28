@@ -32,7 +32,7 @@ class Sarpras extends CI_Controller
             'title' => 'Tambah Sarpras',
             'content' => 'admin/sarpras/form',
             'cropper' => 'admin/sarpras/cropper',
-            'aspect' => '16/9'
+            'aspect' => '1/1'
         ];
 
         $this->load->view('layout_admin/base', $data);
@@ -45,7 +45,7 @@ class Sarpras extends CI_Controller
             'sarpras' => $this->SarprasModel->findBy(['id' => $id])->row(),
             'content' => 'admin/sarpras/form',
             'cropper' => 'admin/sarpras/cropper',
-            'aspect' => '16/9'
+            'aspect' => '1/1'
         ];
 
         $this->load->view('layout_admin/base', $data);

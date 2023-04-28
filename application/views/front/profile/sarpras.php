@@ -7,10 +7,6 @@
       <section id="services" class="services">
           <div class="container" data-aos="fade-up">
 
-              <!-- <div class="section-title"> -->
-              <!-- <h2>Team</h2> -->
-              <!-- <p>Keluarga besar Guru dan Tenaga Kependidikan SMK PGRI PESANGGARAN.</p>
-              </div> -->
 
               <div class="row">
 

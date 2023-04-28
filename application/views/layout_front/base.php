@@ -26,6 +26,7 @@
   <link href="<?= base_url() ?>assets/front/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
+  <link href="<?= base_url() ?>assets/front/css/imagehover.min.css" rel="stylesheet">
   <link href="<?= base_url() ?>assets/front/css/style.css" rel="stylesheet">
   <link href="<?= base_url() ?>assets/front/css/owl.carousel.min.css" rel="stylesheet">
   <link href="<?= base_url() ?>assets/front/css/owl.theme.default.min.css" rel="stylesheet">
@@ -69,7 +70,7 @@
 
   <script>
     $(document).ready(function() {
-      $('.owl-carousel').owlCarousel({
+      $('.owl-1').owlCarousel({
         loop: true,
         margin: 10,
         nav: true,
@@ -82,6 +83,22 @@
           },
           1000: {
             items: 1
+          }
+        }
+      })
+      $('.owl-5').owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: true,
+        responsive: {
+          0: {
+            items: 1
+          },
+          600: {
+            items: 3
+          },
+          1000: {
+            items: 5
           }
         }
       })

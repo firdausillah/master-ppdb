@@ -39,7 +39,7 @@
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">keterangan<?= @$aspect ?></label>
+                        <label class="form-label">keterangan</label>
                         <input type="text" class="form-control" name="keterangan" value="<?= @$sarpras->keterangan ?>">
                     </div>
 
