@@ -100,6 +100,11 @@
                                     </ul>
                                 </li>
                                 <li class="sidebar-item">
+                                    <a class="sidebar-link berita" href="<?= site_url('admin/berita') ?>">
+                                        <i class="fa fa-newspaper-o" aria-hidden="true"></i> <span class="align-middle">Berita</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
                                     <a class="sidebar-link user" href="<?= site_url('admin/user') ?>">
                                         <i class="align-middle" data-feather="user"></i> <span class="align-middle">User</span>
                                     </a>
