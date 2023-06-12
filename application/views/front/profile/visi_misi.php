@@ -16,18 +16,20 @@
                           <div class="col-sm-12">
                               <h3>Visi</h3>
                               <p>
-                                  Menghasilkan tamatan berbasis kompetensi, bertaqwa, mandiri dan sesuai kebutuhan pasar kerja tingkat menengah
+                                  MENGHASILKAN TAMATAN YANG DISIPLIN DAN BERKOMPETEN
                               </p>
                           </div>
                       </div><br>
                       <div class="row">
                           <div class="col-sm-12">
                               <h3>Misi</h3>
-                              <ul>
-                                  <li>Membentuk peserta didik yang terdidik dan terlatih sesuai kompetensi berstandar keterampilan kerja</li>
-                                  <li>Menyiapkan pembelajaran berbasis kompetensi kecakapan hidup dan kewirausahaan didasari pengembangan diri yang berkelanjutan</li>
-                                  <li>Membentuk sikap dan perilaku peserta didik yang berakar pada nilai-nilai budaya bangsa indonesia</li>
-                              </ul>
+                              <ol>
+                                  <li>Melaksanakan Pembiasaan Keagamaan setiap hari</li>
+                                  <li>Konsisten Menerapkan tata tertib sekolah</li>
+                                  <li>Menerapkan Projek Penguatan Profil Pelajar Pancasila</li>
+                                  <li>Mewujudkan Kegiatan Kewirausahaan untuk Pengembangan diri</li>
+                                  <li>Melaksanakan Pembelajaran sesuai dengan kompetensi keahlian masing masing</li>
+                              </ol>
                           </div>
                       </div>
 

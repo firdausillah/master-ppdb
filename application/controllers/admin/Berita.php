@@ -1,12 +1,12 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Sarpras extends CI_Controller
+class Berita extends CI_Controller
 {
     function __construct()
     {
         parent::__construct();
-        $this->load->model('SarprasModel');
+        $this->load->model('BeritaModel');
         $this->load->helper('slug');
         $this->load->helper('upload_foto');
 
@@ -18,9 +18,9 @@ class Sarpras extends CI_Controller
     public function index()
     {
         $data = [
-            'title' => 'Sarpras',
-            'sarpras' => $this->SarprasModel->get()->result(),
-            'content' => 'admin/sarpras/table'
+            'title' => 'Berita',
+            'berita' => $this->BeritaModel->get()->result(),
+            'content' => 'admin/berita/table'
         ];
 
         $this->load->view('layout_admin/base', $data);
@@ -29,10 +29,10 @@ class Sarpras extends CI_Controller
     public function add()
     {
         $data = [
-            'title' => 'Tambah Sarpras',
-            'content' => 'admin/sarpras/form',
-            'cropper' => 'admin/sarpras/cropper',
-            'aspect' => '1/1'
+            'title' => 'Tambah Berita',
+            'content' => 'admin/berita/form',
+            'cropper' => 'admin/berita/cropper',
+            'aspect' => '4/3'
         ];
 
         $this->load->view('layout_admin/base', $data);
@@ -41,11 +41,11 @@ class Sarpras extends CI_Controller
     public function edit($id)
     {
         $data = [
-            'title' => 'Edit Sarpras',
-            'sarpras' => $this->SarprasModel->findBy(['id' => $id])->row(),
-            'content' => 'admin/sarpras/form',
-            'cropper' => 'admin/sarpras/cropper',
-            'aspect' => '1/1'
+            'title' => 'Edit Berita',
+            'berita' => $this->BeritaModel->findBy(['id' => $id])->row(),
+            'content' => 'admin/berita/form',
+            'cropper' => 'admin/berita/cropper',
+            'aspect' => '4/3'
         ];
 
         $this->load->view('layout_admin/base', $data);
@@ -60,8 +60,8 @@ class Sarpras extends CI_Controller
         }
         $id = $this->input->post('id');
         $file_foto = $this->input->post('file_foto');
-        $folderPath = './uploads/img/sarpras/';
-        $foto = ''; //jika upload berhasil akan di replace oleh function save_foto()
+        $folderPath = './uploads/img/berita/';
+        $foto = $this->input->post('gambar'); //jika upload berhasil akan di replace oleh function save_foto()
 
         if ($file_foto) {
             $foto = save_foto($file_foto,
@@ -81,14 +81,14 @@ class Sarpras extends CI_Controller
         
         if (empty($id)) {
             unset($id);
-            if ($this->SarprasModel->add($data)){
+            if ($this->BeritaModel->add($data)){
                 $this->session->set_flashdata('flash', 'Data berhasil dimasukan');
-                redirect(base_url('admin/sarpras'));
+                redirect(base_url('admin/Berita'));
             } exit($this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan'));
         } else {
-            if ($this->SarprasModel->update(['id' => $id], $data)){
+            if ($this->BeritaModel->update(['id' => $id], $data)){
                 $this->session->set_flashdata('flash', 'Data berhasil diupdate');
-                redirect(base_url('admin/sarpras'));
+                redirect(base_url('admin/Berita'));
             } exit($this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan'));
         }
     }
@@ -105,7 +105,7 @@ class Sarpras extends CI_Controller
     //     $kode = slugify($nama) . '-' . $id;
     //     // echo $kode; exit();
 
-    //     $folderPath = './uploads/img/sarpras/';
+    //     $folderPath = './uploads/img/berita/';
 
     //     $foto_parts = explode(";base64,", $_POST['foto']);
     //     $foto_base64 = base64_decode($foto_parts[1]);
@@ -122,7 +122,7 @@ class Sarpras extends CI_Controller
 
     //         echo json_encode(["foto uploaded gagal."]);
     //     } else {
-    //         if ($this->SarprasModel->update(['id' => $id], ['foto' => $foto])) {
+    //         if ($this->BeritaModel->update(['id' => $id], ['foto' => $foto])) {
     //             $this->session->set_flashdata('flash', 'Data berhasil diupdate');
     //         } else {
     //             $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
@@ -141,25 +141,25 @@ class Sarpras extends CI_Controller
     //     ];
 
 
-    //     if ($this->SarprasModel->update(['id' => $id], $data)) {
+    //     if ($this->BeritaModel->update(['id' => $id], $data)) {
     //         $this->session->set_flashdata('flash', 'Data berhasil diupdate');
     //     } else {
     //         $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
     //     }
 
-    //     redirect(base_url('admin/sarpras'));
+    //     redirect(base_url('admin/Berita'));
     // }
 
     public function delete($id)
     {
-        $data = $this->SarprasModel->findBy(['id' => $id])->row();
-        @unlink(FCPATH . 'uploads/img/sarpras/' . $data->foto);
+        $data = $this->BeritaModel->findBy(['id' => $id])->row();
+        @unlink(FCPATH . 'uploads/img/berita/' . $data->foto);
 
-        if ($this->SarprasModel->delete(['id' => $id])) {
+        if ($this->BeritaModel->delete(['id' => $id])) {
             $this->session->set_flashdata('flash', 'Data berhasil dihapus');
         } else {
             $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
         }
-        redirect('admin/sarpras');
+        redirect('admin/Berita');
     }
 }

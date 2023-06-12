@@ -11,7 +11,7 @@
                   <div class="portfolio-details-slider swiper">
                       <div class="swiper-wrapper align-items-center">
                           <div class="swiper-slide">
-                              <img src="<?= base_url('uploads/img/sarpras/' . @$berita_r->foto); ?>" alt="">
+                              <img src="<?= base_url('uploads/img/berita/' . @$berita_r->foto); ?>" alt="">
                           </div>
                       </div>
                   </div>
@@ -36,7 +36,7 @@
                   <div class="owl-carousel owl-5 owl-theme">
                       <?php foreach ($berita as $i => $val) : ?>
                           <div class="item imghvr-fade">
-                              <img src="<?= base_url('uploads/img/sarpras/' . $val->foto); ?>" alt="Gambar" class="card-img-top">
+                              <img src="<?= base_url('uploads/img/berita/' . $val->foto); ?>" alt="Gambar" class="card-img-top">
                               <a href="<?= site_url('berita/show/' . $val->slug); ?>">
                                   <figcaption>
                                       <h4 class="text-dark"><?= $val->nama ?></h4>

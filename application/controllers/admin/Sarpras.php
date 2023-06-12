@@ -61,7 +61,7 @@ class Sarpras extends CI_Controller
         $id = $this->input->post('id');
         $file_foto = $this->input->post('file_foto');
         $folderPath = './uploads/img/sarpras/';
-        $foto = ''; //jika upload berhasil akan di replace oleh function save_foto()
+        $foto = $this->input->post('gambar'); //jika upload berhasil akan di replace oleh function save_foto()
 
         if ($file_foto) {
             $foto = save_foto($file_foto,

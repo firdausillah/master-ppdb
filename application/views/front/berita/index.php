@@ -11,7 +11,7 @@
                   <?php foreach ($berita as $i => $val) : ?>
                       <div class="col-lg-4 col-md-6 col-12">
                           <div class="card mb-4 imghvr-fade shadow p-3 mb-5 bg-body rounded">
-                              <img src="<?= base_url('uploads/img/sarpras/' . $val->foto); ?>" class="card-img-top" alt="...">
+                              <img src="<?= base_url('uploads/img/berita/' . $val->foto); ?>" class="card-img-top" alt="...">
                               <div class="card-body text-dark">
                                   <h4 class="card-title"><?= substr($val->nama, 0, 20); ?></h4>
                                   <small><?= timespan(strtotime($val->created_on), strtotime(date("Y-m-d H:i:s")), 2); ?> Ago</small>
