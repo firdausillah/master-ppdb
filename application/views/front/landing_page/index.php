@@ -26,10 +26,10 @@
         ?>
         <!-- End Services Section -->
 
-        <!-- ======= Cta Section ======= -->
-        <?php // $this->load->view('front/landing_page/_cta')
+        <!-- ======= berita ======= -->
+        <?php $this->load->view('front/landing_page/_berita')
         ?>
-        <!-- End Cta Section -->
+        <!-- End berita -->
 
         <!-- ======= profil Section ======= -->
         <?php $this->load->view('front/landing_page/_profil')

@@ -14,18 +14,18 @@
 
               <div class="row">
 
-                <?php foreach($tendiks as $tendik):?>
-                  <div class="col-lg-4 mt-4" data-aos="zoom-in" data-aos-delay="100">
-                      <div class="member d-flex align-items-start">
-                          <div class="pic"><img src="<?= base_url() ?>assets/front/img/team/team-1.jpg" class="img-fluid" alt=""></div>
-                          <div class="member-info">
-                              <h4><?= $tendik->nama_tendik ?></h4>
-                              <span>Chief Executive Officer</span>
-                              <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p>
+                  <?php foreach ($gtks as $gtk) : ?>
+                      <div class="col-lg-4 mt-4" data-aos="zoom-in" data-aos-delay="100">
+                          <div class="member d-flex align-items-start">
+                              <div class="pic"><img src="<?= base_url('uploads/img/gtk/' . $gtk->foto); ?>" class="img-fluid" alt=""></div>
+                              <div class="member-info">
+                                  <h4><?= $gtk->nama_tendik ?></h4>
+                                  <span>Chief Executive Officer</span>
+                                  <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p>
+                              </div>
                           </div>
                       </div>
-                  </div>
-                <?php endforeach?>
+                  <?php endforeach ?>
 
               </div>
 

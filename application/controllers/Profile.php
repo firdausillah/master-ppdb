@@ -5,7 +5,7 @@ class Profile extends CI_Controller {
 
 	function __construct(){
 		parent::__construct();
-		$this->load->model('TendikModel', 'mTendik');
+		$this->load->model('GtkModel', 'mGtk');
 		$this->load->model('SarprasModel');
 	}
 
@@ -31,7 +31,7 @@ class Profile extends CI_Controller {
 
 	public function guru_tendik(){
 		$data = [
-			'tendiks' => $this->mTendik->get()->result(),
+			'gtks' => $this->mGtk->get()->result(),
 			'title' => 'Guru dan Tenaga Kependidikan',
 			'content' => 'front/profile/guru_tendik'
 		];

@@ -28,6 +28,7 @@
   <!-- Template Main CSS File -->
   <link href="<?= base_url() ?>assets/front/css/imagehover.min.css" rel="stylesheet">
   <link href="<?= base_url() ?>assets/front/css/style.css" rel="stylesheet">
+  <link href="<?= base_url() ?>assets/front/css/mystyle.css" rel="stylesheet">
   <link href="<?= base_url() ?>assets/front/css/owl.carousel.min.css" rel="stylesheet">
   <link href="<?= base_url() ?>assets/front/css/owl.theme.default.min.css" rel="stylesheet">
 

@@ -11,6 +11,7 @@ class Home extends CI_Controller {
 		$this->load->model('AsalSekolahModel', 'mAsalSekolah');
 		$this->load->model('SiswaModel', 'mSiswa');
 		$this->load->model('ProfileModel', 'mProfile');
+		$this->load->model('BeritaModel');
 	}
 
 	public function index(){
@@ -20,6 +21,7 @@ class Home extends CI_Controller {
 			'persyaratans' => $this->mPersyaratan->get()->result(),
 			'asalsekolahs' => $this->mAsalSekolah->get()->result(),
 			'profile' => $this->mProfile->findBy(['id' => 1])->row(),
+			'berita' => $this->BeritaModel->show(10, 1),
 			'title' => 'Home',
 			'content' => 'front/landing_page/index'
 		];

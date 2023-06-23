@@ -101,7 +101,12 @@
                                 </li>
                                 <li class="sidebar-item">
                                     <a class="sidebar-link berita" href="<?= site_url('admin/berita') ?>">
-                                        <i class="fa fa-newspaper-o" aria-hidden="true"></i> <span class="align-middle">Berita</span>
+                                        <i class="fa fa-newspaper" aria-hidden="true"></i> <span class="align-middle">Berita</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a class="sidebar-link gtk" href="<?= site_url('admin/gtk') ?>">
+                                        <i class="fa fa-users" aria-hidden="true"></i> <span class="align-middle">GTK</span>
                                     </a>
                                 </li>
                                 <li class="sidebar-item">
