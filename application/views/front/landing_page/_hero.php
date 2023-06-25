@@ -10,13 +10,13 @@
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="<?= base_url() ?>uploads/img/banner/banner1.jpg" class="d-block w-100" alt="<?= base_url() ?>uploads/img/banner/banner1.jpg">
+                        <img src="<?= base_url() ?>uploads/img/banner/banner1.gif" class="d-block w-100" alt="<?= base_url() ?>uploads/img/banner/banner1.gif">
                     </div>
                     <div class="carousel-item">
-                        <img src="<?= base_url() ?>uploads/img/banner/banner2.jpg" class="d-block w-100" alt="<?= base_url() ?>uploads/img/banner/banner2.jpg">
+                        <img src="<?= base_url() ?>uploads/img/banner/banner2.gif" class="d-block w-100" alt="<?= base_url() ?>uploads/img/banner/banner2.gif">
                     </div>
                     <div class="carousel-item">
-                        <img src="<?= base_url() ?>uploads/img/banner/banner4.jpg" class="d-block w-100" alt="<?= base_url() ?>uploads/img/banner/banner4.jpg">
+                        <img src="<?= base_url() ?>uploads/img/banner/banner4.gif" class="d-block w-100" alt="<?= base_url() ?>uploads/img/banner/banner4.gif">
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
