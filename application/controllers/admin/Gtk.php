@@ -20,7 +20,7 @@ class Gtk extends CI_Controller
         $data = [
             'title' => 'gtk',
             'gtk' => $this->GtkModel->get()->result(),
-            'content' => 'admin/Gtk/table'
+            'content' => 'admin/gtk/table'
         ];
 
         $this->load->view('layout_admin/base', $data);
@@ -30,8 +30,8 @@ class Gtk extends CI_Controller
     {
         $data = [
             'title' => 'Tambah Gtk',
-            'content' => 'admin/Gtk/form',
-            'cropper' => 'admin/Gtk/cropper'
+            'content' => 'admin/gtk/form',
+            'cropper' => 'admin/gtk/cropper'
         ];
 
         $this->load->view('layout_admin/base', $data);
@@ -42,8 +42,8 @@ class Gtk extends CI_Controller
         $data = [
             'title' => 'Edit Gtk',
             'gtk' => $this->GtkModel->findBy(['id' => $id])->row(),
-            'content' => 'admin/Gtk/form',
-            'cropper' => 'admin/Gtk/cropper'
+            'content' => 'admin/gtk/form',
+            'cropper' => 'admin/gtk/cropper'
         ];
 
         $this->load->view('layout_admin/base', $data);
@@ -59,7 +59,7 @@ class Gtk extends CI_Controller
         }
         $id = $this->input->post('id');
         $file_foto = $this->input->post('file_foto');
-        $folderPath = './uploads/img/Gtk/';
+        $folderPath = './uploads/img/gtk/';
         $foto = $this->input->post('gambar'); //jika upload berhasil akan di replace oleh function save_foto()
 
         if ($file_foto) {
@@ -96,7 +96,7 @@ class Gtk extends CI_Controller
     public function delete($id)
     {
         $data = $this->GtkModel->findBy(['id' => $id])->row();
-        @unlink(FCPATH . 'uploads/img/Gtk/' . $data->foto);
+        @unlink(FCPATH . 'uploads/img/gtk/' . $data->foto);
 
         if ($this->GtkModel->delete(['id' => $id])) {
             $this->session->set_flashdata('flash', 'Data berhasil dihapus');
