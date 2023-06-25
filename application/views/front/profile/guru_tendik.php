@@ -19,9 +19,9 @@
                           <div class="member d-flex align-items-start">
                               <div class="pic"><img src="<?= base_url('uploads/img/gtk/' . $gtk->foto); ?>" class="img-fluid" alt=""></div>
                               <div class="member-info align-self-center">
-                                  <h4><?= $gtk->nama_tendik ?></h4>
-                                  <!-- <span>Chief Executive Officer</span>
-                                  <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p> -->
+                                  <h5><?= $gtk->nama_tendik ?></h5>
+                                  <span><?= $gtk->keterangan ?></span>
+                                  <!-- <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p> -->
                               </div>
                           </div>
                       </div>
