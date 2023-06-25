@@ -18,10 +18,10 @@
                       <div class="col-lg-4 mt-4" data-aos="zoom-in" data-aos-delay="100">
                           <div class="member d-flex align-items-start">
                               <div class="pic"><img src="<?= base_url('uploads/img/gtk/' . $gtk->foto); ?>" class="img-fluid" alt=""></div>
-                              <div class="member-info">
-                                  <h4><?= $gtk->nama_tendik ?></h4>
-                                  <span>Chief Executive Officer</span>
-                                  <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p>
+                              <div class="member-info align-self-center">
+                                  <h3><?= $gtk->nama_tendik ?></h3>
+                                  <!-- <span>Chief Executive Officer</span>
+                                  <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p> -->
                               </div>
                           </div>
                       </div>

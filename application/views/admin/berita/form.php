@@ -37,7 +37,7 @@
                     <div class="mb-3">
                         <label class="form-label">keterangan</label>
                         <!-- <input type="text" class="form-control" name="keterangan" "> -->
-                        <textarea name=" keterangan" class="form-control" id="keterangan" cols="30" rows="10"><?= @$berita->keterangan ?></textarea>
+                        <textarea name="keterangan" class="form-control" id="editor" cols="30" rows="10"><?= @$berita->keterangan ?></textarea>
                     </div>
 
 

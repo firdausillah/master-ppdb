@@ -16,7 +16,7 @@
                         <img src="<?= base_url() ?>uploads/img/banner/banner2.gif" class="d-block w-100" alt="<?= base_url() ?>uploads/img/banner/banner2.gif">
                     </div>
                     <div class="carousel-item">
-                        <img src="<?= base_url() ?>uploads/img/banner/banner4.gif" class="d-block w-100" alt="<?= base_url() ?>uploads/img/banner/banner4.gif">
+                        <img src="<?= base_url() ?>uploads/img/banner/banner3.gif" class="d-block w-100" alt="<?= base_url() ?>uploads/img/banner/banner4.gif">
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">

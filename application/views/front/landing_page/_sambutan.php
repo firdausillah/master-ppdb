@@ -28,7 +28,7 @@
 
                     </div>
                     <div class="col-lg-4 d-flex align-items-center" data-aos="fade-left" data-aos-delay="100">
-                        <img src="<?= base_url() ?>assets/front/img/team/teama-4.png" class="img-fluid" alt="">
+                        <img src="<?= base_url() ?>assets/front/img/team/bu-umi.gif" class="img-fluid" alt="">
                     </div>
                 </div>
 
