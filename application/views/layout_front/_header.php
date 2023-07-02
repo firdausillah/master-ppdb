@@ -25,21 +25,16 @@
                     <li class="dropdown"><a href="" name="jurusan"><span>Jurusan</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
                             <li><a href="<?= site_url('jurusan/teknik_sepeda_motor'); ?>">Teknik Sepeda Motor</a></li>
-                            <li><a href="<?= site_url('jurusan/'); ?>">Teknik Alat Berat</a></li>
-                            <li><a href="<?= site_url('jurusan/'); ?>">Agribisnis Pengolahan Hasil Pertanian</a></li>
-                            <li><a href="<?= site_url('jurusan/'); ?>">Manajemen Perkantoran Lembaga Bisnis</a></li>
-                            <li><a href="<?= site_url('jurusan/'); ?>">Akuntansi dan Keuangan Lembaga</a></li>
-                            <li><a href="<?= site_url('jurusan/'); ?>">Perhotelan</a></li>
+                            <li><a href="<?= site_url('jurusan/teknik_alat_berat'); ?>">Teknik Alat Berat</a></li>
+                            <li><a href="<?= site_url('jurusan/agribisnis_pengolahan_hasil_pertanian'); ?>">Agribisnis Pengolahan Hasil Pertanian</a></li>
+                            <li><a href="<?= site_url('jurusan/manajemen_perkantoran_lembaga_bisnis'); ?>">Manajemen Perkantoran Lembaga Bisnis</a></li>
+                            <li><a href="<?= site_url('jurusan/akuntansi_dan_keuangan_lembaga'); ?>">Akuntansi dan Keuangan Lembaga</a></li>
+                            <li><a href="<?= site_url('jurusan/perhotelan'); ?>">Perhotelan</a></li>
                         </ul>
                     </li>
                     <li class="dropdown"><a href="" name="login"><span>Login</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
                             <li><a href="<?= site_url('jurusan/teknik_sepeda_motor'); ?>">Teknik Sepeda Motor</a></li>
-                            <li><a href="<?= site_url('jurusan/'); ?>">Teknik Alat Berat</a></li>
-                            <li><a href="<?= site_url('jurusan/'); ?>">Agribisnis Pengolahan Hasil Pertanian</a></li>
-                            <li><a href="<?= site_url('jurusan/'); ?>">Manajemen Perkantoran Lembaga Bisnis</a></li>
-                            <li><a href="<?= site_url('jurusan/'); ?>">Akuntansi dan Keuangan Lembaga</a></li>
-                            <li><a href="<?= site_url('jurusan/'); ?>">Perhotelan</a></li>
                         </ul>
                     </li>
                     <li><a class="nav-link" href="<?= site_url('berita'); ?>" name="berita">Berita</a></li>
