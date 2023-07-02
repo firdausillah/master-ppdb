@@ -21,18 +21,18 @@
                     <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
                         <row class="php-email-form d-flex align-items-center">
                             <div class="owl-carousel owl-1 owl-theme">
-                                <?php for ($i = 0; $i < 4; $i++) : ?>
+                                <?php foreach ($testimoni as $key => $value) : ?>
                                     <div class="item" style="padding: 20px;border-radius: 10px;">
                                         <figure class="text-center">
                                             <blockquote class="blockquote">
-                                                <p>A well-known quote, contained in a blockquote element. A well-known quote, contained in a blockquote element.</p>
+                                                <?= $value->keterangan ?>
                                             </blockquote>
                                             <figcaption class="blockquote-footer">
-                                                Someone famous in <cite title="Source Title">Source Title</cite>
+                                                <?= $value->alumni_nama ?> <cite title="Source Title"><?= $value->tahun_lulus ?></cite>
                                             </figcaption>
                                         </figure>
                                     </div>
-                                <?php endfor ?>
+                                <?php endforeach ?>
                             </div>
                         </row>
                     </div>

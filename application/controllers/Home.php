@@ -13,6 +13,7 @@ class Home extends CI_Controller {
 		$this->load->model('ProfileModel', 'mProfile');
 		$this->load->model('BeritaModel');
 		$this->load->model('BannerModel');
+		$this->load->model('TestimoniModel');
 	}
 
 	public function index(){
@@ -24,6 +25,7 @@ class Home extends CI_Controller {
 			'profile' => $this->mProfile->findBy(['id' => 1])->row(),
 			'berita' => $this->BeritaModel->show(10, 1),
 			'banner' => $this->BannerModel->get()->result(),
+			'testimoni' => $this->TestimoniModel->get()->result(),
 			'title' => 'Home',
 			'content' => 'front/landing_page/index'
 		];

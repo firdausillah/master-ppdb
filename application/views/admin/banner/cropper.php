@@ -1,3 +1,21 @@
+/* 
+    ini script yang digunakan untuk upload foto dengan skala
+    cara menggunakan :
+        1. buat controller 
+            ex. 
+                public function add()
+                    {
+                        $data = [
+                            'title' => 'Tambah Banner',
+                            'content' => 'admin/banner/form',
+                            'cropper' => 'admin/banner/cropper',
+                            'aspect' => '300/100'
+                        ];
+
+                        $this->load->view('layout_admin/base', $data);
+                    }
+*/
+
 <!-- Modal Upload Gambar -->
 <div class="modal fade" id="modalUpload" tabindex="-1" role="dialog" aria-labelledby="modalUploadLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
