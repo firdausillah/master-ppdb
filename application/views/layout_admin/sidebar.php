@@ -119,7 +119,21 @@
                                         <i class="align-middle" data-feather="file"></i> <span class="align-middle">Profile</span>
                                     </a>
                                 </li>
-
+                                <li class="sidebar-header">
+                                    Front
+                                </li>
+                                <li class="sidebar-item">
+                                    <a data-bs-target="#home" data-bs-toggle="collapse" class="sidebar-link collapsed" aria-expanded="false">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle align-middle">
+                                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                        </svg> <span class="align-middle">Home</span>
+                                    </a>
+                                    <ul id="home" class="sidebar-dropdown list-unstyled collapse" data-parent="#sidebar">
+                                        <li class="sidebar-item"><a class="sidebar-link" href="<?= base_url() ?>admin/banner">Banner</a></li>
+                                        <li class="sidebar-item"><a class="sidebar-link" href="<?= base_url() ?>admin/testimoni">Testimoni Alumni</a></li>
+                                    </ul>
+                                </li>
                             </ul>
                         </div>
                     </div>

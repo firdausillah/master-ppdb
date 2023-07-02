@@ -56,16 +56,7 @@
     <script src="<?= base_url() ?>assets/js/myScript.js"></script>
     <script src="https://cdn.ckeditor.com/ckeditor5/38.0.1/classic/ckeditor.js"></script>
     <?php @$cropper ? $this->load->view($cropper) : "" ?>
-    <script>
-        ClassicEditor
-            .create(document.querySelector('#editor'))
-            .then(editor => {
-                console.log(editor);
-            })
-            .catch(error => {
-                console.error(error);
-            });
-    </script>
+    <script src="<?= base_url() ?>assets/js/classicEditor.js"></script>
 </body>
 
 </html>

@@ -4,20 +4,16 @@
         <div class="container-fluid">
             <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <?php foreach ($banner as $key => $value) : ?>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="<?= $key ?>" <?= ($key == 0 ? "class='active' aria-current='true'" : '') ?> aria-label="Slide <?= $key ?>"></button>
+                    <?php endforeach ?>
                 </div>
                 <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="<?= base_url() ?>uploads/img/banner/banner1.gif" class="d-block w-100" alt="<?= base_url() ?>uploads/img/banner/banner1.gif">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="<?= base_url() ?>uploads/img/banner/banner2.gif" class="d-block w-100" alt="<?= base_url() ?>uploads/img/banner/banner2.gif">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="<?= base_url() ?>uploads/img/banner/banner3.gif" class="d-block w-100" alt="<?= base_url() ?>uploads/img/banner/banner4.gif">
-                    </div>
+                    <?php foreach ($banner as $key => $value) : ?>
+                        <div class="carousel-item<?= ($key == 0 ? " active" : '') ?>">
+                            <img src="<?= base_url('uploads/img/banner/'.$value->foto) ?>" class="d-block w-100" alt="<?= $value->nama ?>">
+                        </div>
+                    <?php endforeach ?>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>

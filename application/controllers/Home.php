@@ -12,6 +12,7 @@ class Home extends CI_Controller {
 		$this->load->model('SiswaModel', 'mSiswa');
 		$this->load->model('ProfileModel', 'mProfile');
 		$this->load->model('BeritaModel');
+		$this->load->model('BannerModel');
 	}
 
 	public function index(){
@@ -22,6 +23,7 @@ class Home extends CI_Controller {
 			'asalsekolahs' => $this->mAsalSekolah->get()->result(),
 			'profile' => $this->mProfile->findBy(['id' => 1])->row(),
 			'berita' => $this->BeritaModel->show(10, 1),
+			'banner' => $this->BannerModel->get()->result(),
 			'title' => 'Home',
 			'content' => 'front/landing_page/index'
 		];
