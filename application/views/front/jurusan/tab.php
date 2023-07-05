@@ -9,7 +9,7 @@
 
               <div class="row">
                   <div class="col-sm-6 text-center align-self-start">
-                      <img src="<?= base_url('assets/front/img/prodi/logo-jurusan/tab.png') ?>" class="shadow p-3 mb-5 bg-white rounded" height="450px" alt="">
+                      <img src="<?= base_url('assets/front/img/prodi/logo-jurusan/tab.png') ?>" class="img-fluid shadow p-3 mb-5 bg-white rounded" height="450px" alt="">
                   </div>
                   <div class="col-sm-6">
                       <p class="fst-italic" style="text-align: justify;">

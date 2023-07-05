@@ -60,7 +60,7 @@ class Berita extends CI_Controller {
 
 		$data = [
 			'berita_r' => $get_berita,
-			'berita' => $this->BeritaModel->show(10, 1),
+			'berita' => $this->BeritaModel->show(10, 0),
 			'title' => $get_berita->nama,
 			'content' => 'front/berita/show'
 		];

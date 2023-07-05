@@ -58,7 +58,6 @@
                                         <li class="sidebar-item"><a class="sidebar-link" href="<?= base_url() ?>admin/pekerjaan">Pekerjaan</a></li>
                                         <li class="sidebar-item"><a class="sidebar-link" href="<?= base_url() ?>admin/penghasilan">Penghasilan Orang Tua</a></li>
                                         <li class="sidebar-item"><a class="sidebar-link" href="<?= base_url() ?>admin/asalsekolah">Asal Sekolah</a></li>
-                                        <li class="sidebar-item"><a class="sidebar-link" href="<?= base_url() ?>admin/sarpras">Sarpras</a></li>
                                     </ul>
                                 </li>
 
@@ -132,6 +131,7 @@
                                     <ul id="home" class="sidebar-dropdown list-unstyled collapse" data-parent="#sidebar">
                                         <li class="sidebar-item"><a class="sidebar-link" href="<?= base_url() ?>admin/banner">Banner</a></li>
                                         <li class="sidebar-item"><a class="sidebar-link" href="<?= base_url() ?>admin/testimoni">Testimoni Alumni</a></li>
+                                        <li class="sidebar-item"><a class="sidebar-link" href="<?= base_url() ?>admin/sarpras">Sarpras</a></li>
                                     </ul>
                                 </li>
                             </ul>

@@ -23,12 +23,13 @@ class Home extends CI_Controller {
 			'persyaratans' => $this->mPersyaratan->get()->result(),
 			'asalsekolahs' => $this->mAsalSekolah->get()->result(),
 			'profile' => $this->mProfile->findBy(['id' => 1])->row(),
-			'berita' => $this->BeritaModel->show(10, 1),
+			'berita' => $this->BeritaModel->show(10, 0),
 			'banner' => $this->BannerModel->get()->result(),
 			'testimoni' => $this->TestimoniModel->get()->result(),
 			'title' => 'Home',
 			'content' => 'front/landing_page/index'
 		];
+		// print_r($this->BeritaModel->show(10, 0)); exit();
 		$this->load->view('layout_front/base', $data);
 	}
 }
