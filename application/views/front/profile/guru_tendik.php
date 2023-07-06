@@ -9,7 +9,7 @@
 
               <div class="section-title">
                   <!-- <h2>Team</h2> -->
-                  <p>Keluarga besar Guru dan Tenaga Kependidikan SMK PGRI PESANGGARAN.</p>
+                  <p>GURU DAN TENAGA KEPENDIDIKAN SMK PGRI PESANGGARAN.</p>
               </div>
 
               <div class="row">
@@ -19,7 +19,7 @@
                           <div class="member d-flex align-items-start">
                               <div class="pic"><img src="<?= base_url('uploads/img/gtk/' . $gtk->foto); ?>" class="img-fluid" alt=""></div>
                               <div class="member-info align-self-center">
-                                  <h4><?= $gtk->nama_tendik ?></h4>
+                                  <h5><?= $gtk->nama_tendik ?></h5>
                                   <span><?= $gtk->keterangan ?></span>
                                   <!-- <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p> -->
                               </div>
