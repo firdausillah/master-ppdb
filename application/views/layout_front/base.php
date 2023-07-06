@@ -62,7 +62,6 @@
   <script src="<?= base_url() ?>assets/front/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="<?= base_url() ?>assets/front/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="<?= base_url() ?>assets/front/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src='https://widgets.sociablekit.com/instagram-feed/widget.js' async defer></script>
   <script src="<?= base_url() ?>assets/front/js/owl.carousel.min.js"></script>
   <!-- <script src="<?= base_url() ?>assets/front/vendor/php-email-form/validate.js"></script> -->
 
