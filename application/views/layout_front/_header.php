@@ -33,9 +33,7 @@
                         </ul>
                     </li>
                     <li><a class="nav-link" href="<?= site_url('berita'); ?>" name="berita">Berita</a></li>
-                    <li><a class="nav-link" href="<?= site_url('galery'); ?>" name="galery">Galeri</a></li>
-                    <!-- <li><a class="nav-link" href="" name="modul">Modul</a></li>
-                    <li><a class="nav-link" href="" name="kurikulum">Kurikulum</a></li> -->
+                    <li><a class="nav-link" href="https://www.instagram.com/smkgrisa/" target="_blank" name="galery">Galeri</a></li>
                     <li><a class="getstarted" href="<?= site_url('ppdb') ?>">PPDB</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
