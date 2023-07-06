@@ -75,6 +75,7 @@ class Gtk extends CI_Controller
             'nama_tendik' => $this->input->post('nama_tendik'),
             'foto' => $foto,
             'is_active' => 1,
+            'urutan' => $this->input->post('urutan'),
             'keterangan' => $this->input->post('keterangan')
         ];
         

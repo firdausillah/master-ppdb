@@ -24,7 +24,7 @@ class Home extends CI_Controller {
 			'asalsekolahs' => $this->mAsalSekolah->get()->result(),
 			'profile' => $this->mProfile->findBy(['id' => 1])->row(),
 			'berita' => $this->BeritaModel->show(10, 0),
-			'banner' => $this->BannerModel->get()->result(),
+			'banner' => $this->BannerModel->get_urutan()->result(),
 			'testimoni' => $this->TestimoniModel->get()->result(),
 			'title' => 'Home',
 			'content' => 'front/landing_page/index'

@@ -32,7 +32,7 @@ class Banner extends CI_Controller
             'title' => 'Tambah Banner',
             'content' => 'admin/banner/form',
             'cropper' => 'admin/banner/cropper',
-            'aspect' => '300/100'
+            'aspect' => '3000/1000'
         ];
 
         $this->load->view('layout_admin/base', $data);
@@ -45,7 +45,7 @@ class Banner extends CI_Controller
             'banner' => $this->BannerModel->findBy(['id' => $id])->row(),
             'content' => 'admin/banner/form',
             'cropper' => 'admin/banner/cropper',
-            'aspect' => '300/100'
+            'aspect' => '3000/1000'
         ];
 
         $this->load->view('layout_admin/base', $data);
@@ -77,6 +77,7 @@ class Banner extends CI_Controller
             'nama' => $this->input->post('nama'),
             'foto' => $foto,
             'is_active' => 1,
+            'urutan' => $this->input->post('urutan'),
             'keterangan' => $this->input->post('keterangan')
         ];
         

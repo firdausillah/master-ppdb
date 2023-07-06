@@ -19,6 +19,10 @@
                         <input type="input" class="form-control" name="nama" value="<?= @$banner->nama ?>" required>
                     </div>
                     <div class="mb-3">
+                        <label class="form-label">Urutan</label>
+                        <input type="number" class="form-control" name="urutan" value="<?= @$banner->urutan ?>">
+                    </div>
+                    <div class="mb-3">
                         <label class="form-label">Gambar</label>
                         <div class="row">
                             <div class="col-lg-6">

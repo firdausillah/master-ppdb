@@ -24,6 +24,7 @@
                                     <th style="width:2%;">No</th>
                                     <th>Judul</th>
                                     <th>Foto</th>
+                                    <th>Urutan</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -33,6 +34,7 @@
                                         <td><?= $c + 1; ?></td>
                                         <td><?= $sar->nama; ?></td>
                                         <td><img src="<?= base_url('uploads/img/banner/' . $sar->foto) ?>" height="100px" alt=""></td>
+                                        <td><?= $sar->urutan; ?></td>
                                         <td>
                                             <a href="<?= base_url('admin/banner/edit/' . $sar->id) ?>" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
                                             <a href="<?= base_url('admin/banner/delete/' . $sar->id) ?>" class="btn btn-danger btn-sm tombol-hapus"><i class="fa fa-trash"></i></a>

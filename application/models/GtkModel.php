@@ -9,6 +9,7 @@ class GtkModel extends CI_Model
 
 	function get()
 	{
+		$this->db->order_by('urutan', 'ASC');
 		return $this->db->get('tb_gtk');
 	}
 

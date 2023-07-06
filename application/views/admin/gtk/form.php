@@ -15,8 +15,12 @@
                 <input type="hidden" name="slug" value="<?= @$gtk->slug ?>">
                 <div class="card-body">
                     <div class="mb-3">
-                        <label class="form-label">gtk</label>
+                        <label class="form-label">Nama</label>
                         <input type="input" class="form-control" name="nama_tendik" value="<?= @$gtk->	nama_tendik ?>" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Urutan</label>
+                        <input type="number" class="form-control" name="urutan" value="<?= @$gtk->	urutan ?>" >
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Gambar</label>

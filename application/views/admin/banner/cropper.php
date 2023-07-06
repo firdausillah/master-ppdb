@@ -1,4 +1,4 @@
-/* 
+<!--
     ini script yang digunakan untuk upload foto dengan skala
     cara menggunakan :
         1. buat controller 
@@ -14,7 +14,7 @@
 
                         $this->load->view('layout_admin/base', $data);
                     }
-*/
+-->
 
 <!-- Modal Upload Gambar -->
 <div class="modal fade" id="modalUpload" tabindex="-1" role="dialog" aria-labelledby="modalUploadLabel" aria-hidden="true">

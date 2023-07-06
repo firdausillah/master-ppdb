@@ -12,6 +12,12 @@ class BannerModel extends CI_Model
 		return $this->db->get('tb_banner');
 	}
 
+	function get_urutan()
+	{
+		$this->db->order_by('urutan', 'ASC');
+		return $this->db->get('tb_banner');
+	}
+
 	function findBy($id)
 	{
 		$this->db->where($id);

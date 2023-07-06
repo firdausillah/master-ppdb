@@ -44,12 +44,12 @@
                     <div class="col-lg-3 col-md-6 footer-links">
                         <h4>Jurusan</h4>
                         <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Teknik Sepeda Motor</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Teknik Alat Berat</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Agribisnis Pengolahan Hasil Pertanian</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Manajemen Perkantoran Lembaga Bisnis</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Akuntansi dan Keuangan Lembaga</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Perhotelan</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="<?=base_url('jurusan/teknik_sepeda_motor')?>">Teknik Sepeda Motor</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="<?=base_url('jurusan/teknik_alat_berat')?>">Teknik Alat Berat</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="<?=base_url('jurusan/agribisnis_pengolahan_hasil_pertanian')?>">Agribisnis Pengolahan Hasil Pertanian</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="<?=base_url('jurusan/manajemen_perkantoran_lembaga_bisnis')?>">Manajemen Perkantoran Lembaga Bisnis</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="<?=base_url('jurusan/akuntansi_dan_keuangan_lembaga')?>">Akuntansi dan Keuangan Lembaga</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="<?=base_url('jurusan/perhotelan')?>">Perhotelan</a></li>
                         </ul>
                     </div>
 
