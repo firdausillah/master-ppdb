@@ -33,23 +33,20 @@
                     <div class="col-lg-3 col-md-6 footer-links">
                         <h4>Login</h4>
                         <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="<?= base_url() ?>auth/login" target="_blank">Admin</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">CBT</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">SKL</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">PPDB</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Sarpras</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="https://cbt.smkpgripesanggaran.sch.id/login.php" target="_blank">CBT</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="http://skl.smkpgripesanggaran.sch.id/" target="_blank">SKL</a></li>
                         </ul>
                     </div>
 
                     <div class="col-lg-3 col-md-6 footer-links">
                         <h4>Jurusan</h4>
                         <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="<?=base_url('jurusan/teknik_sepeda_motor')?>">Teknik Sepeda Motor</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="<?=base_url('jurusan/teknik_alat_berat')?>">Teknik Alat Berat</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="<?=base_url('jurusan/agribisnis_pengolahan_hasil_pertanian')?>">Agribisnis Pengolahan Hasil Pertanian</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="<?=base_url('jurusan/manajemen_perkantoran_lembaga_bisnis')?>">Manajemen Perkantoran Lembaga Bisnis</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="<?=base_url('jurusan/akuntansi_dan_keuangan_lembaga')?>">Akuntansi dan Keuangan Lembaga</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="<?=base_url('jurusan/perhotelan')?>">Perhotelan</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="<?= base_url('jurusan/teknik_sepeda_motor') ?>">Teknik Sepeda Motor</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="<?= base_url('jurusan/teknik_alat_berat') ?>">Teknik Alat Berat</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="<?= base_url('jurusan/agribisnis_pengolahan_hasil_pertanian') ?>">Agribisnis Pengolahan Hasil Pertanian</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="<?= base_url('jurusan/manajemen_perkantoran_lembaga_bisnis') ?>">Manajemen Perkantoran Lembaga Bisnis</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="<?= base_url('jurusan/akuntansi_dan_keuangan_lembaga') ?>">Akuntansi dan Keuangan Lembaga</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="<?= base_url('jurusan/perhotelan') ?>">Perhotelan</a></li>
                         </ul>
                     </div>
 

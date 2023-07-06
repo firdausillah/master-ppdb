@@ -32,11 +32,6 @@
                             <li><a href="<?= site_url('jurusan/perhotelan'); ?>">Perhotelan</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown"><a href="" name="login"><span>Login</span> <i class="bi bi-chevron-down"></i></a>
-                        <ul>
-                            <li><a href="<?= site_url('jurusan/teknik_sepeda_motor'); ?>">Teknik Sepeda Motor</a></li>
-                        </ul>
-                    </li>
                     <li><a class="nav-link" href="<?= site_url('berita'); ?>" name="berita">Berita</a></li>
                     <li><a class="nav-link" href="<?= site_url('galery'); ?>" name="galery">Galeri</a></li>
                     <!-- <li><a class="nav-link" href="" name="modul">Modul</a></li>

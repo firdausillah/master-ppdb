@@ -61,6 +61,14 @@
                             Login
                         </button>
                     </div>
+                    <hr>
+                    <div class="container text-center">
+                        <div class="row">
+                            <a class="btn btn-info btn-block" href="https://cbt.smkpgripesanggaran.sch.id/pgri-panel/login.php" target="_blank">Admin CBT</a>
+                            <a class="btn btn-info btn-block" href="https://skl.smkpgripesanggaran.sch.id/admin/" target="_blank">Admin SKL</a>
+                            <a class="btn btn-info btn-block" href="http://sarpras.smkpgripesanggaran.sch.id/" target="_blank">Admin SARPRAS</a>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
