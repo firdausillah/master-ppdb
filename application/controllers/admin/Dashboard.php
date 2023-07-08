@@ -9,8 +9,9 @@ class Dashboard extends CI_Controller
         $this->load->model('ProfileModel');
         $this->load->model('SiswaModel');
         $this->load->model('JurusanModel');
+        $role = $this->session->userdata('role');
 
-        if ($this->session->userdata('role') != 'admin') {
+        if ($role != 'superadmin' AND $role != 'adminppdb' AND $role != 'adminberita') {
             redirect(base_url("auth/login"));
         }
     }

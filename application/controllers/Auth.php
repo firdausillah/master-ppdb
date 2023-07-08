@@ -30,7 +30,7 @@ class Auth extends CI_Controller
 
 		$cek = $this->mAuth->cekLogin('tb_user', $where)->row();
 		$test = $this->mAuth->cekLogin('tb_user', $where)->num_rows();
-
+		
 		if ($test > 0) {
 			$data_session = [
 				'id'	=> $cek->id,

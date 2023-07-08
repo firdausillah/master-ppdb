@@ -8,7 +8,7 @@ class Transportasi extends CI_Controller
         parent::__construct();
         $this->load->model('TransportasiModel');
 
-        if ($this->session->userdata('role') != 'admin') {
+        if ($this->session->userdata('role') != 'superadmin') {
             redirect(base_url("auth/login"));
         }
     }

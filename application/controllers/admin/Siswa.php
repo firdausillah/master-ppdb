@@ -19,7 +19,9 @@ class Siswa extends CI_Controller
         $this->load->model('AsalSekolahModel');
         $this->load->model('LogUserModel');
 
-        if ($this->session->userdata('role') != 'admin') {
+        $role = $this->session->userdata('role');
+
+        if ($role != 'superadmin' and $role != 'adminppdb') {
             redirect(base_url("auth/login"));
         }
 

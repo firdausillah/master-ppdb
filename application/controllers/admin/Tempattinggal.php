@@ -8,7 +8,7 @@ class Tempattinggal extends CI_Controller
         parent::__construct();
         $this->load->model('TempattinggalModel');
 
-        if ($this->session->userdata('role') != 'admin') {
+        if ($this->session->userdata('role') != 'superadmin') {
             redirect(base_url("auth/login"));
         }
     }

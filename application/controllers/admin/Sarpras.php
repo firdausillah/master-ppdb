@@ -10,7 +10,7 @@ class Sarpras extends CI_Controller
         $this->load->helper('slug');
         $this->load->helper('upload_foto');
 
-        if ($this->session->userdata('role') != 'admin') {
+        if ($this->session->userdata('role') != 'superadmin') {
             redirect(base_url("auth/login"));
         }
     }

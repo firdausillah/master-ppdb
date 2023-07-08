@@ -10,7 +10,9 @@ class Berita extends CI_Controller
         $this->load->helper('slug');
         $this->load->helper('upload_foto');
 
-        if ($this->session->userdata('role') != 'admin') {
+        $role = $this->session->userdata('role');
+
+        if ($role != 'superadmin' and $role != 'adminberita') {
             redirect(base_url("auth/login"));
         }
     }

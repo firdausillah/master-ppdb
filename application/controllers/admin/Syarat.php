@@ -8,7 +8,7 @@ class Syarat extends CI_Controller
         parent::__construct();
         $this->load->model('PersyaratanModel');
 
-        if ($this->session->userdata('role') != 'admin') {
+        if ($this->session->userdata('role') != 'superadmin') {
             redirect(base_url("auth/login"));
         }
     }

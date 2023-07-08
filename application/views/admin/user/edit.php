@@ -14,15 +14,23 @@
                     <div class="mb-3">
                         <label class="form-label">Nama</label>
                         <input type="text" class="form-control" name="nama" value="<?= $user->nama ?>" required>
-                        <input type="hidden" class="form-control" name="role" value="<?= $user->role ?>" required>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Username</label>
                         <input type="text" class="form-control" name="username" value="<?= $user->username ?>" required>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">password</label>
+                        <label class="form-label">Password</label>
                         <input type="text" class="form-control" name="password" value="<?= $user->password ?>" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Role</label>
+                        <select class="form-control" name="role" id="role" required>
+                            <option value="">----Pilih Di Sini----</option>
+                            <option value="superadmin" <?= $user->role == 'superadmin' ? 'selected' : '' ?>>Super Admin</option>
+                            <option value="adminppdb" <?= $user->role == 'adminppdb' ? 'selected' : '' ?>>Admin PPDB</option>
+                            <option value="adminberita" <?= $user->role == 'adminberita' ? 'selected' : '' ?>>Admin Berita</option>
+                        </select>
                     </div>
                 </div>
                 <div class="card-footer text-right">

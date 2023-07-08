@@ -14,33 +14,37 @@
                         Tambah User
                     </button>
                 </div>
-                <table id="myTable" class="table table-bordered table-responsive p-3">
-                    <thead>
-                        <tr>
-                            <th>No</th>
-                            <th class="text-midle">Nama</th>
-                            <th class="text-midle">Username</th>
-                            <th class="text-midle">Password</th>
-                            <th class="text-midle">Role</th>
-                            <th class="text-midle">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach ($user as $no => $usr) : ?>
-                            <tr>
-                                <td><?= $no + 1; ?></td>
-                                <td><?= $usr->nama ?></td>
-                                <td><?= $usr->username ?></td>
-                                <td><?= $usr->password ?></td>
-                                <td><?= $usr->role ?></td>
-                                <td>
-                                    <a href="<?= base_url('admin/user/edit/' . $usr->id) ?>" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
-                                    <a href="<?= base_url('admin/user/delete/' . $usr->id) ?>" class="btn btn-danger btn-sm tombol-hapus"><i class="fa fa-trash"></i></a>
-                                </td>
-                            </tr>
-                        <?php endforeach ?>
-                    </tbody>
-                </table>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table id="myTable" class="table table-bordered table-responsive p-3">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th class="text-midle">Nama</th>
+                                    <th class="text-midle">Username</th>
+                                    <th class="text-midle">Password</th>
+                                    <th class="text-midle">Role</th>
+                                    <th class="text-midle">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php foreach ($user as $no => $usr) : ?>
+                                    <tr>
+                                        <td><?= $no + 1; ?></td>
+                                        <td><?= $usr->nama ?></td>
+                                        <td><?= $usr->username ?></td>
+                                        <td><?= $usr->password ?></td>
+                                        <td><?= $usr->role ?></td>
+                                        <td>
+                                            <a href="<?= base_url('admin/user/edit/' . $usr->id) ?>" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
+                                            <a href="<?= base_url('admin/user/delete/' . $usr->id) ?>" class="btn btn-danger btn-sm tombol-hapus"><i class="fa fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                <?php endforeach ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -61,7 +65,6 @@
                 <div class="mb-3">
                     <label class="form-label">Nama</label>
                     <input type="text" class="form-control" name="nama" required>
-                    <input type="hidden" class="form-control" name="role" value="admin" required>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Username</label>
@@ -70,6 +73,15 @@
                 <div class="mb-3">
                     <label class="form-label">password</label>
                     <input type="text" class="form-control" name="password" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Role</label>
+                    <select class="form-control" name="role" id="role" required>
+                        <option value="">----Pilih Di Sini----</option>
+                        <option value="superadmin">Super Admin</option>
+                        <option value="adminppdb">Admin PPDB</option>
+                        <option value="adminberita">Admin Berita</option>
+                    </select>
                 </div>
             </div>
             <div class="modal-footer">
