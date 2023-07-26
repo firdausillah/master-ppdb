@@ -34,7 +34,8 @@
                     </li>
                     <li><a class="nav-link" href="<?= site_url('berita'); ?>" name="berita">Berita</a></li>
                     <!-- <li><a class="nav-link" href="https://www.instagram.com/smkgrisa/" target="_blank" name="galery">Galeri</a></li> -->
-                    <li><a class="getstarted" href="<?= site_url('ppdb') ?>">PPDB</a></li>
+                    <!-- <li><a class="getstarted" href="<?= site_url('ppdb') ?>">PPDB</a></li> -->
+                    <li><a class="getstarted" href="http://www.ppdb.smkpgripesanggaran.sch.id" target="_blank">PPDB</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
