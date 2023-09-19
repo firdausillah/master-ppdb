@@ -203,15 +203,10 @@
                                                 <path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
                                             </svg> <span class="align-middle">Siswa</span>
                                         </a>
-                                        <ul id="siswa" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar" style="">
-                                            <li class="sidebar-item">
-                                                <a data-bs-target="#ppdb" data-bs-toggle="collapse" class="sidebar-link" aria-expanded="true">PPDB</a>
-                                                <ul id="ppdb" class="sidebar-dropdown list-unstyled collapse" data-parent="#sidebar">
-                                                    <li class="sidebar-item"><a class="sidebar-link" href="<?= base_url('admin/siswa') ?>">Semua Siswa</a></li>
-                                                    <li class="sidebar-item"><a class="sidebar-link" href="<?= base_url('admin/siswa/sudahverifikasi') ?>">Siswa Diverifikasi</a></li>
-                                                    <li class="sidebar-item"><a class="sidebar-link" href="<?= base_url('admin/siswa/belumverifikasi') ?>">Siswa Belum Verifikasi</a></li>
-                                                </ul>
-                                            </li>
+                                        <ul id="siswa" class="sidebar-dropdown list-unstyled collapse" data-parent="#sidebar">
+                                            <li class="sidebar-item"><a class="sidebar-link" href="<?= base_url('admin/siswa') ?>">Semua Siswa</a></li>
+                                            <li class="sidebar-item"><a class="sidebar-link" href="<?= base_url('admin/siswa/sudahverifikasi') ?>">Siswa Diverifikasi</a></li>
+                                            <li class="sidebar-item"><a class="sidebar-link" href="<?= base_url('admin/siswa/belumverifikasi') ?>">Siswa Belum Verifikasi</a></li>
                                         </ul>
                                     </li>
                                 </ul>
