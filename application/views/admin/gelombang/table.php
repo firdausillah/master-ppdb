@@ -32,6 +32,7 @@
                                 <td>Gelombang ke-<?= $gel->gelombang ?></td>
                                 <td><?= $gel->tgl_buka ?></td>
                                 <td><?= $gel->tgl_tutup ?></td>
+                                <td><?= $gel->benefit ?></td>
                                 <td><?= $gel->status == 1 ? '<span class="badge bg-success"> Dibuka </span>' : '<span class="badge bg-danger"> Ditutup </span>' ?></td>
                                 <td>
                                     <a href="<?= base_url('admin/gelombang/edit/' . $gel->id) ?>" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
@@ -69,6 +70,10 @@
                 <div class="mb-3">
                     <label class="form-label">Tgl di Tutup</label>
                     <input type="date" class="form-control" name="tgl_tutup" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Benefit</label>
+                    <input type="text" class="form-control" name="benefit">
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Status</label>

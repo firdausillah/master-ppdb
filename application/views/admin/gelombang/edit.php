@@ -24,6 +24,10 @@
                         <input type="date" class="form-control" name="tgl_tutup" value="<?= $gelombang->tgl_tutup ?>" required>
                     </div>
                     <div class="mb-3">
+                        <label class="form-label">Benefit</label>
+                        <input type="text" class="form-control" name="tgl_tutup" value="<?= $gelombang->benefit ?>">
+                    </div>
+                    <div class="mb-3">
                         <label class="form-label">Status</label>
                         <select class="form-control" name="status" required id="">
                             <option <?= $gelombang->status == '1' ? 'selected' : '' ?> value="1">Aktif</option>
