@@ -21,6 +21,7 @@
                             <th class="text-midle">Gelombang</th>
                             <th class="text-midle">Tanggal dibuka</th>
                             <th class="text-midle">Tanggal ditutup</th>
+                            <th class="text-midle">Benefit</th>
                             <th class="text-midle">Status</th>
                             <th class="text-midle">Action</th>
                         </tr>
