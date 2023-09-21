@@ -29,6 +29,7 @@ class Gelombang extends CI_Controller
             'gelombang' => $this->input->post('gelombang'),
             'tgl_buka'  => $this->input->post('tgl_buka'),
             'tgl_tutup' => $this->input->post('tgl_tutup'),
+            'benefit' => $this->input->post('benefit'),
             'status'    => $this->input->post('status')
         ];
         
@@ -56,6 +57,7 @@ class Gelombang extends CI_Controller
             'gelombang' => $this->input->post('gelombang'),
             'tgl_buka'  => $this->input->post('tgl_buka'),
             'tgl_tutup' => $this->input->post('tgl_tutup'),
+            'benefit' => $this->input->post('benefit'),
             'status'    => $this->input->post('status')
         ];
         
