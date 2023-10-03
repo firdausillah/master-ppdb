@@ -214,6 +214,11 @@
                                             <li class="sidebar-item"><a class="sidebar-link" href="<?= base_url('admin/siswa/belumverifikasi') ?>">Siswa Belum Verifikasi</a></li>
                                         </ul>
                                     </li>
+                                    <li class="sidebar-item">
+                                        <a class="sidebar-link berita" href="<?= base_url() ?>admin/marketing">
+                                            <i class="fa fa-users" aria-hidden="true"></i> <span class="align-middle">Marketing</span>
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
                         <?php endif ?>
