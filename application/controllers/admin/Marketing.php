@@ -8,7 +8,8 @@ class Marketing extends CI_Controller
         parent::__construct();
         $this->load->model('PembawaModel');
 
-        if ($this->session->userdata('role') != 'superadmin') {
+        $role = $this->session->userdata('role');
+        if ($role != 'superadmin' and $role != 'adminppdb') {
             redirect(base_url("auth/login"));
         }
     }
