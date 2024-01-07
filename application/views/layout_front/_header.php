@@ -20,6 +20,7 @@
                             <li><a href="<?= site_url('profile/organisasi'); ?>">Struktur Organisasi</a></li>
                             <li><a href="<?= site_url('profile/guru_tendik'); ?>">Guru dan Tenaga Kependidikan</a></li>
                             <li><a href="<?= site_url('profile/sarpras'); ?>">Sarana dan Prasarana</a></li>
+                            <li><a href="<?= site_url('profile/osis'); ?>">Osis</a></li>
                         </ul>
                     </li>
                     <li class="dropdown"><a href="" name="jurusan"><span>Jurusan</span> <i class="bi bi-chevron-down"></i></a>

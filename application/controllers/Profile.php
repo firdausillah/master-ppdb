@@ -6,6 +6,7 @@ class Profile extends CI_Controller {
 	function __construct(){
 		parent::__construct();
 		$this->load->model('GtkModel', 'mGtk');
+		$this->load->model('OsisModel');
 		$this->load->model('SarprasModel');
 	}
 
@@ -34,6 +35,15 @@ class Profile extends CI_Controller {
 			'gtks' => $this->mGtk->get()->result(),
 			'title' => 'Guru dan Tenaga Kependidikan',
 			'content' => 'front/profile/guru_tendik'
+		];
+		$this->load->view('layout_front/base', $data);
+	}
+
+	public function osis(){
+		$data = [
+			'osis' => $this->OsisModel->joinJurusan()->result(),
+			'title' => 'Osis',
+			'content' => 'front/profile/osis'
 		];
 		$this->load->view('layout_front/base', $data);
 	}

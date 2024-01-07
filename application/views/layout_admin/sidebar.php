@@ -119,6 +119,11 @@
                                             <i class="align-middle" data-feather="file"></i> <span class="align-middle">Profile</span>
                                         </a>
                                     </li>
+                                    <li class="sidebar-item">
+                                        <a class="sidebar-link osis" href="<?= site_url('admin/osis') ?>">
+                                            <i class="align-middle" data-feather="users"></i> <span class="align-middle">Osis</span>
+                                        </a>
+                                    </li>
                                     <li class="sidebar-header">
                                         Front
                                     </li>
